@@ -348,7 +348,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-contact-buttons {
-    background-color: #528431; /* ★変更: ボタンの周りの背景色を #528431 に変更 */
+    /* 半透過の背景色 */
+    background-color: rgba(82, 132, 49, 0.9); /* #528431 のRBG値と透明度0.9 */
     padding: 20px 25px; /* パディング調整 */
     border-radius: 0 0 8px 8px; /* 下の角を丸く、上は角ばらせる */
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
@@ -361,8 +362,9 @@ h1, h2, h3, h4, h5, h6 {
 
 /* 個々の連絡先ボタンのスタイル */
 .contact-btn {
-    background-color: #528431; /* ★変更: ボタン自体の背景色を #528431 に変更 */
-    color: white; /* ★変更: ボタンの文字色を白に変更（背景が濃くなるため） */
+    /* 半透過の背景色 */
+    background-color: rgba(82, 132, 49, 0.9); /* #528431 のRBG値と透明度0.9 */
+    color: white; /* ボタンの文字色は白 */
     padding: 18px 30px;
     border-radius: 8px;
     text-decoration: none;
@@ -375,11 +377,12 @@ h1, h2, h3, h4, h5, h6 {
     white-space: nowrap;
     flex: 1 1 auto; /* Flexアイテムとしての振る舞いを調整 */
     min-width: 200px; /* ある程度の最小幅を確保 */
-    border: 1px solid #7cb342; /* ★変更: 枠線を少し明るめの緑に変更（見やすくするため） */
+    border: 1px solid rgba(124, 179, 66, 0.9); /* 枠線も半透過に */
 }
 
 .contact-btn:hover {
-    background-color: #689f38; /* ★変更: ホバー時の色を少し明るい緑に */
+    /* ホバー時の色を少し明るい緑に（半透過） */
+    background-color: rgba(104, 159, 56, 0.9); /* #689f38 のRBG値と透明度0.9 */
     transform: translateY(-3px);
     color: white; /* ホバー時も文字色は白 */
 }
@@ -388,7 +391,7 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
     font-size: 1.4em;
     font-weight: 900;
-    color: white; /* ★変更: 背景が濃くなるため、文字色を白に変更 */
+    color: white; /* 背景が濃くなるため、文字色を白に変更 */
     margin-top: 5px;
 }
 
@@ -396,7 +399,7 @@ h1, h2, h3, h4, h5, h6 {
 .contact-btn small {
     display: block;
     font-size: 0.8em; /* テキストを小さく */
-    color: #eee; /* ★変更: 背景が濃くなるため、色を明るめに変更 */
+    color: #eee; /* 背景が濃くなるため、色を明るめに変更 */
     margin-top: 5px;
 }
 
