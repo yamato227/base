@@ -330,6 +330,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     flex-direction: column; /* 縦に並べる */
     align-items: flex-end; /* 右寄せ */
+    width: fit-content; /* ★追加: コンテンツの幅に合わせる */
 }
 
 .hero-contact-label {
@@ -342,6 +343,8 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: -1px; /* 下の要素と少し重ねるため */
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     white-space: nowrap;
+    text-align: center; /* ★追加: ラベル内のテキストを中央揃え */
+    width: 100%; /* ★追加: 親要素の幅いっぱいに広げる（flex-direction: column のため） */
 }
 
 .hero-contact-buttons {
@@ -353,11 +356,12 @@ h1, h2, h3, h4, h5, h6 {
     gap: 15px; /* ボタン間の隙間 */
     flex-wrap: wrap; /* 小さい画面で折り返す */
     justify-content: center; /* ボタンを中央寄せ */
+    width: 100%; /* ★追加: ラベルと幅を合わせるため */
 }
 
 /* 個々の連絡先ボタンのスタイル */
 .contact-btn {
-    background-color: #fff; /* ボタン自体の背景は白 */
+    background-color: #e0f2f1; /* ★変更: 薄い緑色の背景 */
     color: #333;
     padding: 18px 30px;
     border-radius: 8px;
@@ -371,11 +375,11 @@ h1, h2, h3, h4, h5, h6 {
     white-space: nowrap;
     flex: 1 1 auto; /* Flexアイテムとしての振る舞いを調整 */
     min-width: 200px; /* ある程度の最小幅を確保 */
-    border: 1px solid #ddd; /* 枠線を追加 */
+    border: 1px solid #b2dfdb; /* ★変更: 枠線を少し濃い目の薄い緑に変更 */
 }
 
 .contact-btn:hover {
-    background-color: #f0f0f0;
+    background-color: #c8e6c9; /* ★変更: ホバー時の色を少し濃いめの薄い緑に */
     transform: translateY(-3px);
     color: #333;
 }
@@ -714,65 +718,5 @@ h1, h2, h3, h4, h5, h6 {
     .contact-btn {
         width: 100%;
         min-width: unset; /* 最小幅の制限を解除 */
-    }
-    /* レスポンシブ対応の調整ここまで */
-
-    .section-common {
-        padding: 50px 0;
-    }
-    .section-title {
-        font-size: 2em;
-        margin-bottom: 40px;
-    }
-
-    .news-list li {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .news-list .news-date {
-        margin-bottom: 5px;
-    }
-    .news-list a {
-        margin-left: 0;
-    }
-
-    .services-section .service-cards {
-        grid-template-columns: 1fr;
-    }
-    .service-card {
-        margin-bottom: 20px;
-    }
-    .service-card.map-card {
-        height: auto;
-    }
-    .service-card.map-card iframe {
-        height: 250px; /* モバイルでのマップの高さ */
-    }
-
-    .cta-section {
-        padding: 50px 20px;
-    }
-    .cta-section p {
-        font-size: 1em;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    .footer-info, .footer-nav {
-        min-width: unset;
-        width: 100%;
-    }
-    .footer-nav ul {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    .footer-info p, .footer-nav a {
-        text-align: center;
-    }
-    .footer-logo {
-        margin-bottom: 20px;
     }
 }
