@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>真宗大谷派 蓮通寺 - 心の安らぎを見つける場所</title>
-    <link rel="stylesheet" href="style.css">
+    <title>浄土真宗 蓮通寺</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="img/kamon.jpg">
 </head>
 <body>
 
     <header class="header">
         <div class="header-inner">
-            <h1 class="site-logo">
+            <div class="site-logo">
                 <a href="index.html">
-                    <img src="img/logo-1.jpg" alt="真宗大谷派 蓮通寺">
+                    <img src="./img/logo-1.jpg" alt="浄土真宗 蓮通寺">
                 </a>
-            </h1>
+            </div>
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html">ホーム</a></li>
@@ -33,7 +35,7 @@
                     <li><a href="contact.html">お問い合わせ</a></li>
                 </ul>
             </nav>
-            <button class="mobile-menu-toggle" aria-label="メニューを開く">
+            <button class="mobile-menu-toggle" aria-label="モバイルメニューを開く">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -41,36 +43,42 @@
         </div>
     </header>
 
-    <main>
-        <section class="hero-section">
-            <div class="video-background">
-                <video autoplay muted loop playsinline>
-                    <source src="img/main.webm" type="video/webm">
-                    <source src="img/main.mp4" type="video/mp4">
-                    お使いのブラウザは動画に対応していません。
-                </video>
-            </div>
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h2 class="hero-main-title">
-                    心に響く<br>
-                    阿弥陀仏の教え
-                </h2>
-                </div>
-            <div class="hero-contact-buttons">
-                <a href="contact.html" class="contact-btn email-btn">
-                    ご相談はこちら<br>
-                    <span>お問い合わせフォーム</span>
-                </a>
-                <a href="tel:000-0000-0000" class="contact-btn tel-btn">
-                    お電話でのご相談<br>
-                    <span>000-0000-0000</span><br>
-                    <span>受付時間：午前9時～午後5時</span>
-                </a>
-            </div>
-        </section>
+    <section class="hero-section">
+        <div class="image-slideshow">
+            <picture class="slideshow-image active">
+                <source media="(max-width: 768px)" srcset="./img/kv01_sp-1.jpg">
+                <img src="./img/kv01_pc-1.jpg" alt="スライドショー画像1">
+            </picture>
+            <picture class="slideshow-image">
+                <source media="(max-width: 768px)" srcset="./img/kv02_sp-1.jpg">
+                <img src="./img/kv02_pc-1.jpg" alt="スライドショー画像2">
+            </picture>
+        </div>
 
-        <section class="section-common news-section">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <h2 class="hero-main-title">
+                心に響く<br>
+                阿弥陀仏の教え
+            </h2>
+        </div>
+        <div class="hero-contact-buttons">
+            <a href="contact.html" class="contact-btn email-btn">
+                ご相談はこちら<br>
+                <span>お問い合わせフォーム</span><br>
+                <small>24時間受付中</small>
+            </a>
+            <a href="tel:000-0000-0000" class="contact-btn tel-btn">
+                お電話でのご相談<br>
+                <span>000-0000-0000</span><br>
+                <small>受付時間：10:00～16:00</small>
+            </a>
+        </div>
+    </section>
+
+    <main>
+        <section class="news-section section-common">
             <div class="container">
                 <h2 class="section-title">お知らせ</h2>
                 <ul class="news-list">
@@ -84,18 +92,18 @@
             </div>
         </section>
 
-        <section class="section-common services-section bg-light-gray">
+        <section class="services-section section-common bg-light-gray">
             <div class="container">
                 <h2 class="section-title">蓮通寺のご案内</h2>
                 <div class="service-cards">
                     <div class="service-card">
-                        <img src="img/tera.jpg" alt="蓮通寺について">
+                        <img src="./img/tera.jpg" alt="蓮通寺について">
                         <h3>蓮通寺について</h3>
                         <p>蓮通寺の歴史、本堂、住職など、当寺の概要をご紹介いたします。</p>
                         <a href="about.html" class="common-btn small">詳しく見る</a>
                     </div>
                     <div class="service-card">
-                        <img src="img/top_about_03.jpg" alt="年間行事・法要">
+                        <img src="./img/top_about_03.jpg" alt="年間行事・法要">
                         <h3>年間行事・法要</h3>
                         <p>月例法話会や報恩講、春秋彼岸会など、年間を通じて行われる行事や法要をご案内します。</p>
                         <a href="service.html" class="common-btn small">詳しく見る</a>
@@ -125,8 +133,8 @@
             <div class="footer-content">
                 <div class="footer-info">
                     <div class="footer-logo">
-                        <img src="img/logo-1.jpg" alt="蓮通寺">
-                        <p class="footer-site-name">真宗大谷派 蓮通寺</p>
+                        <img src="./img/logo-1.jpg" alt="蓮通寺">
+                        <p class="footer-site-name">浄土真宗 蓮通寺</p>
                     </div>
                     <p>〒XXX-XXXX 〇〇県〇〇市〇〇町〇〇番地</p>
                     <p>TEL: 000-0000-0000</p>
@@ -151,6 +159,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
