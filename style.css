@@ -9,10 +9,9 @@
     width: 100%;
     height: 650px; /* kugyounokai.com くらいの高さ */
     overflow: hidden;
-    display: flex;
-    /* ★変更: flex-start に戻し、justify-content も flex-start に戻します */
+    display: flex; /* flexコンテナとして動作 */
     align-items: center; /* 垂直方向中央寄せ */
-    justify-content: flex-start; /* 水平方向左寄せに戻す */
+    justify-content: center; /* ★変更: hero-contentブロック自体を水平中央に配置 */
     color: white;
     text-shadow: 1px 1px 5px rgba(0,0,0,0.7); /* テキスト影を濃く */
 }
@@ -46,15 +45,12 @@
 .hero-content {
     position: relative;
     z-index: 3; /* オーバーレイより手前に */
-    /* ★変更: max-width を調整し、padding を container に合わせる */
+    /* ★変更: max-widthをcontainerと同じにし、margin: auto で中央寄せ */
     max-width: 1080px; /* .container と同じ幅 */
     width: 100%; /* 親のmax-width内で幅を確保 */
     padding: 0 20px; /* .container と同じパディング */
-    margin: 0 auto; /* 中央寄せ */
-    text-align: left; /* ★変更: 左寄せに戻す */
-    
-    /* hero-content 自体は中央に置き、その中のテキストを左寄せにするため */
-    /* text-align: center; を削除 */
+    margin: 0 auto; /* ★追加: hero-content ブロック自体を水平中央に配置 */
+    text-align: left; /* ★変更なし: hero-content内のテキストは左寄せ */
 }
 
 .hero-main-title {
@@ -63,27 +59,15 @@
     margin-bottom: 20px;
     font-weight: 900; /* さらに太く */
     color: white;
-    text-align: left; /* ★変更: 左寄せに戻す */
+    text-align: left; /* ★変更なし: 左寄せのまま */
     max-width: 600px; /* キャッチコピーの最大の幅を制限 (調整可能) */
-    margin-left: 0; /* flex-startに戻すのでこれは不要だが念のため */
+    /* margin-left: 0; は不要 */
 }
 
-.hero-main-title::after {
-    display: none; /* ヒーロー内のh2にアンダーラインは不要 */
-}
+/* hero-subtitle のスタイルは不要 */
+/* .hero-subtitle { ... } を削除 */
 
-/* hero-subtitle は削除したので、このスタイルは不要になります */
-/* .hero-subtitle {
-    font-size: 1.4em;
-    line-height: 1.6;
-    color: white;
-    max-width: 600px;
-    text-align: left;
-} */
-
-
-/* ヒーローセクション下部の連絡先ボタン (kugyounokai.com の配置を参考に) */
-/* これは hero-section の右下に配置するため、変更なし */
+/* ヒーローセクション下部の連絡先ボタンは変更なし */
 .hero-contact-buttons {
     position: absolute;
     bottom: 30px; /* 下からの位置 */
@@ -102,14 +86,13 @@
     .hero-section {
         height: 450px;
         align-items: flex-end; /* 下に寄せる */
-        justify-content: center; /* モバイルでは中央寄せで調整 */
+        justify-content: center; /* 中央寄せは維持 */
     }
 
     .hero-content {
         padding: 0 20px;
-        margin-left: 0;
+        margin: 0 auto 120px auto; /* ★変更: 中央寄せと下マージンを調整 */
         text-align: center; /* モバイルでは中央寄せを維持 */
-        margin-bottom: 120px; /* ボタンとの重なりを避ける */
     }
     .hero-main-title {
         font-size: 2.5em;
