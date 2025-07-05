@@ -1,35 +1,285 @@
 /* style.css */
 
-/* ... (その他のスタイルは変更なし) ... */
+/* 基本リセットと共通スタイル */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Noto Serif JP', serif, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f8f8f8;
+}
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    color: #004d40;
+    text-decoration: none;
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+a:hover {
+    color: #00796b;
+    opacity: 0.8;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Serif JP', serif;
+    color: #004d40;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    line-height: 1.3;
+}
+
+.section-common {
+    padding: 80px 0;
+    margin-bottom: 30px;
+    background-color: #fff;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.section-common.bg-light-gray {
+    background-color: #f5f5f5;
+}
+
+.section-title {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    padding-bottom: 20px;
+    font-weight: 700;
+    color: #333;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #004d40;
+    border-radius: 2px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* ボタンの共通スタイル */
+.common-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #004d40;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.common-btn:hover {
+    background-color: #00796b;
+    transform: translateY(-2px);
+    color: white;
+}
+
+.common-btn.small {
+    padding: 10px 20px;
+    font-size: 0.9em;
+}
+
+.common-btn.large {
+    padding: 18px 40px;
+    font-size: 1.1em;
+}
+
+.btn-area {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* ヘッダー */
+.header {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 100;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.site-logo img {
+    height: 60px;
+    vertical-align: middle;
+}
+
+/* メインナビゲーション */
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-nav li {
+    margin-left: 35px;
+    position: relative;
+}
+
+.main-nav a {
+    display: block;
+    padding: 15px 0;
+    color: #333;
+    font-weight: 700;
+    font-size: 1.05em;
+    white-space: nowrap;
+}
+
+.main-nav a:hover {
+    color: #004d40;
+}
+
+/* ドロップダウンメニュー */
+.main-nav .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    min-width: 180px;
+    border-radius: 5px;
+    padding: 10px 0;
+    z-index: 10;
+    flex-direction: column;
+}
+
+.main-nav .has-dropdown:hover > .dropdown {
+    display: flex;
+}
+
+.main-nav .dropdown li {
+    margin: 0;
+}
+
+.main-nav .dropdown a {
+    padding: 10px 20px;
+    white-space: nowrap;
+    font-weight: normal;
+    font-size: 1em;
+    color: #555;
+}
+
+.main-nav .dropdown a:hover {
+    background-color: #f0f0f0;
+    color: #004d40;
+}
+
+/* モバイルメニューのトグルボタン（初期は非表示） */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 24px;
+    position: relative;
+    z-index: 101;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    margin-bottom: 6px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.mobile-menu-toggle span:last-child {
+    margin-bottom: 0;
+}
+
+/* モバイルメニューオープン時のアニメーション */
+.mobile-menu-toggle.open span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+.mobile-menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+.mobile-menu-toggle.open span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
 
 /* ヒーローセクション */
 .hero-section {
     position: relative;
     width: 100%;
-    height: 650px; /* kugyounokai.com くらいの高さ */
+    height: 650px;
     overflow: hidden;
     display: flex;
-    align-items: center; /* 垂直方向中央寄せ */
-    /* ★変更: テキストブロックを左端寄りに配置するため flex-start に戻す */
-    justify-content: flex-start; /* 水平方向左寄せ */
+    align-items: center;
+    justify-content: flex-start; /* 左端寄せ */
     color: white;
     text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
 }
 
-/* ... (動画背景のスタイルは変更なし) ... */
+.hero-section .video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-section .video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
 
 .hero-content {
     position: relative;
     z-index: 3;
-    /* ★変更: max-width は維持しつつ、margin-left で左からの位置を調整 */
-    max-width: 1080px; /* .container と同じ幅 (コンテンツ幅) */
-    width: 100%; /* 親のmax-width内で幅を確保 */
-    padding: 0 20px; /* 左右のパディング (コンテンツと画面端の余白) */
-    /* ★変更: hero-content ブロック自体を画面左端から少し離して配置 */
-    /* flex-startと組み合わせて左側からの開始位置を調整 */
-    margin-left: 5%; /* 左から5%の位置に開始 (調整可能) */
-    margin-right: auto; /* 右は自動調整 */
-    text-align: left; /* hero-content内のテキストは左寄せ */
+    max-width: 1080px;
+    width: 100%;
+    padding: 0 20px;
+    margin-left: 5%; /* 左からの位置を調整 */
+    margin-right: auto;
+    text-align: left;
 }
 
 .hero-main-title {
@@ -38,36 +288,345 @@
     margin-bottom: 20px;
     font-weight: 900;
     color: white;
-    text-align: left; /* 左寄せのまま */
-    /* max-width は hero-content で制御されるため不要だが、残しても問題なし */
+    text-align: left;
+}
+
+.hero-main-title::after {
+    display: none;
 }
 
 .hero-subtitle {
     font-size: 1.4em;
     line-height: 1.6;
     color: white;
-    max-width: 600px; /* 必要であればサブタイトルの最大幅を設定 */
+    max-width: 600px;
     text-align: left;
     margin-top: 10px;
 }
 
-/* ... (ヒーローセクション下部の連絡先ボタンは変更なし) ... */
+/* ヒーローセクション下部の連絡先ボタン */
+.hero-contact-buttons {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    z-index: 4;
+    display: flex;
+    gap: 15px;
+}
 
+.contact-btn {
+    background-color: #fff;
+    color: #333;
+    padding: 18px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+    font-size: 0.95em;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+.contact-btn:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-3px);
+    color: #333;
+}
+
+.contact-btn span {
+    display: block;
+    font-size: 1.4em;
+    font-weight: 900;
+    color: #004d40;
+    margin-top: 5px;
+}
+
+/* お知らせセクション */
+.news-section {
+    background-color: #fefefe;
+}
+
+.news-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.news-list li {
+    padding: 15px 0;
+    border-bottom: 1px dashed #eee;
+    display: flex;
+    align-items: baseline;
+}
+
+.news-list li:last-child {
+    border-bottom: none;
+}
+
+.news-list .news-date {
+    font-size: 0.9em;
+    color: #777;
+    flex-shrink: 0;
+    width: 100px;
+    font-weight: normal;
+}
+
+.news-list a {
+    margin-left: 20px;
+    flex-grow: 1;
+    color: #333;
+    font-weight: normal;
+    font-size: 1.05em;
+}
+
+.news-list a:hover {
+    color: #004d40;
+}
+
+/* サービス紹介セクション */
+.services-section .service-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.service-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Googleマップカードのスタイル */
+.service-card.map-card {
+    height: 450px;
+}
+
+.service-card.map-card iframe {
+    flex-grow: 1;
+    height: auto;
+    min-height: 200px;
+}
+
+.service-card.map-card h3,
+.service-card.map-card p,
+.service-card.map-card .common-btn {
+    flex-shrink: 0;
+    padding: 0 20px;
+}
+.service-card.map-card h3 {
+    margin-top: 20px;
+}
+.service-card.map-card p {
+    margin-bottom: 20px;
+}
+.service-card.map-card .common-btn {
+    margin-bottom: 20px;
+    margin-top: auto;
+}
+
+.service-card h3 {
+    font-size: 1.6em;
+    margin: 20px 0 10px;
+    color: #004d40;
+}
+
+.service-card p {
+    padding: 0 20px;
+    margin-bottom: 20px;
+    font-size: 0.95em;
+    color: #555;
+}
+
+.service-card .common-btn {
+    margin-bottom: 20px;
+}
+
+/* CTAセクション */
+.cta-section {
+    background-color: #004d40;
+    color: white;
+    text-align: center;
+    padding: 80px 0;
+}
+
+.cta-section .section-title {
+    color: white;
+}
+
+.cta-section .section-title::after {
+    background-color: white;
+}
+
+.cta-section p {
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* フッター */
+.footer {
+    background-color: #222;
+    color: #bbb;
+    padding: 50px 0;
+    font-size: 0.9em;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.footer-info {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.footer-logo img {
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.footer-site-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.footer-info p {
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+.footer-nav {
+    flex: 2;
+    min-width: 300px;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.footer-nav a {
+    color: #bbb;
+    display: block;
+    padding: 5px 0;
+}
+
+.footer-nav a:hover {
+    color: #004d40;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 20px;
+}
+
+.copyright p {
+    margin: 0;
+    color: #999;
+}
 
 /* レスポンシブ対応 */
 @media (max-width: 1024px) {
-    /* ... (他のスタイルは変更なし) ... */
+    .header-inner {
+        padding: 10px 20px;
+    }
+    .site-logo img {
+        height: 50px;
+    }
+    .main-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-out;
+        display: none;
+    }
+    .main-nav.open {
+        display: flex;
+        transform: translateY(0);
+    }
+    .main-nav li {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .main-nav a {
+        padding: 12px 20px;
+        border-bottom: 1px solid #eee;
+    }
+    .main-nav li:last-child a {
+        border-bottom: none;
+    }
+    .main-nav .dropdown {
+        position: static;
+        box-shadow: none;
+        padding: 0;
+        border-radius: 0;
+        background-color: #f8f8f8;
+        width: 100%;
+    }
+    .main-nav .dropdown a {
+        padding-left: 40px;
+    }
+    .main-nav .has-dropdown:hover > .dropdown {
+        display: flex;
+    }
+    .mobile-menu-toggle {
+        display: block;
+    }
 
     .hero-section {
         height: 450px;
-        align-items: flex-end; /* 下に寄せる */
-        justify-content: center; /* モバイルではhero-contentブロック全体を中央寄せ */
+        align-items: flex-end;
+        justify-content: center;
     }
 
     .hero-content {
         padding: 0 20px;
-        margin: 0 auto 120px auto; /* モバイルでは中央寄せと下マージンを調整 */
-        text-align: center; /* モバイルではコンテンツ内のテキストも中央寄せ */
+        margin: 0 auto 120px auto;
+        text-align: center;
     }
     .hero-main-title {
         font-size: 2.5em;
@@ -78,5 +637,60 @@
         text-align: center;
     }
 
-    /* ... (他のスタイルは変更なし) ... */
+    .hero-contact-buttons {
+        flex-direction: column;
+        width: calc(100% - 40px);
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        gap: 10px;
+    }
+    .contact-btn {
+        width: 100%;
+        padding: 15px 20px;
+    }
+
+    .section-common {
+        padding: 50px 0;
+    }
+    .section-title {
+        font-size: 2em;
+        margin-bottom: 40px;
+    }
+
+    .news-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .news-list .news-date {
+        margin-bottom: 5px;
+    }
+    .news-list a {
+        margin-left: 0;
+    }
+
+    .services-section .service-cards {
+        grid-template-columns: 1fr;
+    }
+    .service-card.map-card {
+        height: auto;
+    }
+    .service-card.map-card iframe {
+        height: 300px;
+        min-height: unset;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-info, .footer-nav {
+        min-width: unset;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .footer-nav ul {
+        grid-template-columns: 1fr;
+    }
 }
