@@ -115,7 +115,6 @@ h1, h2, h3, h4, h5, h6 {
 .header {
     background-color: #fff;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    /* ★変更: Sticky Header の設定 */
     position: sticky;
     top: 0;
     z-index: 100; /* 他のコンテンツの上に表示されるようにする */
@@ -350,7 +349,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-contact-buttons {
-    /* ★透過率を75%に戻す */
+    /* 半透過の背景色 (75% 不透明) */
     background-color: rgba(82, 132, 49, 0.75); /* #528431 のRBG値と透明度0.75 */
     padding: 20px 25px; /* パディング調整 */
     border-radius: 0 0 8px 8px; /* 下の角を丸く、上は角ばらせる */
@@ -364,7 +363,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* 個々の連絡先ボタンのスタイル */
 .contact-btn {
-    /* ★透過率を75%に戻す */
+    /* 半透過の背景色 (75% 不透明) */
     background-color: rgba(82, 132, 49, 0.75); /* #528431 のRBG値と透明度0.75 */
     color: white; /* ボタンの文字色は白 */
     padding: 18px 30px;
@@ -372,22 +371,25 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
     font-weight: bold;
     text-align: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* 影を少し弱く */
-    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+    /* ★変更: 二重枠の追加とホバー時の変化 */
+    border: 1px solid rgba(170, 200, 150, 0.75); /* 外側の細い枠 (明るい緑) */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1), inset 0 0 0 2px rgba(255, 255, 255, 0.5); /* 影 + 内側の白い枠 */
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     font-size: 0.95em;
     line-height: 1.4;
     white-space: nowrap;
     flex: 1 1 auto; /* Flexアイテムとしての振る舞いを調整 */
     min-width: 200px; /* ある程度の最小幅を確保 */
-    /* ★透過率を75%に戻す */
-    border: 1px solid rgba(124, 179, 66, 0.75); /* 枠線も半透過 */
 }
 
 .contact-btn:hover {
-    /* ★透過率を75%に戻す */
+    /* ホバー時の色を少し明るい緑に（半透過） */
     background-color: rgba(104, 159, 56, 0.75); /* #689f38 のRBG値と透明度0.75 */
     transform: translateY(-3px);
     color: white; /* ホバー時も文字色は白 */
+    /* ★変更: ホバー時の枠線の色変化 */
+    border-color: rgba(190, 220, 170, 0.75); /* 外枠を少し明るく */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2), inset 0 0 0 2px rgba(255, 255, 255, 0.7); /* 影を強調 + 内枠を少し不透明に */
 }
 
 .contact-btn span {
