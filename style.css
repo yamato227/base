@@ -321,7 +321,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 10px;
 }
 
-/* ヒーローセクション下部の連絡先ボタンの新しいラッパー - ここから追加・修正 */
+/* ヒーローセクション下部の連絡先ボタンの新しいラッパー */
 .hero-contact-wrapper {
     position: absolute;
     bottom: 30px;
@@ -345,11 +345,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-contact-buttons {
-    /* 既存のスタイルを修正または追加 */
-    /* position: absolute; /* この行は削除 */
-    /* bottom: 30px; /* この行は削除 */
-    /* right: 30px; /* この行は削除 */
-    /* z-index: 4; /* この行は削除 */
     background-color: rgba(255, 255, 255, 0.95); /* 少し透明感のある白背景 */
     padding: 20px 25px; /* パディング調整 */
     border-radius: 0 0 8px 8px; /* 下の角を丸く、上は角ばらせる */
@@ -362,7 +357,6 @@ h1, h2, h3, h4, h5, h6 {
 
 /* 個々の連絡先ボタンのスタイル */
 .contact-btn {
-    /* 既存のスタイルから変更 */
     background-color: #fff; /* ボタン自体の背景は白 */
     color: #333;
     padding: 18px 30px;
@@ -377,6 +371,7 @@ h1, h2, h3, h4, h5, h6 {
     white-space: nowrap;
     flex: 1 1 auto; /* Flexアイテムとしての振る舞いを調整 */
     min-width: 200px; /* ある程度の最小幅を確保 */
+    border: 1px solid #ddd; /* 枠線を追加 */
 }
 
 .contact-btn:hover {
@@ -400,7 +395,6 @@ h1, h2, h3, h4, h5, h6 {
     color: #666; /* 色を少し薄く */
     margin-top: 5px;
 }
-/* ヒーローセクション下部の連絡先ボタンの新しいラッパー - ここまで追加・修正 */
 
 
 /* お知らせセクション */
@@ -697,7 +691,7 @@ h1, h2, h3, h4, h5, h6 {
         text-align: center;
     }
 
-    /* ヒーローセクション下部の連絡先ボタン - レスポンシブ対応の調整 - ここから追加・修正 */
+    /* ヒーローセクション下部の連絡先ボタン - レスポンシブ対応の調整 */
     .hero-contact-wrapper {
         width: calc(100% - 40px); /* 左右20pxずつ余白 */
         left: 20px;
@@ -721,7 +715,7 @@ h1, h2, h3, h4, h5, h6 {
         width: 100%;
         min-width: unset; /* 最小幅の制限を解除 */
     }
-    /* ヒーローセクション下部の連絡先ボタン - レスポンシブ対応の調整 - ここまで追加・修正 */
+    /* レスポンシブ対応の調整ここまで */
 
     .section-common {
         padding: 50px 0;
