@@ -237,28 +237,45 @@ h1, h2, h3, h4, h5, h6 {
 .hero-section {
     position: relative;
     width: 100%;
-    height: 650px;
+    height: 650px; /* デスクトップの高さ */
     overflow: hidden;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* 左端寄せ */
+    justify-content: flex-start;
     color: white;
     text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
 }
 
-.hero-section .video-background {
+/* 画像スライドショーのスタイル */
+.image-slideshow {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    z-index: 1; /* オーバーレイの下に、コンテンツの上に */
+    overflow: hidden; /* はみ出た画像を隠す */
 }
 
-.hero-section .video-background video {
+.image-slideshow picture {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    opacity: 0; /* 最初は全て透明 */
+    transition: opacity 1.5s ease-in-out; /* フェードアニメーション */
+}
+
+.image-slideshow picture.active {
+    opacity: 1; /* active クラスが付いた画像だけ表示 */
+}
+
+.image-slideshow img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 画像がセクション全体を覆うように */
+    display: block; /* img要素のデフォルトの余白を消す */
 }
 
 .hero-overlay {
@@ -277,7 +294,7 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 1080px;
     width: 100%;
     padding: 0 20px;
-    margin-left: 5%; /* 左からの位置を調整 */
+    margin-left: 5%;
     margin-right: auto;
     text-align: left;
 }
@@ -618,7 +635,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .hero-section {
-        height: 450px;
+        height: 450px; /* モバイルの高さ */
         align-items: flex-end;
         justify-content: center;
     }
