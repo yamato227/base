@@ -241,7 +241,7 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: flex-start; /* 左端寄せ */
     color: white;
     text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
 }
@@ -294,7 +294,7 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 1080px;
     width: 100%;
     padding: 0 20px;
-    margin-left: 5%;
+    margin-left: 5%; /* 左からの位置を調整 */
     margin-right: auto;
     text-align: left;
 }
@@ -635,7 +635,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .hero-section {
-        height: 450px; /* モバイルの高さ */
+        height: 450px;
         align-items: flex-end;
         justify-content: center;
     }
