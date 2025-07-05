@@ -11,7 +11,8 @@
     overflow: hidden;
     display: flex; /* flexコンテナとして動作 */
     align-items: center; /* 垂直方向中央寄せ */
-    justify-content: center; /* ★変更: hero-contentブロック自体を水平中央に配置 */
+    /* ★変更: flex-start に戻し、hero-contentを左に寄せる */
+    justify-content: flex-start; /* 水平方向左寄せに戻す */
     color: white;
     text-shadow: 1px 1px 5px rgba(0,0,0,0.7); /* テキスト影を濃く */
 }
@@ -45,11 +46,13 @@
 .hero-content {
     position: relative;
     z-index: 3; /* オーバーレイより手前に */
-    /* ★変更: max-widthをcontainerと同じにし、margin: auto で中央寄せ */
+    /* ★変更: max-widthをcontainerと同じにするが、marginは自動ではなく特定の値を指定する */
     max-width: 1080px; /* .container と同じ幅 */
     width: 100%; /* 親のmax-width内で幅を確保 */
     padding: 0 20px; /* .container と同じパディング */
-    margin: 0 auto; /* ★追加: hero-content ブロック自体を水平中央に配置 */
+    /* ★変更: 中央の少し左に寄せるためのマージン調整 */
+    margin-left: max(calc(50% - 400px), 20px); /* 画面幅が広いときに左から400px程度の位置、最小20px */
+    margin-right: auto; /* 右は自動調整 */
     text-align: left; /* ★変更なし: hero-content内のテキストは左寄せ */
 }
 
@@ -64,8 +67,8 @@
     /* margin-left: 0; は不要 */
 }
 
-/* hero-subtitle のスタイルは不要 */
-/* .hero-subtitle { ... } を削除 */
+/* hero-subtitle のスタイルは不要なので削除済み */
+
 
 /* ヒーローセクション下部の連絡先ボタンは変更なし */
 .hero-contact-buttons {
@@ -91,7 +94,8 @@
 
     .hero-content {
         padding: 0 20px;
-        margin: 0 auto 120px auto; /* ★変更: 中央寄せと下マージンを調整 */
+        /* ★変更: モバイルでは中央寄せにするためmargin-leftは0に */
+        margin: 0 auto 120px auto; /* 中央寄せと下マージンを調整 */
         text-align: center; /* モバイルでは中央寄せを維持 */
     }
     .hero-main-title {
