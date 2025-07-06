@@ -864,12 +864,12 @@ h1, h2, h3, h4, h5, h6 {
         text-align: center;
     }
     
-    /* ★修正箇所: ヒーロー連絡先セクションのモバイル表示を非表示に★ */
+    /* ★★★★★ ここを修正しました！ ★★★★★ */
     .hero-contact-wrapper {
         display: none; /* モバイルビューで非表示にする */
     }
     
-    /* ヒーローセクションの画像表示 (現状維持ですが、問題があればここを見直します) */
+    /* ヒーローセクションの画像表示 (変更なし。contact-wrapperが非表示になれば見えるはずです) */
     .image-slideshow {
         position: absolute;
         top: 0;
