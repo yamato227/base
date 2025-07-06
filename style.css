@@ -1,631 +1,210 @@
 /* style.css */
 
-/* 基本リセットと共通スタイル */
-* {
-    box-sizing: border-box;
+/* --- 全体的な設定 (省略) --- */
+
+/* ヘッダー関連 (省略) */
+
+/* メインナビゲーション (省略) */
+
+/* ヒーローセクション関連 (省略) */
+
+/* ヒーローコンタクトボタン関連 (ここを参考に「お問い合わせ」セクションも調整) */
+.hero-contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* ボタン間のスペース */
+    margin-top: 30px;
+    flex-wrap: wrap; /* スマホで折り返すように */
 }
 
-body {
-    margin: 0;
-    font-family: 'Noto Serif JP', serif, sans-serif;
-    color: #333;
-    line-height: 1.8; /* 行の高さを少し広げて読みやすく */
-    background-color: #f8f8f8;
-    font-size: 17px; /* ベースの文字サイズを少し大きく (例: 16px -> 17px) */
-}
-
-.container {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-a {
-    color: #004d40;
+.hero-contact-buttons .contact-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #5a7d57; /* ボタンの背景色 */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 8px;
     text-decoration: none;
-    transition: color 0.3s ease, opacity 0.3s ease;
+    font-weight: bold;
+    min-width: 220px; /* ボタンの最小幅 */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
 }
 
-a:hover {
-    color: #00796b;
+.hero-contact-buttons .contact-btn:hover {
+    background-color: #4a6a47;
+}
+
+.hero-contact-buttons .contact-btn span {
+    font-size: 1.2em;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.hero-contact-buttons .contact-btn small {
+    font-size: 0.8em;
     opacity: 0.8;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Noto Serif JP', serif;
-    color: #004d40;
-    margin-top: 1em;
-    margin-bottom: 0.6em; /* 余白を調整 */
-    line-height: 1.3;
-}
+/* --- お知らせセクション (省略) --- */
 
-.section-common {
-    padding: 60px 0; /* 上下のパディングを大きく */
-    margin-bottom: 40px; /* セクション間の余白を大きく */
-    background-color: #fff;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-    border-radius: 8px;
-    overflow: hidden;
-}
+/* --- サービスセクション (省略) --- */
 
-.section-common.bg-light-gray {
-    background-color: #f5f5f5;
-}
-
-.section-title {
-    font-size: 2.8em; /* タイトルを大きく */
-    text-align: center;
-    margin-bottom: 70px; /* 下の余白を大きく */
-    position: relative;
-    padding-bottom: 25px; /* 下線との距離を広げる */
-    font-weight: 700;
-    color: #333;
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: 90px; /* 下線を少し長く */
-    height: 5px; /* 下線を太く */
-    background-color: #004d40;
-    border-radius: 2px;
-}
-
-.text-center {
-    text-align: center;
-}
-
-/* ボタンの共通スタイル */
-.common-btn {
-    display: inline-block;
-    padding: 18px 35px; /* パディングを大きく */
-    background-color: #004d40;
-    color: white;
-    border-radius: 5px;
-    font-weight: bold;
-    text-align: center;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    font-size: 1.1em; /* ボタンの文字サイズを大きく */
-}
-
-.common-btn:hover {
-    background-color: #00796b;
-    transform: translateY(-2px);
-    color: white;
-}
-
-.common-btn.small {
-    padding: 12px 25px;
-    font-size: 1em;
-}
-
-.common-btn.large {
-    padding: 20px 45px;
-    font-size: 1.2em;
-}
-
-.btn-area {
-    text-align: center;
-    margin-top: 50px; /* 上の余白を大きく */
-}
-
-/* ヘッダー */
-.header {
-    background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.header-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 20px; /* パディングを大きく */
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.site-logo img {
-    height: 65px; /* ロゴの高さを少し大きく */
-    vertical-align: middle;
-}
-
-/* メインナビゲーション */
-.main-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-.main-nav li {
-    margin-left: 40px; /* 間隔を広げる */
-    position: relative;
-}
-
-.main-nav a {
-    display: block;
-    padding: 18px 0; /* パディングを大きく */
-    color: #333;
-    font-weight: 700;
-    font-size: 1.15em; /* ナビゲーションの文字を大きく */
-    white-space: nowrap;
-}
-
-.main-nav a:hover {
-    color: #004d40;
-}
-
-/* ドロップダウンメニュー */
-.main-nav .dropdown {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #fff;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    min-width: 200px; /* 最小幅を広げる */
-    border-radius: 5px;
-    padding: 10px 0;
-    z-index: 10;
-    flex-direction: column;
-}
-
-.main-nav .has-dropdown:hover > .dropdown {
-    display: flex;
-}
-
-.main-nav .dropdown li {
-    margin: 0;
-}
-
-.main-nav .dropdown a {
-    padding: 12px 25px; /* ドロップダウンのパディングを大きく */
-    white-space: nowrap;
-    font-weight: normal;
-    font-size: 1.05em; /* ドロップダウンの文字サイズを大きく */
-    color: #555;
-}
-
-.main-nav .dropdown a:hover {
-    background-color: #f0f0f0;
-    color: #004d40;
-}
-
-/* モバイルメニューのトグルボタン（初期は非表示） */
-.mobile-menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 30px;
-    cursor: pointer;
-    padding: 0;
-    width: 30px;
-    height: 24px;
-    position: relative;
-    z-index: 101;
-}
-
-.mobile-menu-toggle span {
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: #333;
-    margin-bottom: 6px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.mobile-menu-toggle span:last-child {
-    margin-bottom: 0;
-}
-
-/* モバイルメニューオープン時のアニメーション */
-.mobile-menu-toggle.open span:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
-}
-.mobile-menu-toggle.open span:nth-child(2) {
-    opacity: 0;
-}
-.mobile-menu-toggle.open span:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
-}
-
-/* ヒーローセクション（トップページ用） */
-.hero-section {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    color: white;
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
-}
-
-/* ページごとのヒーローセクション（about.html用） */
-.page-hero-about {
-    padding: 150px 0; /* パディングをさらに大きく */
-    /* ここを修正: 相対パスに変更 */
-    background-image: url(../img/about_kv_pc-1.jpg);
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-    min-height: 450px; /* 最小高さを高く */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
-}
-
-/* ヒーローセクションのオーバーレイ（about.html用） */
-.page-hero-about::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: -1;
-}
-
-.page-hero-about .section-title {
-    color: white;
-    margin-bottom: 25px; /* 下のpタグとの余白を広げる */
-}
-.page-hero-about .section-title::after {
-    background-color: white;
-}
-.page-hero-about p {
-    font-size: 1.3em; /* ヒーローテキストを大きく */
-    max-width: 700px;
-    margin: 0 auto;
-    color: white;
-}
-
-
-/* 画像スライドショーのスタイル（トップページ用） */
-.image-slideshow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    overflow: hidden;
-}
-
-.image-slideshow picture {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out;
-}
-
-.image-slideshow picture.active {
-    opacity: 1;
-}
-
-.image-slideshow img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 2;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 3;
-    max-width: 1080px;
-    width: 100%;
-    padding: 0 20px;
-    margin-left: 5%;
-    margin-right: auto;
-    text-align: left;
-}
-
-.hero-main-title {
-    font-size: 4.5em; /* メインタイトルをさらに大きく */
-    line-height: 1.2;
-    margin-bottom: 25px;
-    font-weight: 900;
-    color: white;
-    text-align: left;
-}
-
-.hero-main-title::after {
-    display: none;
-}
-
-.hero-subtitle {
-    font-size: 1.6em; /* サブタイトルを大きく */
-    line-height: 1.6;
-    color: white;
-    max-width: 600px;
-    text-align: left;
-    margin-top: 15px;
-}
-
-/* ヒーローセクション下部の連絡先ボタンの新しいラッパー */
-.hero-contact-wrapper {
-    position: absolute;
-    bottom: 40px; /* 下からの距離を広げる */
-    right: 40px; /* 右からの距離を広げる */
-    z-index: 4;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    width: fit-content;
-}
-
-.hero-contact-label {
-    background-color: #004d40;
-    color: white;
-    font-size: 1.3em; /* 文字サイズ調整 */
-    font-weight: bold;
-    padding: 12px 30px; /* パディング調整 */
-    border-radius: 8px 8px 0 0;
-    margin-bottom: -1px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    white-space: nowrap;
-    text-align: center;
-    width: 100%;
-}
-
-.hero-contact-buttons {
-    background-color: rgba(82, 132, 49, 0.75);
-    padding: 25px 30px; /* パディング調整 */
-    border-radius: 0 0 8px 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    display: flex;
-    gap: 20px; /* ボタン間の隙間を広げる */
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-}
-
-/* 個々の連絡先ボタンのスタイル */
-.contact-btn {
-    background-color: rgba(82, 132, 49, 0.75);
-    color: white;
-    padding: 20px 35px; /* パディングを大きく */
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    text-align: center;
-    border: 1px solid rgba(170, 200, 150, 0.75);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1),
-                inset 0 0 0 2px rgba(255, 255, 255, 0.5);
-    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-    font-size: 1.05em; /* 文字サイズを大きく */
-    line-height: 1.4;
-    white-space: nowrap;
-    flex: 1 1 auto;
-    min-width: 220px; /* 最小幅を少し広げる */
-}
-
-.contact-btn:hover {
-    background-color: rgba(104, 159, 56, 0.75);
-    transform: translateY(-3px);
-    color: white;
-    border-color: rgba(190, 220, 170, 0.75);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2),
-                inset 0 0 0 2px rgba(255, 255, 255, 0.7);
-}
-
-.contact-btn span {
-    font-size: 1.7em; /* メインテキストをさらに大きく */
-    font-weight: 900;
-    color: white;
-    margin-top: 5px;
-}
-
-/* smallタグのスタイルを追加 */
-.contact-btn small {
-    font-size: 0.9em; /* サブテキストを少し大きく */
-    color: #eee;
-    margin-top: 5px;
-}
-
-
-/* お知らせセクション */
-.news-section {
-    background-color: #fefefe;
-}
-
-.news-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.news-list li {
-    padding: 18px 0; /* パディングを大きく */
-    border-bottom: 1px dashed #eee;
-    display: flex;
-    align-items: baseline;
-}
-
-.news-list li:last-child {
-    border-bottom: none;
-}
-
-.news-list .news-date {
-    font-size: 1em; /* 日付の文字サイズを大きく */
-    color: #777;
-    flex-shrink: 0;
-    width: 110px; /* 幅を広げる */
-    font-weight: normal;
-}
-
-.news-list a {
-    margin-left: 25px; /* 間隔を広げる */
-    flex-grow: 1;
-    color: #333;
-    font-weight: normal;
-    font-size: 1.1em; /* リンクの文字サイズを大きく */
-}
-
-.news-list a:hover {
-    color: #004d40;
-}
-
-/* サービス紹介セクション */
-.services-section .service-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* カードの最小幅を広げる */
-    gap: 40px; /* 間隔を広げる */
-    margin-top: 50px; /* 上の余白を大きく */
-}
-
-.service-card {
-    background-color: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.service-card img {
-    width: 100%;
-    height: 220px; /* 画像の高さを少し大きく */
-    object-fit: cover;
-    display: block;
-}
-
-/* Googleマップカードのスタイル */
-.service-card.map-card {
-    height: 480px; /* マップカードの高さを高く */
-}
-
-.service-card.map-card iframe {
-    flex-grow: 1;
-    height: auto;
-    min-height: 220px;
-}
-
-.service-card.map-card h3,
-.service-card.map-card p,
-.service-card.map-card .common-btn {
-    flex-shrink: 0;
-    padding: 0 25px; /* パディングを広げる */
-}
-.service-card.map-card h3 {
-    margin-top: 25px; /* 余白を調整 */
-}
-.service-card.map-card p {
-    margin-bottom: 25px;
-    font-size: 1em; /* マップカード内のテキストサイズを調整 */
-}
-.service-card.map-card .common-btn {
-    margin-bottom: 25px;
-    margin-top: auto;
-}
-
-.service-card h3 {
-    font-size: 1.8em; /* サービスカードのタイトルを大きく */
-    margin: 25px 0 12px;
-    color: #004d40;
-}
-
-.service-card p {
-    padding: 0 25px;
-    margin-bottom: 25px;
-    font-size: 1em; /* サービスカードの本文を大きく */
-    color: #555;
-}
-
-.service-card .common-btn {
-    margin-bottom: 25px;
-}
-
-/* CTAセクション */
+/* --- CTAセクション (お問い合わせ) --- */
+/* ★ここから「お問い合わせ」セクションのスタイル変更点★ */
 .cta-section {
-    background-color: #004d40;
-    color: white;
-    text-align: center;
-    padding: 90px 0; /* パディングを大きく */
+    padding: 80px 0; /* 上下の余白を調整 */
+    text-align: center; /* タイトルと説明文を中央寄せ */
 }
 
 .cta-section .section-title {
-    color: white;
+    margin-bottom: 20px;
 }
 
-.cta-section .section-title::after {
-    background-color: white;
-}
-
-.cta-section p {
-    font-size: 1.2em; /* CTAの本文を大きく */
-    margin-bottom: 50px; /* ボタンとの間に余白を設ける */
-    max-width: 750px; /* 最大幅を広げる */
+.cta-description {
+    font-size: 1.1em;
+    margin-bottom: 40px; /* ボタンとの間に余白 */
+    line-height: 1.6;
+    max-width: 800px; /* 幅を制限して読みやすく */
     margin-left: auto;
     margin-right: auto;
 }
 
-/* CTAセクションの連絡先ボタンのラッパー */
+/* ヒーローセクションのボタンと似たスタイルを適用 */
 .cta-contact-buttons {
     display: flex;
     justify-content: center;
-    gap: 40px; /* ボタン間のスペースを広げる */
-    flex-wrap: wrap;
-    margin-top: 50px;
+    gap: 20px; /* ボタン間のスペース */
+    flex-wrap: wrap; /* スマホで折り返すように */
 }
 
-/* 個々のCTA連絡先ボタンのスタイル */
-.cta-contact-btn {
+.cta-contact-buttons .contact-btn {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 25px 45px; /* パディングを大きく */
-    border-radius: 12px; /* 角丸をさらに大きく */
+    background-color: #5a7d57; /* ボタンの背景色 */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
-    white-space: nowrap;
-    width: 300px; /* ボタンの固定幅を広げる */
-    min-height: 110px; /* 最小高さを高く */
-    
-    background-color: #006056;
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3),
-                inset 0 0 0 2px rgba(255, 255, 255, 0.6);
-    
-    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    min-width: 220px; /* ボタンの最小幅 */
+    box-shadow: 0 4px 6px rgba;
+    transition: background-color 0.3s ease;
 }
 
-/* ホバー時のスタイル */
-.cta-contact-btn:hover {
-    background-color: #00796b;
-    border-color: rgba(255, 255, 2
+.cta-contact-buttons .contact-btn:hover {
+    background-color: #4a6a47;
+}
+
+.cta-contact-buttons .contact-btn span {
+    font-size: 1.2em;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.cta-contact-buttons .contact-btn small {
+    font-size: 0.8em;
+    opacity: 0.8;
+}
+/* ★「お問い合わせ」セクションのスタイル変更点ここまで★ */
+
+
+/* --- フッター関連 --- */
+.footer {
+    background-color: #f7f7f7;
+    padding: 40px 0; /* フッターの上下の余白 */
+    border-top: 1px solid #eee;
+    color: #555;
+    font-size: 0.9em;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* 上揃え */
+    flex-wrap: wrap; /* スマホで折り返す */
+    gap: 20px; /* 要素間のスペース */
+}
+
+.footer-info {
+    flex: 1;
+    min-width: 250px; /* 小さな画面での折り返し用 */
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center; /* 垂直方向中央寄せ */
+    margin-bottom: 15px;
+}
+
+.footer-logo img {
+    /* ★フッターロゴのサイズ調整★ */
+    height: 40px; /* ロゴの高さを調整 */
+    width: auto;
+    margin-right: 10px;
+    /* ★フッターロゴのサイズ調整ここまで★ */
+}
+
+.footer-site-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+/* ★ここからフッターナビゲーションの横並び変更点★ */
+.footer-nav {
+    flex: 2; /* infoより広めに取る */
+    min-width: 300px; /* 小さな画面での折り返し用 */
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* 横並びにする */
+    flex-wrap: wrap; /* 画面が狭いときに折り返す */
+    gap: 10px 20px; /* 行間と列間のスペース */
+    justify-content: flex-end; /* 右寄せにする場合はflex-end */
+}
+
+.footer-nav li a {
+    text-decoration: none;
+    color: #555;
+    padding: 5px 0;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.footer-nav li a:hover {
+    color: #5a7d57;
+}
+/* ★フッターナビゲーションの横並び変更点ここまで★ */
+
+.copyright {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+/* --- レスポンシブデザイン (省略) --- */
+/* モバイル時の調整 (767px以下) */
+@media (max-width: 767px) {
+    /* ... (省略) ... */
+
+    /* フッターナビゲーションを縦並びに戻す（必要に応じて） */
+    .footer-nav ul {
+        flex-direction: column; /* モバイルでは縦並びに戻す */
+        align-items: flex-start; /* 左揃え */
+        gap: 5px; /* 縦並びの隙間 */
+        margin-top: 20px; /* 情報との間に余白 */
+    }
+
+    .footer-nav ul li a {
+        padding: 5px 0;
+    }
+}
