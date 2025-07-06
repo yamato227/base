@@ -1,228 +1,116 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>蓮通寺について - 恭敬の会</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* 蓮通寺についてのセクションの背景画像 */
-        .about-rentsuji-section {
-            background-image: url(https://kugyounokai.com/wp-content/uploads/2022/04/about_kv_pc-1.jpg);
-            background-size: cover;
-            background-position: center;
-            color: white; /* 背景画像が見えるようにテキスト色を白に */
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.6); /* テキストの視認性向上 */
-            padding: 100px 0; /* 上下のパディングを調整 */
-        }
-        .about-rentsuji-section .section-title {
-            color: white; /* タイトル色も白に */
-        }
-        .about-rentsuji-section .section-title::after {
-            background-color: white; /* 下線も白に */
-        }
-        .about-rentsuji-section p {
-            max-width: 800px;
-            margin: 0 auto 20px auto;
-            text-align: center;
-            font-size: 1.1em;
-            line-height: 1.8;
-        }
-
-        /* モバイル版の背景画像 */
-        @media screen and (max-width: 767px) {
-            .about-rentsuji-section {
-                background-image: url(https://kugyounokai.com/wp-content/uploads/2022/04/about_kv_sp-2.jpg);
-            }
-        }
-
-        /* 由緒セクションの画像 */
-        .history-image {
-            margin: 40px auto; /* 上下の余白と中央寄せ */
-            max-width: 800px; /* 画像の最大幅 */
-            display: block; /* 中央寄せのためにブロック要素に */
-            width: 100%; /* 親要素の幅に合わせる */
-            height: auto; /* アスペクト比を維持 */
-            border-radius: 8px; /* 角丸 */
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* 影 */
-        }
-
-        /* 法宝物セクションの画像ギャラリー */
-        .treasures-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 画像の列を自動調整 */
-            gap: 20px; /* 画像間の隙間 */
-            margin-top: 40px; /* 上のテキストとの間隔 */
-        }
-
-        .treasures-gallery img {
-            width: 100%; /* 親要素の幅に合わせる */
-            height: 200px; /* 高さを固定 */
-            object-fit: cover; /* 画像がコンテナを覆うように調整 */
-            border-radius: 8px; /* 角丸 */
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* 影 */
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .treasures-gallery img:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
-    </style>
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蓮通寺について | 浄土真宗 蓮通寺</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">     <link rel="icon" href="../img/kamon.jpg"> </head>
 <body>
-    <header class="header">
-        <div class="header-inner">
-            <div class="site-logo">
-                <a href="index.html"><img src="https://kugyounokai.com/wp-content/themes/kugyounokai/assets/img/common/logo.png" alt="恭敬の会"></a>
-            </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">トップページ</a></li>
-                    <li class="has-dropdown">
-                        <a href="#">恭敬の会とは</a>
-                        <ul class="dropdown">
-                            <li><a href="about.html">蓮通寺について</a></li>
-                            <li><a href="#">代表者からの挨拶</a></li>
-                            <li><a href="#">僧侶紹介</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">ご供養について</a></li>
-                    <li><a href="#">よくある質問</a></li>
-                    <li><a href="#">お問い合わせ</a></li>
-                </ul>
-            </nav>
-            <button class="mobile-menu-toggle" aria-label="メニューを開く">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </header>
 
-    <main>
-        <section class="page-hero-about hero-section">
-            <div class="hero-overlay"></div>
-            <div class="hero-content container">
-                <h1 class="hero-main-title">蓮通寺について</h1>
-                <p class="hero-subtitle"></p> </div>
-        </section>
+    <header class="header">
+        <div class="header-inner">
+            <div class="site-logo">
+                <a href="../index.html">                     <img src="../img/logo-1.jpg" alt="浄土真宗 蓮通寺">                 </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">ホーム</a></li>                     <li class="has-dropdown">
+                        <a href="#">蓮通寺について</a>
+                        <ul class="dropdown">
+                            <li><a href="about.html">蓮通寺について</a></li>                             <li><a href="history.html">沿革</a></li>                         </ul>
+                    </li>
+                    <li><a href="service.html">年間行事・法要</a></li>                     <li><a href="blog.html">ブログ</a></li>                     <li><a href="access.html">アクセス</a></li>                     <li><a href="contact.html">お問い合わせ</a></li>                 </ul>
+            </nav>
+            <button class="mobile-menu-toggle" aria-label="モバイルメニューを開く">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
 
-        <section class="section-common about-rentsuji-section">
-            <div class="container">
-                <h2 class="section-title">蓮通寺について</h2>
-                <p>蓮通寺は、浄土真宗本願寺派に属する寺院です。長い歴史の中で、地域の皆様と共に歩み、心の拠り所として親しまれてきました。私たちは、阿弥陀如来の教えを基に、皆様の人生に寄り添い、共に喜び、共に悲しむ場を提供しています。仏様の智慧と慈悲を伝え、日々の生活の中に安らぎと感謝の心を見出すお手伝いをさせていただきます。</p>
-                <p>当寺院では、法事・法要、ご葬儀、永代供養など、様々なご供養を承っております。また、仏事に関するご相談や、心の悩みについても、僧侶が親身になってお話を伺います。どなた様でもお気軽にお越しいただける開かれたお寺を目指しています。</p>
-            </div>
-        </section>
+    <main>
+        <section class="page-hero-about section-common">
+            <div class="container text-center">
+                <h1 class="section-title">蓮通寺について</h1>
+                <p>蓮通寺の由緒や、代々受け継がれてきた貴重な法宝物をご紹介いたします。</p>
+            </div>
+        </section>
 
-        <section class="section-common bg-light-gray history-section">
-            <div class="container">
-                <h2 class="section-title">由緒</h2>
-                <p class="text-center">蓮通寺は、歴史と伝統を重んじながらも、現代社会に寄り添うお寺として、地域の皆様に支えられてきました。当寺院の創建は古く、幾多の変遷を経て現在に至ります。開基以来、多くの門信徒の方々に支えられ、仏法を伝える大切な役割を担ってきました。</p>
-                <p class="text-center">江戸時代には、地域の信仰の中心として栄え、多くの人々が蓮通寺に集い、心の安らぎを求めていました。明治以降も、時代の変化に対応しながら、仏様の教えを守り伝え続けています。これからも、蓮通寺は皆様の心の拠り所として、地域社会に貢献してまいります。</p>
-                <img src="https://kugyounokai.com/wp-content/uploads/2022/04/about_03.jpg" alt="蓮通寺の由緒" class="history-image">
-            </div>
-        </section>
+        <section class="about-section section-common">
+            <div class="container">
+                <h2 class="section-title">由緒</h2>
+                <p>源平争乱の寿永三年（1184年）、征夷大将軍源義仲は粟津ヶ原で敗死し、その室山吹御前は子息義隆・義順を伴い、北近江浅井郡の山中で世の浮沈を窺って暮らしていたが、義仲を破った頼朝・義経の兄弟も世を去り、琵琶湖にすぐ近い海津の荘に住まいを移したところ、本願寺御開山親鸞聖人、越後に流罪となり琵琶湖を舟で渡ってこられ海津にお着きになり、義隆・義順兄弟と師弟の約諾を交わしてくださり、兄の義隆は海津荘岩谷の地で願慶寺開基となり、弟の義順は浅井郡塩津荘岩熊に赴き蓮通寺の開基となった。</p>
+                <p>時が下って本願寺中興された第八世蓮如上人からも教えをいただき、本願寺東西分派の際には教如上人に従い東本願寺に属し、第十三世宣如上人の次男である、長浜御坊大通寺霊瑞院宣澄師の曾孫が當院に入寺し、公家の綾小路家とも姻戚関係を結び、以降法儀相続して現在に至っている。</p>
+            </div>
+        </section>
 
-        <section class="section-common treasures-section">
-            <div class="container">
-                <h2 class="section-title">法宝物</h2>
-                <p class="text-center">蓮通寺には、長い歴史の中で大切に守り伝えられてきた数々の法宝物がございます。これらは、単なる古い品々ではなく、ご先祖様からの信仰の証であり、仏様の教えを今に伝える貴重な文化財です。ご本尊である阿弥陀如来像をはじめ、歴史的な掛け軸、仏具などが安置されており、それぞれが深い意味と物語を持っています。</p>
-                <p class="text-center">これらの法宝物は、当寺院の歴史と信仰の深さを示すものであり、訪れる人々に静かな感動を与えています。私たちは、これらの宝物を未来へと大切に引き継ぎ、多くの人々に仏様の教えと歴史の重みを感じていただけるよう努めてまいります。</p>
+        <section class="treasures-section section-common bg-light-gray">
+            <div class="container">
+                <h2 class="section-title">法宝物</h2>
+                <ul class="treasures-list">
+                    <li>親鸞聖人御真筆・十字名号</li>
+                    <li>親鸞聖人御真筆・六字名号</li>
+                    <li>蓮如上人御真筆・六字名号</li>
+                    <li>伝・親鸞聖人御自刻御影像</li>
+                    <li>兆伝司筆・聖徳太子真向御影（写真）</li>
+                    <li>護国山大聖寺本尊・大日如来坐像（西浅井町指定文化財・平安時代）</li>
+                    <li>薬師如来坐像（平安時代）</li>
+                </ul>
+            </div>
+        </section>
 
-                <div class="treasures-gallery">
-                    <img src="https://kugyounokai.com/wp-content/uploads/2022/04/about_04.jpg" alt="法宝物1">
-                    <img src="https://kugyounokai.com/wp-content/uploads/2022/04/about_05.jpg" alt="法宝物2">
-                    <img src="https://kugyounokai.com/wp-content/uploads/2022/04/about_06.jpg" alt="法宝物3">
-                    <img src="https://kugyounokai.com/wp-content/uploads/2022/04/about_07.jpg" alt="法宝物4">
-                    <img src="https://kugyounokai.com/wp-content/uploads/2022/04/about_08.jpg" alt="法宝物5">
-                    <img src="https://kugyounokai.com/wp-content/uploads/2022/04/about_09.jpg" alt="法宝物6">
-                </div>
-            </div>
-        </section>
+        <section id="contact" class="cta-section section-common">
+            <div class="container">
+                <h2 class="section-title">お問い合わせ</h2>
+                <p>ご葬儀、ご法要、その他ご不明な点がございましたら、お気軽にお問い合わせください。</p>
+                
+                <div class="cta-contact-buttons">
+                    <a href="mailto:your-email@example.com" class="cta-contact-btn">
+                        <span>メールでのご相談</span>
+                        <small>24時間受付中</small>
+                    </a>
+                    <a href="tel:000-0000-0000" class="cta-contact-btn phone-btn">
+                        <span>電話でのご相談</span>
+                        <small>営業時間 9:00〜17:00</small>
+                    </a>
+                </div>
+            </div>
+        </section>
 
-        <section class="cta-section section-common">
-            <div class="container">
-                <h2 class="section-title">ご相談・お問い合わせ</h2>
-                <p>ご供養に関するご相談、お寺についてのご質問など、お気軽にお問い合わせください。専門の僧侶が丁寧に対応させていただきます。</p>
-                <div class="cta-contact-buttons">
-                    <a href="#" class="cta-contact-btn phone-btn">
-                        <span>お電話でのお問い合わせ</span>
-                        <small>（受付時間：9:00〜17:00）</small>
-                    </a>
-                    <a href="#" class="cta-contact-btn">
-                        <span>メールでのお問い合わせ</span>
-                        <small>24時間受付</small>
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
+    </main>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <div class="footer-logo">
-                        <img src="https://kugyounokai.com/wp-content/themes/kugyounokai/assets/img/common/logo.png" alt="恭敬の会">
-                    </div>
-                    <p class="footer-site-name">恭敬の会</p>
-                    <p>〒123-4567 東京都〇〇区〇〇1-2-3</p>
-                    <p>TEL: 03-XXXX-XXXX</p>
-                    <p>FAX: 03-XXXX-XXXX</p>
-                </div>
-                <nav class="footer-nav">
-                    <ul>
-                        <li><a href="index.html">トップページ</a></li>
-                        <li><a href="about.html">蓮通寺について</a></li>
-                        <li><a href="#">代表者からの挨拶</a></li>
-                        <li><a href="#">僧侶紹介</a></li>
-                        <li><a href="#">ご供養について</a></li>
-                        <li><a href="#">よくある質問</a></li>
-                        <li><a href="#">お問い合わせ</a></li>
-                        <li><a href="#">プライバシーポリシー</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2025 Kugyo no Kai. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <img src="../img/logo-1.jpg" alt="蓮通寺">                         <p class="footer-site-name">浄土真宗 蓮通寺</p>
+                    </div>
+                    <p>〒XXX-XXXX 〇〇県〇〇市〇〇町〇〇番地</p>
+                    <p>TEL: 000-0000-0000</p>
+                </div>
+                <nav class="footer-nav">
+                    <ul>
+                        <li><a href="../index.html">ホーム</a></li>                         <li><a href="about.html">蓮通寺について</a></li>
+                        <li><a href="history.html">沿革</a></li>
+                        <li><a href="service.html">年間行事・法要</a></li>
+                        <li><a href="blog.html">ブログ</a></li>
+                        <li><a href="access.html">アクセス</a></li>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                        <li><a href="privacy.html">プライバシーポリシー</a></li>
+                        <li><a href="sitemap.html">サイトマップ</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="copyright">
+                <p>© 2025 Rentsuji. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // モバイルメニューのトグル機能
-            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-            const mainNav = document.querySelector('.main-nav');
-
-            mobileMenuToggle.addEventListener('click', function() {
-                mainNav.classList.toggle('open');
-                mobileMenuToggle.classList.toggle('open');
-            });
-
-            // ヒーローセクションの画像スライドショー
-            const slideshow = document.querySelector('.image-slideshow');
-            if (slideshow) {
-                const images = slideshow.querySelectorAll('picture');
-                let currentIndex = 0;
-
-                function showNextImage() {
-                    images[currentIndex].classList.remove('active');
-                    currentIndex = (currentIndex + 1) % images.length;
-                    images[currentIndex].classList.add('active');
-                }
-
-                if (images.length > 0) {
-                    images[0].classList.add('active'); // 最初の画像をアクティブにする
-                    setInterval(showNextImage, 5000); // 5秒ごとに画像を切り替える
-                }
-            }
-        });
-    </script>
-</body>
+    <script src="../script.js"></script> </body>
 </html>
