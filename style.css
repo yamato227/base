@@ -251,13 +251,15 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ページごとのヒーローセクション（about.html用） */
 .page-hero-about {
-    padding: 150px 0; /* パディングをさらに大きく */
-    background-image: url(https://kugyounokai.com/wp-content/uploads/2022/04/about_kv_pc-1.jpg);
+    /* 修正 */
+    padding: 100px 0; /* パディングを縮小 */
+    background-image: url(../img/about_kv_pc-1.jpg);
     background-size: cover;
     background-position: center;
     color: white;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-    min-height: 450px; /* 最小高さを高く */
+    /* 修正 */
+    min-height: 350px; /* 最小高さを縮小 */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -279,13 +281,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .page-hero-about .section-title {
     color: white;
-    margin-bottom: 25px; /* 下のpタグとの余白を広げる */
+    /* 修正 */
+    margin-bottom: 15px; /* 下のpタグとの余白を縮小 */
 }
 .page-hero-about .section-title::after {
     background-color: white;
 }
 .page-hero-about p {
-    font-size: 1.3em; /* ヒーローテキストを大きく */
+    /* 修正 */
+    font-size: 1.1em; /* ヒーローテキストを縮小 */
     max-width: 700px;
     margin: 0 auto;
     color: white;
@@ -716,366 +720,114 @@ h1, h2, h3, h4, h5, h6 {
 .copyright {
     text-align: center;
     padding-top: 25px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    margin-top: 25px;
+    
 }
 
-.copyright p {
-    margin: 0;
-    color: #999;
-    font-size: 0.95em; /* コピーライトの文字サイズを大きく */
-}
-
-/* ============== ここから追加・修正されたCSS ============== */
-
-/* 由緒セクションの画像 */
+/* about.html の由緒セクションの画像 */
 .history-image {
-    margin: 50px auto; /* 上下の余白を大きく */
-    max-width: 850px; /* 画像の最大幅を広げる */
     display: block;
-    width: 100%;
+    max-width: 100%;
     height: auto;
+    margin: 30px auto;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* 法宝物セクションの画像ギャラリー */
+/* 法宝物セクションのスタイル */
+.treasures-section {
+    padding: 60px 0; /* パディングを縮小 */
+}
+
 .treasures-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* 画像の列の最小幅を広げる */
-    gap: 25px; /* 画像間の隙間を広げる */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px; /* 間隔を調整 */
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 40px; /* 下のリストとの間隔を調整 */
 }
 
 .treasures-gallery img {
     width: 100%;
-    height: 240px; /* 高さを少し大きく */
-    object-fit: cover;
+    height: 250px; /* 画像の高さを固定 */
+    object-fit: cover; /* 画像をトリミングしてカバー */
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.treasures-gallery img:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-/* 法宝物セクションのテキストリスト（新しいクラス名） */
 .treasures-text-list {
-    list-style: disc;
-    padding-left: 25px; /* 左側にインデントを広げる */
-    max-width: 850px; /* 幅を広げる */
-    margin: 0 auto;
-    line-height: 2; /* 行の高さをさらに広げて読みやすく */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.1em;
+    line-height: 2.2; /* 行間を広げる */
     color: #555;
-    font-size: 1.1em; /* リストの文字サイズを大きく */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .treasures-text-list li {
-    margin-bottom: 12px; /* 各リストアイテムの下に余白を広げる */
+    padding-left: 25px;
+    position: relative;
 }
 
-/* 由緒セクションのpタグの文字サイズ調整 */
-.about-section p {
-    font-size: 1.05em; /* 由緒セクションの本文の文字サイズを調整 */
-    margin-bottom: 1.2em; /* 段落間の余白を調整 */
+.treasures-text-list li::before {
+    content: '▶'; /* 矢印アイコン */
+    position: absolute;
+    left: 0;
+    color: #004d40;
+    font-size: 0.8em;
+    line-height: 1.8;
 }
-
-
-/* レスポンシブ対応 */
-@media (max-width: 1024px) {
-    body {
-        font-size: 16px; /* タブレットでのベースフォントサイズ */
-    }
-    .header-inner {
-        padding: 15px 20px;
-    }
-    .site-logo img {
-        height: 55px;
-    }
-    .main-nav {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #fff;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 0;
-        transform: translateY(-100%);
-        transition: transform 0.3s ease-out;
-        display: none;
-    }
-    .main-nav.open {
-        display: flex;
-        transform: translateY(0);
-    }
-    .main-nav li {
-        margin: 0;
-        width: 100%;
-        text-align: center;
-    }
-    .main-nav a {
-        padding: 15px 20px; /* パディング調整 */
-        border-bottom: 1px solid #eee;
-        font-size: 1.1em; /* モバイルナビの文字サイズを調整 */
-    }
-    .main-nav li:last-child a {
-        border-bottom: none;
-    }
-    .main-nav .dropdown {
-        position: static;
-        box-shadow: none;
-        padding: 0;
-        border-radius: 0;
-        background-color: #f8f8f8;
-        width: 100%;
-    }
-    .main-nav .dropdown a {
-        padding-left: 40px;
-        font-size: 1em; /* モバイルドロップダウンの文字サイズを調整 */
-    }
-    .main-nav .has-dropdown:hover > .dropdown {
-        display: flex;
-    }
-    .mobile-menu-toggle {
-        display: block;
-    }
-
-    /* モバイル版のヒーローセクション（トップページ用） */
-    .hero-section {
-        height: 100vh;
-        align-items: flex-end;
-        justify-content: center;
-    }
-
-    .hero-content {
-        padding: 0 20px;
-        margin: 0 auto 130px auto; /* 下からの距離を調整 */
-        text-align: center;
-    }
-    .hero-main-title {
-        font-size: 3em; /* モバイルでのメインタイトルを調整 */
-        text-align: center;
-    }
-    .hero-subtitle {
-        font-size: 1.2em; /* モバイルでのサブタイトルを調整 */
-        text-align: center;
-    }
-
-    /* ヒーローセクション下部の連絡先ボタン - レスポンシブ対応の調整 */
-    .hero-contact-wrapper {
-        width: calc(100% - 40px);
-        left: 20px;
-        right: 20px;
-        bottom: 30px; /* 下からの距離を調整 */
-        align-items: center;
-    }
-    .hero-contact-label {
-        width: 100%;
-        text-align: center;
-        border-radius: 8px 8px 0 0;
-        font-size: 1.2em; /* モバイルでのラベル文字サイズ */
-        padding: 10px 20px;
-    }
-    .hero-contact-buttons {
-        flex-direction: column;
-        width: 100%;
-        padding: 20px; /* パディング調整 */
-        border-radius: 0 0 8px 8px;
-        gap: 15px; /* 間隔調整 */
-    }
-    .contact-btn {
-        width: 100%;
-        min-width: unset;
-        padding: 18px 30px; /* パディング調整 */
-        font-size: 1em; /* モバイルでのボタン文字サイズ */
-    }
-    .contact-btn span {
-        font-size: 1.5em; /* モバイルでのメインテキスト */
-    }
-    .contact-btn small {
-        font-size: 0.85em; /* モバイルでのサブテキスト */
-    }
-
-    /* モバイル版のページヒーローセクション（about.html用） */
-    .page-hero-about {
-        background-image: url(https://kugyounokai.com/wp-content/uploads/2022/04/about_kv_sp-2.jpg);
-        padding: 100px 0; /* モバイルでのパディング調整 */
-        min-height: 350px; /* モバイルでの最小高さを調整 */
-    }
-    .page-hero-about .section-title {
-        font-size: 2.2em; /* モバイルでのタイトルサイズ */
-    }
-    .page-hero-about p {
-        font-size: 1.1em; /* モバイルでの本文サイズ */
-    }
-
-    .section-common {
-        padding: 80px 0; /* モバイルでのセクションパディング調整 */
-    }
-    .section-title {
-        font-size: 2em; /* モバイルでのセクションタイトルサイズ */
-        margin-bottom: 50px;
-    }
-    .section-title::after {
-        width: 70px;
-        height: 4px;
-    }
-
-    .about-section p {
-        font-size: 0.95em; /* 由緒セクションの本文の文字サイズをモバイルで調整 */
-    }
-    .history-image {
-        margin: 30px auto; /* モバイルでの余白調整 */
-    }
-    .treasures-gallery {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* モバイルでの画像列の調整 */
-        gap: 15px;
-        margin-top: 30px;
-        margin-bottom: 30px;
-    }
-    .treasures-gallery img {
-        height: 150px; /* モバイルでの画像高さ */
-    }
-    .treasures-text-list {
-        font-size: 0.95em; /* モバイルでのリスト文字サイズ */
-        padding-left: 15px;
-    }
-    .treasures-text-list li {
-        margin-bottom: 8px;
-    }
-
-    .news-list li {
-        flex-direction: column; /* 縦並びにする */
-        align-items: flex-start;
-        padding: 12px 0;
-    }
-    .news-list .news-date {
-        width: auto; /* 幅指定を解除 */
-        margin-bottom: 5px; /* 日付の下に余白 */
-        margin-left: 0;
-        font-size: 0.9em;
-    }
-    .news-list a {
-        margin-left: 0;
-        font-size: 1em;
-    }
-
-    .services-section .service-cards {
-        grid-template-columns: 1fr; /* 1列にする */
-        gap: 30px;
-    }
-    .service-card img {
-        height: 180px; /* モバイルでの画像高さ */
-    }
-    .service-card.map-card {
-        height: 400px;
-    }
-    .service-card.map-card iframe {
-        min-height: 180px;
-    }
-    .service-card h3 {
-        font-size: 1.5em;
-    }
-    .service-card p {
-        font-size: 0.9em;
-    }
-
-    .cta-section {
-        padding: 70px 0;
-    }
-    .cta-section p {
-        font-size: 1em;
-        margin-bottom: 30px;
-    }
-    .cta-contact-buttons {
-        gap: 15px;
-    }
-    .cta-contact-btn {
-        width: 90%;
-        max-width: 280px;
-        padding: 18px 30px;
-    }
-    .cta-contact-btn span {
-        font-size: 1.6em;
-    }
-    .cta-contact-btn small {
-        font-size: 0.9em;
-    }
-
-    .footer {
-        padding: 40px 0;
-        font-size: 0.9em;
-    }
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    .footer-info {
-        min-width: unset;
-        width: 100%;
-        margin-bottom: 30px;
-    }
-    .footer-nav {
-        min-width: unset;
-        width: 100%;
-    }
-    .footer-nav ul {
-        grid-template-columns: 1fr; /* 1列にする */
-        text-align: center;
-    }
-    .footer-nav a {
-        padding: 8px 0;
-    }
-}
-
-@media (max-width: 768px) {
-    body {
-        font-size: 15px; /* さらに小さい画面でのベースフォントサイズ */
-    }
-    .section-title {
-        font-size: 1.8em;
-        margin-bottom: 40px;
-    }
-    .section-title::after {
-        width: 60px;
-        height: 3px;
-    }
-
-    .page-hero-about {
-        padding: 80px 0;
-        min-height: 300px;
-    }
-    .page-hero-about .section-title {
-        font-size: 2em;
-    }
-    .page-hero-about p {
-        font-size: 1em;
-    }
-
-    .hero-main-title {
-        font-size: 2.2em;
-    }
-    .hero-subtitle {
-        font-size: 1em;
-    }
-}
-/* base/style.css のどこかに追記 */
 
 /* 境内紹介ページの画像スタイル */
+.keidai-intro-section .keidai-content-block {
+    display: flex;
+    flex-direction: column; /* スマートフォンでは縦並び */
+    align-items: center;
+    gap: 30px; /* 画像とテキスト、または画像間の隙間 */
+    margin-bottom: 60px; /* 各紹介ブロック間の下余白 */
+}
+
+.keidai-intro-section .keidai-images {
+    display: flex;
+    flex-wrap: wrap; /* 複数画像の場合に折り返し */
+    justify-content: center;
+    gap: 20px; /* 画像間の隙間 */
+    width: 100%; /* 親要素に合わせる */
+}
+
 .keidai-intro-section .keidai-image {
     display: block;
     max-width: 100%;
     height: auto;
-    margin: 30px auto 60px; /* 上下に余白を追加 */
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    object-fit: cover; /* 画像がはみ出さないように調整 */
 }
+
+.keidai-intro-section .keidai-image:not(.single-image) {
+    /* 複数画像の場合の幅調整 */
+    flex: 1 1 calc(50% - 10px); /* 2列表示（隙間考慮） */
+    min-width: 280px; /* 最小幅 */
+    max-height: 350px; /* 最大高さを設定して高さを揃える試み */
+}
+
+.keidai-intro-section .keidai-image.single-image {
+    /* 単一画像の場合の幅調整 */
+    max-width: 80%; /* 単一画像は少し狭めに */
+    margin: 0 auto; /* 中央寄せ */
+}
+
+/* テキストが画像の下に来るように調整 */
+.keidai-intro-section .keidai-content-block p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 0; /* ブロックの下余白は親で設定済み */
+    text-align: left;
+    width: 100%; /* 幅を親に合わせる */
+}
+
 
 /* 境内紹介ページのセクションタイトル */
 .keidai-intro-section .section-title {
@@ -1097,8 +849,41 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #004d40;
 }
 
-.keidai-intro-section p {
-    font-size: 1.1em;
-    line-height: 1.8;
-    margin-bottom: 20px;
+/* PC表示時 (768px以上) での調整 */
+@media (min-width: 768px) {
+    .keidai-intro-section .keidai-content-block {
+        flex-direction: row; /* PCでは横並び */
+        align-items: flex-start; /* 上揃え */
+    }
+
+    .keidai-intro-section .keidai-content-block:nth-of-type(odd) {
+        /* 奇数番目のブロック (画像が左、テキストが右) */
+        flex-direction: row;
+    }
+
+    .keidai-intro-section .keidai-content-block:nth-of-type(even) {
+        /* 偶数番目のブロック (画像が右、テキストが左) */
+        flex-direction: row-reverse; /* 左右を反転 */
+    }
+
+    .keidai-intro-section .keidai-images {
+        flex: 1; /* 画像が占める幅 */
+        max-width: 55%; /* 画像の最大幅を調整 */
+        justify-content: flex-start; /* 左寄せ */
+    }
+
+    .keidai-intro-section .keidai-image:not(.single-image) {
+        flex: 1 1 calc(50% - 10px);
+        max-height: 300px; /* PCでの画像の高さを調整 */
+    }
+
+    .keidai-intro-section .keidai-image.single-image {
+        max-width: 55%; /* 単一画像も幅を調整 */
+        margin: 0; /* 左寄せにするため中央寄せを解除 */
+    }
+
+    .keidai-intro-section .keidai-content-block p {
+        flex: 1; /* テキストが占める幅 */
+        max-width: 45%; /* テキストの最大幅を調整 */
+    }
 }
