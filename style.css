@@ -251,15 +251,14 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ページごとのヒーローセクション（about.html用） */
 .page-hero-about {
-    /* 修正 */
-    padding: 100px 0; /* パディングを縮小 */
+    padding: 150px 0; /* パディングをさらに大きく */
+    /* ここを修正: 相対パスに変更 */
     background-image: url(../img/about_kv_pc-1.jpg);
     background-size: cover;
     background-position: center;
     color: white;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-    /* 修正 */
-    min-height: 350px; /* 最小高さを縮小 */
+    min-height: 450px; /* 最小高さを高く */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -281,15 +280,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .page-hero-about .section-title {
     color: white;
-    /* 修正 */
-    margin-bottom: 15px; /* 下のpタグとの余白を縮小 */
+    margin-bottom: 25px; /* 下のpタグとの余白を広げる */
 }
 .page-hero-about .section-title::after {
     background-color: white;
 }
 .page-hero-about p {
-    /* 修正 */
-    font-size: 1.1em; /* ヒーローテキストを縮小 */
+    font-size: 1.3em; /* ヒーローテキストを大きく */
     max-width: 700px;
     margin: 0 auto;
     color: white;
@@ -631,259 +628,4 @@ h1, h2, h3, h4, h5, h6 {
 /* ホバー時のスタイル */
 .cta-contact-btn:hover {
     background-color: #00796b;
-    border-color: rgba(255, 255, 255, 0.6);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.4),
-                inset 0 0 0 2px rgba(255, 255, 255, 0.8);
-    transform: translateY(-3px);
-    color: white;
-}
-
-.cta-contact-btn span {
-    font-size: 1.8em; /* メインテキストをさらに大きく */
-    font-weight: 700;
-    margin-bottom: 6px;
-}
-
-/* smallタグのスタイルを追加 */
-.cta-contact-btn small {
-    font-size: 0.95em; /* サブテキストをさらに大きく */
-    color: rgba(255, 255, 255, 0.8);
-    margin-top: 5px;
-}
-
-/* フッター */
-.footer {
-    background-color: #222;
-    color: #bbb;
-    padding: 60px 0; /* パディングを大きく */
-    font-size: 1em; /* フッターのベース文字サイズを大きく */
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    margin-bottom: 40px; /* 余白を大きく */
-}
-
-.footer-info {
-    flex: 1;
-    min-width: 280px; /* 最小幅を広げる */
-    margin-bottom: 25px;
-}
-
-.footer-logo img {
-    height: 55px; /* ロゴの高さを少し大きく */
-    margin-bottom: 12px;
-}
-
-.footer-site-name {
-    font-size: 1.3em; /* サイト名を大きく */
-    font-weight: bold;
-    color: white;
-    margin-top: 8px;
-    margin-bottom: 18px;
-}
-
-.footer-info p {
-    margin: 6px 0;
-    line-height: 1.6;
-    font-size: 0.95em; /* フッター情報のテキストを少し大きく */
-}
-
-.footer-nav {
-    flex: 2;
-    min-width: 350px; /* 最小幅を広げる */
-}
-
-.footer-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* 列の最小幅を広げる */
-    gap: 12px; /* 間隔を広げる */
-}
-
-.footer-nav a {
-    color: #bbb;
-    display: block;
-    padding: 6px 0;
-    font-size: 1em; /* フッターナビの文字サイズを大きく */
-}
-
-.footer-nav a:hover {
-    color: #004d40;
-}
-
-.copyright {
-    text-align: center;
-    padding-top: 25px;
-    
-}
-
-/* about.html の由緒セクションの画像 */
-.history-image {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin: 30px auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* 法宝物セクションのスタイル */
-.treasures-section {
-    padding: 60px 0; /* パディングを縮小 */
-}
-
-.treasures-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px; /* 間隔を調整 */
-    margin-top: 50px;
-    margin-bottom: 40px; /* 下のリストとの間隔を調整 */
-}
-
-.treasures-gallery img {
-    width: 100%;
-    height: 250px; /* 画像の高さを固定 */
-    object-fit: cover; /* 画像をトリミングしてカバー */
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.treasures-text-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-size: 1.1em;
-    line-height: 2.2; /* 行間を広げる */
-    color: #555;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.treasures-text-list li {
-    padding-left: 25px;
-    position: relative;
-}
-
-.treasures-text-list li::before {
-    content: '▶'; /* 矢印アイコン */
-    position: absolute;
-    left: 0;
-    color: #004d40;
-    font-size: 0.8em;
-    line-height: 1.8;
-}
-
-/* 境内紹介ページの画像スタイル */
-.keidai-intro-section .keidai-content-block {
-    display: flex;
-    flex-direction: column; /* スマートフォンでは縦並び */
-    align-items: center;
-    gap: 30px; /* 画像とテキスト、または画像間の隙間 */
-    margin-bottom: 60px; /* 各紹介ブロック間の下余白 */
-}
-
-.keidai-intro-section .keidai-images {
-    display: flex;
-    flex-wrap: wrap; /* 複数画像の場合に折り返し */
-    justify-content: center;
-    gap: 20px; /* 画像間の隙間 */
-    width: 100%; /* 親要素に合わせる */
-}
-
-.keidai-intro-section .keidai-image {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    object-fit: cover; /* 画像がはみ出さないように調整 */
-}
-
-.keidai-intro-section .keidai-image:not(.single-image) {
-    /* 複数画像の場合の幅調整 */
-    flex: 1 1 calc(50% - 10px); /* 2列表示（隙間考慮） */
-    min-width: 280px; /* 最小幅 */
-    max-height: 350px; /* 最大高さを設定して高さを揃える試み */
-}
-
-.keidai-intro-section .keidai-image.single-image {
-    /* 単一画像の場合の幅調整 */
-    max-width: 80%; /* 単一画像は少し狭めに */
-    margin: 0 auto; /* 中央寄せ */
-}
-
-/* テキストが画像の下に来るように調整 */
-.keidai-intro-section .keidai-content-block p {
-    font-size: 1.1em;
-    line-height: 1.8;
-    margin-bottom: 0; /* ブロックの下余白は親で設定済み */
-    text-align: left;
-    width: 100%; /* 幅を親に合わせる */
-}
-
-
-/* 境内紹介ページのセクションタイトル */
-.keidai-intro-section .section-title {
-    text-align: left; /* 左寄せに変更 */
-    margin-left: 0;
-    margin-right: 0;
-    font-size: 2.2em; /* 少し小さめに */
-    margin-top: 60px; /* 上に大きな余白 */
-    margin-bottom: 30px; /* 下に余白 */
-    padding-bottom: 15px; /* 下線との距離を調整 */
-    color: #004d40;
-}
-
-.keidai-intro-section .section-title::after {
-    left: 0; /* 左端に揃える */
-    transform: translateX(0);
-    width: 60px; /* 下線を短く */
-    height: 4px; /* 下線を調整 */
-    background-color: #004d40;
-}
-
-/* PC表示時 (768px以上) での調整 */
-@media (min-width: 768px) {
-    .keidai-intro-section .keidai-content-block {
-        flex-direction: row; /* PCでは横並び */
-        align-items: flex-start; /* 上揃え */
-    }
-
-    .keidai-intro-section .keidai-content-block:nth-of-type(odd) {
-        /* 奇数番目のブロック (画像が左、テキストが右) */
-        flex-direction: row;
-    }
-
-    .keidai-intro-section .keidai-content-block:nth-of-type(even) {
-        /* 偶数番目のブロック (画像が右、テキストが左) */
-        flex-direction: row-reverse; /* 左右を反転 */
-    }
-
-    .keidai-intro-section .keidai-images {
-        flex: 1; /* 画像が占める幅 */
-        max-width: 55%; /* 画像の最大幅を調整 */
-        justify-content: flex-start; /* 左寄せ */
-    }
-
-    .keidai-intro-section .keidai-image:not(.single-image) {
-        flex: 1 1 calc(50% - 10px);
-        max-height: 300px; /* PCでの画像の高さを調整 */
-    }
-
-    .keidai-intro-section .keidai-image.single-image {
-        max-width: 55%; /* 単一画像も幅を調整 */
-        margin: 0; /* 左寄せにするため中央寄せを解除 */
-    }
-
-    .keidai-intro-section .keidai-content-block p {
-        flex: 1; /* テキストが占める幅 */
-        max-width: 45%; /* テキストの最大幅を調整 */
-    }
-}
+    border-color: rgba(255, 255, 2
