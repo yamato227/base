@@ -879,7 +879,7 @@ h1, h2, h3, h4, h5, h6 {
     .page-hero-about p {
         font-size: 1.1em;
         /* タブレットでも2行になる可能性があるため、ここでmax-widthを調整するか、
-           white-space: nowrap; overflow: hidden; text-overflow: ellipsis; を検討 */
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis; を検討 */
         max-width: 700px; /* 必要に応じて調整 */
     }
 }
@@ -1177,4 +1177,53 @@ h1, h2, h3, h4, h5, h6 {
         padding-top: 15px;
         font-size: 0.8em;
     }
+}
+
+/* プライバシーポリシーページ専用のスタイル */
+.policy-content {
+    background-color: #ffffff;
+    padding: 50px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    max-width: 900px;
+    margin: 50px auto;
+    line-height: 1.8;
+    color: #333;
+}
+.policy-content h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+.policy-content h3 {
+    font-size: 1.2em;
+    color: #555;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+.policy-content p {
+    margin-bottom: 15px;
+}
+.policy-content ul, .policy-content ol {
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+.policy-content li {
+    margin-bottom: 8px;
+}
+.contact-info {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-top: 40px;
+    border-radius: 5px;
+}
+.contact-info p {
+    margin-bottom: 5px;
+}
+.contact-info strong {
+    color: #007bff;
 }
