@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ内容確認 - 蓮通寺</title>
+    <meta name="description" content="蓮通寺へのお問い合わせ内容の確認ページです。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../img/kamon.jpg">
+    <style>
+        /* 確認画面のデザインを簡易的に追加（style.cssに移動することを推奨） */
+        .confirm-section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .confirm-box {
+            background-color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            max-width: 700px;
+            margin: 30px auto;
+            text-align: left;
+        }
+        .confirm-box p {
+            margin-bottom: 25px;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        .confirm-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        .confirm-table th,
+        .confirm-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+            font-size: 1em;
+        }
+        .confirm-table th {
+            background-color: #f5f5f5;
+            width: 150px;
+            font-weight: bold;
+            color: #333;
+        }
+        .confirm-table tr:last-child th,
+        .confirm-table tr:last-child td {
+            border-bottom: none;
+        }
+        .confirm-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .confirm-buttons .btn {
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            text-decoration: none; /* aタグの場合 */
+            display: inline-block; /* aタグの場合 */
+            text-align: center;
+        }
+        .confirm-buttons .btn-back {
+            background-color: #6c757d; /* グレー系 */
+            color: white;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+        .confirm-buttons .btn-back:hover {
+            background-color: #5a6268;
+        }
+        .confirm-buttons .btn-submit-final {
+            background-color: #28a745; /* 緑系 */
+            color: white;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+        .confirm-buttons .btn-submit-final:hover {
+            background-color: #218838;
+        }
+        .privacy-note {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 30px;
+            text-align: center;
+        }
+        .privacy-note a {
+            color: #007bff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <div class="site-logo">
+                <a href="../index.html">
+                    <img src="../img/logo-1.png" alt="浄土真宗 蓮通寺">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">ホーム</a></li>
+                    <li class="has-dropdown">
+                        <a href="#">蓮通寺について</a>
+                        <ul class="dropdown">
+                            <li><a href="about.html">蓮通寺について</a></li>
+                            <li><a href="keidai.html">境内紹介</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="service.html">年間行事・法要</a></li>
+                    <li><a href="access.html">アクセス</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" aria-label="モバイルメニューを開く">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero-about section-common">
+            <picture class="hero-background-image">
+                <source srcset="../img/about_kv_sp-2.jpg" media="(max-width: 767px)">
+                <img src="../img/about_kv_pc-1.jpg" alt="蓮通寺の風景">
+            </picture>
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <h1 class="section-title">お問い合わせ内容確認</h1>
+                <p>以下の内容でよろしければ「送信する」ボタンを押してください。</p>
+            </div>
+        </section>
+
+        <section class="section-common bg-light-gray confirm-section">
+            <div class="container">
+                <div class="confirm-box">
+                    <p>送信内容をご確認のうえ、問題ございませんでしたら「送信する」ボタンをクリックしてください。</p>
+
+                    <table class="confirm-table">
+                        <tr>
+                            <th>お名前</th>
+                            <td>山田 太郎</td> </tr>
+                        <tr>
+                            <th>電話番号</th>
+                            <td>090-1234-5678</td> </tr>
+                        <tr>
+                            <th>メールアドレス</th>
+                            <td>a@gmail.com</td> </tr>
+                        <tr>
+                            <th>お問い合わせ内容</th>
+                            <td>
+                                いつも大変お世話になっております。
+                                永代供養についてご相談させて頂きたく、ご連絡いたしました。
+                                お忙しいところ恐縮ですが、一度お話させて頂くお時間を頂戴できますでしょうか。
+                                よろしくお願いいたします。
+                                </td>
+                        </tr>
+                    </table>
+
+                    <p class="privacy-note">
+                        <a href="privacy.html" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a>の内容に同意して送信します。
+                    </p>
+
+                    <div class="confirm-buttons">
+                        <a href="contact.html" class="btn btn-back">戻る</a>
+                        <form action="contact_complete.html" method="POST" style="margin: 0;">
+                            <button type="submit" class="btn btn-submit-final">送信する</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <img src="../img/logo-1.png" alt="蓮通寺ロゴ">
+                    </div>
+                </div>
+                <nav class="footer-nav">
+                    <ul>
+                        <li><a href="../index.html">ホーム</a></li>
+                        <li><a href="about.html">蓮通寺について</a></li>
+                        <li><a href="service.html">年間行事・法要</a></li>
+                        <li><a href="keidai.html">境内紹介</a></li>
+                        <li><a href="access.html">アクセス</a></li>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <p class="copyright">© 2024 Rentoji. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
