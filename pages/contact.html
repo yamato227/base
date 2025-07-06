@@ -189,7 +189,7 @@
                     24時間受け付けております。
                 </p>
 
-                <form action="contact_confirm.html" method="GET" class="contact-form">
+                <form action="mailto:your-email@example.com?subject=お問い合わせフォームからの連絡" method="POST" enctype="text/plain" class="contact-form">
                 <dl>
                         <dt>お名前 <span class="required">必須</span></dt>
                         <dd><input type="text" id="name" name="name" required placeholder="例：山田 太郎"></dd>
@@ -208,17 +208,16 @@
                     </dl>
 
                     <div class="privacy-check">
-                        <input type="checkbox" id="privacy-agree" name="privacy-agree" value="agree" required>
+                        <input type="checkbox" id="privacy-agree" name="privacy-agree" value="同意済み" required>
                         <label for="privacy-agree">
                             <a href="privacy.html" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a>に同意する <span class="required">必須</span>
                         </label>
                     </div>
                     <p class="note" style="text-align: center; margin-top: 15px;">
-                        ※入力内容をご確認の上、「入力内容を確認する」ボタンを押してください。<br>
                         ※ご返信には数日いただく場合がございます。お急ぎの場合はお電話をご利用ください。
-                    </p>
-                    <button type="submit" class="btn btn-submit">入力内容を確認する</button>
-                </form>
+                        </p>
+                    <button type="submit" class="btn btn-submit">送信</button>
+                    </form>
 
                 <div class="contact-info-block">
                     <h2>お電話でのお問い合わせ</h2>
@@ -237,6 +236,7 @@
                     <div class="footer-logo">
                         <img src="../img/logo-1.png" alt="蓮通寺ロゴ">
                     </div>
+                    <p>蓮通寺</p>
                 </div>
                 <nav class="footer-nav">
                     <ul>
