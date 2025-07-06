@@ -254,14 +254,14 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ページごとのヒーローセクション（about.html用） */
 .page-hero-about {
-    padding: 150px 0;
+    padding: 80px 0; /* 余白を150pxから80pxに縮小 */
     /* ここから背景画像を削除し、子要素のpictureで制御 */
     background-image: none;
     background-size: cover;
     background-position: center;
     color: white;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-    min-height: 450px;
+    min-height: 350px; /* 必要に応じて調整。余白を減らしたので少し小さく */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -301,7 +301,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .page-hero-about .section-title {
     color: white;
-    margin-bottom: 25px;
+    margin-bottom: 15px; /* 25pxから15pxに縮小 */
 }
 .page-hero-about .section-title::after {
     background-color: white;
@@ -309,7 +309,7 @@ h1, h2, h3, h4, h5, h6 {
 .page-hero-about p {
     font-size: 1.3em;
     max-width: 700px;
-    margin: 0 auto;
+    margin: 0 auto 0px auto; /* 下の余白も調整 */
     color: white;
 }
 
@@ -825,6 +825,18 @@ h1, h2, h3, h4, h5, h6 {
         right: 20px;
         bottom: 20px;
     }
+
+    /* Tablet: page-hero-about の調整 */
+    .page-hero-about {
+        padding: 60px 0; /* PC版からさらに調整 */
+        min-height: 300px;
+    }
+    .page-hero-about .section-title {
+        margin-bottom: 10px; /* さらに詰める */
+    }
+    .page-hero-about p {
+        font-size: 1.2em; /* 必要であれば調整 */
+    }
 }
 
 @media (max-width: 767px) {
@@ -968,6 +980,20 @@ h1, h2, h3, h4, h5, h6 {
         height: 100%;
         object-fit: cover;
         display: block;
+    }
+
+    /* Mobile: page-hero-about の調整 */
+    .page-hero-about {
+        padding: 40px 0; /* モバイル版でさらに調整 */
+        min-height: 250px; /* 必要に応じてさらに小さく */
+    }
+    .page-hero-about .section-title {
+        font-size: 2em; /* モバイルサイズに合わせる */
+        margin-bottom: 8px; /* さらに詰める */
+    }
+    .page-hero-about p {
+        font-size: 1em; /* モバイルサイズに合わせる */
+        margin-bottom: 0px; /* ほぼゼロに */
     }
 
 
