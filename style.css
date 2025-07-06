@@ -40,7 +40,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-common {
-    padding: 100px 0; /* 上下のパディングを大きく */
+    padding: 60px 0; /* 上下のパディングを大きく */
     margin-bottom: 40px; /* セクション間の余白を大きく */
     background-color: #fff;
     box-shadow: 0 2px 15px rgba(0,0,0,0.05);
