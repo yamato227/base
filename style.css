@@ -254,7 +254,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ページごとのヒーローセクション（about.html, keidai.html用） */
 .page-hero-about {
-    padding: 80px 0; /* 余白を150pxから80pxに縮小 */
+    padding: 80px 0;
     background-image: none;
     background-size: cover;
     background-position: center;
@@ -307,7 +307,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .page-hero-about p {
     font-size: 1.15em;
-    max-width: 700px;
+    max-width: 900px; /* ここを調整してテキストが1行に収まるように広げました */
     margin: 0 auto 0px auto;
     color: white;
 }
@@ -878,6 +878,9 @@ h1, h2, h3, h4, h5, h6 {
     }
     .page-hero-about p {
         font-size: 1.1em;
+        /* タブレットでも2行になる可能性があるため、ここでmax-widthを調整するか、
+           white-space: nowrap; overflow: hidden; text-overflow: ellipsis; を検討 */
+        max-width: 700px; /* 必要に応じて調整 */
     }
 }
 
@@ -1036,6 +1039,7 @@ h1, h2, h3, h4, h5, h6 {
     .page-hero-about p {
         font-size: 0.95em;
         margin-bottom: 0px;
+        max-width: 100%; /* モバイルではmax-widthを解除または広げ、折り返しを許可 */
     }
 
 
