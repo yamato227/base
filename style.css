@@ -1,6 +1,6 @@
 /* style.css */
 
-/* 基本リセットと共通スタイル */
+/* 基本リセットと共通スタイル (お客様の既存スタイルをそのまま使用) */
 * {
     box-sizing: border-box;
 }
@@ -9,9 +9,9 @@ body {
     margin: 0;
     font-family: 'Noto Serif JP', serif, sans-serif;
     color: #333;
-    line-height: 1.8; /* 行の高さを少し広げて読みやすく */
+    line-height: 1.8;
     background-color: #f8f8f8;
-    font-size: 17px; /* ベースの文字サイズを少し大きく (例: 16px -> 17px) */
+    font-size: 17px;
 }
 
 .container {
@@ -35,13 +35,14 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Noto Serif JP', serif;
     color: #004d40;
     margin-top: 1em;
-    margin-bottom: 0.6em; /* 余白を調整 */
+    margin-bottom: 0.6em;
     line-height: 1.3;
 }
 
+/* section-common のパディング調整 (空白部分を縮める) */
 .section-common {
-    padding: 60px 0; /* 上下のパディングを大きく */
-    margin-bottom: 40px; /* セクション間の余白を大きく */
+    padding: 60px 0; /* 元々の60pxを維持、必要であればさらに縮める (例: 40px 0) */
+    margin-bottom: 40px;
     background-color: #fff;
     box-shadow: 0 2px 15px rgba(0,0,0,0.05);
     border-radius: 8px;
@@ -53,11 +54,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-title {
-    font-size: 2.8em; /* タイトルを大きく */
+    font-size: 2.8em;
     text-align: center;
-    margin-bottom: 70px; /* 下の余白を大きく */
+    margin-bottom: 70px;
     position: relative;
-    padding-bottom: 25px; /* 下線との距離を広げる */
+    padding-bottom: 25px;
     font-weight: 700;
     color: #333;
 }
@@ -68,8 +69,8 @@ h1, h2, h3, h4, h5, h6 {
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
-    width: 90px; /* 下線を少し長く */
-    height: 5px; /* 下線を太く */
+    width: 90px;
+    height: 5px;
     background-color: #004d40;
     border-radius: 2px;
 }
@@ -81,7 +82,7 @@ h1, h2, h3, h4, h5, h6 {
 /* ボタンの共通スタイル */
 .common-btn {
     display: inline-block;
-    padding: 18px 35px; /* パディングを大きく */
+    padding: 18px 35px;
     background-color: #004d40;
     color: white;
     border-radius: 5px;
@@ -89,7 +90,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     transition: background-color 0.3s ease, transform 0.3s ease;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    font-size: 1.1em; /* ボタンの文字サイズを大きく */
+    font-size: 1.1em;
 }
 
 .common-btn:hover {
@@ -110,10 +111,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-area {
     text-align: center;
-    margin-top: 50px; /* 上の余白を大きく */
+    margin-top: 50px;
 }
 
-/* ヘッダー */
+/* ヘッダー (お客様の既存スタイルをそのまま使用) */
 .header {
     background-color: #fff;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -126,17 +127,17 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 20px; /* パディングを大きく */
+    padding: 20px 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .site-logo img {
-    height: 65px; /* ロゴの高さを少し大きく */
+    height: 65px; /* お客様の既存スタイル */
     vertical-align: middle;
 }
 
-/* メインナビゲーション */
+/* メインナビゲーション (お客様の既存スタイルをそのまま使用) */
 .main-nav ul {
     list-style: none;
     margin: 0;
@@ -145,16 +146,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main-nav li {
-    margin-left: 40px; /* 間隔を広げる */
+    margin-left: 40px;
     position: relative;
 }
 
 .main-nav a {
     display: block;
-    padding: 18px 0; /* パディングを大きく */
+    padding: 18px 0;
     color: #333;
     font-weight: 700;
-    font-size: 1.15em; /* ナビゲーションの文字を大きく */
+    font-size: 1.15em;
     white-space: nowrap;
 }
 
@@ -162,7 +163,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #004d40;
 }
 
-/* ドロップダウンメニュー */
+/* ドロップダウンメニュー (お客様の既存スタイルをそのまま使用) */
 .main-nav .dropdown {
     display: none;
     position: absolute;
@@ -170,7 +171,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     background-color: #fff;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    min-width: 200px; /* 最小幅を広げる */
+    min-width: 200px;
     border-radius: 5px;
     padding: 10px 0;
     z-index: 10;
@@ -186,10 +187,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main-nav .dropdown a {
-    padding: 12px 25px; /* ドロップダウンのパディングを大きく */
+    padding: 12px 25px;
     white-space: nowrap;
     font-weight: normal;
-    font-size: 1.05em; /* ドロップダウンの文字サイズを大きく */
+    font-size: 1.05em;
     color: #555;
 }
 
@@ -198,7 +199,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #004d40;
 }
 
-/* モバイルメニューのトグルボタン（初期は非表示） */
+/* モバイルメニューのトグルボタン（初期は非表示） (お客様の既存スタイルをそのまま使用) */
 .mobile-menu-toggle {
     display: none;
     background: none;
@@ -225,7 +226,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0;
 }
 
-/* モバイルメニューオープン時のアニメーション */
+/* モバイルメニューオープン時のアニメーション (お客様の既存スタイルをそのまま使用) */
 .mobile-menu-toggle.open span:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
 }
@@ -236,7 +237,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(-9px) rotate(-45deg);
 }
 
-/* ヒーローセクション（トップページ用） */
+/* ヒーローセクション（トップページ用） (お客様の既存スタイルをそのまま使用) */
 .hero-section {
     position: relative;
     width: 100%;
@@ -249,16 +250,16 @@ h1, h2, h3, h4, h5, h6 {
     text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
 }
 
-/* ページごとのヒーローセクション（about.html用） */
+/* ページごとのヒーローセクション（about.html用） (お客様の既存スタイルをそのまま使用) */
 .page-hero-about {
-    padding: 150px 0; /* パディングをさらに大きく */
-    /* ここを修正: 相対パスに変更 */
-    background-image: url(../img/about_kv_pc-1.jpg);
+    padding: 150px 0;
+    /* ここを修正: 相対パスが正しいことを確認。現在のファイル位置との関係で変更が必要な場合あり */
+    background-image: url(../img/about_kv_pc-1.jpg); /* ../img/ であることを再確認 */
     background-size: cover;
     background-position: center;
     color: white;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-    min-height: 450px; /* 最小高さを高く */
+    min-height: 450px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -266,7 +267,7 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 1;
 }
 
-/* ヒーローセクションのオーバーレイ（about.html用） */
+/* ヒーローセクションのオーバーレイ（about.html用） (お客様の既存スタイルをそのまま使用) */
 .page-hero-about::before {
     content: '';
     position: absolute;
@@ -280,20 +281,20 @@ h1, h2, h3, h4, h5, h6 {
 
 .page-hero-about .section-title {
     color: white;
-    margin-bottom: 25px; /* 下のpタグとの余白を広げる */
+    margin-bottom: 25px;
 }
 .page-hero-about .section-title::after {
     background-color: white;
 }
 .page-hero-about p {
-    font-size: 1.3em; /* ヒーローテキストを大きく */
+    font-size: 1.3em;
     max-width: 700px;
     margin: 0 auto;
     color: white;
 }
 
 
-/* 画像スライドショーのスタイル（トップページ用） */
+/* 画像スライドショーのスタイル（トップページ用） (お客様の既存スタイルをそのまま使用) */
 .image-slideshow {
     position: absolute;
     top: 0;
@@ -347,7 +348,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-main-title {
-    font-size: 4.5em; /* メインタイトルをさらに大きく */
+    font-size: 4.5em;
     line-height: 1.2;
     margin-bottom: 25px;
     font-weight: 900;
@@ -360,7 +361,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-subtitle {
-    font-size: 1.6em; /* サブタイトルを大きく */
+    font-size: 1.6em;
     line-height: 1.6;
     color: white;
     max-width: 600px;
@@ -368,11 +369,11 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 15px;
 }
 
-/* ヒーローセクション下部の連絡先ボタンの新しいラッパー */
+/* ヒーローセクション下部の連絡先ボタンの新しいラッパー (お客様の既存スタイルをそのまま使用) */
 .hero-contact-wrapper {
     position: absolute;
-    bottom: 40px; /* 下からの距離を広げる */
-    right: 40px; /* 右からの距離を広げる */
+    bottom: 40px;
+    right: 40px;
     z-index: 4;
     display: flex;
     flex-direction: column;
@@ -383,9 +384,9 @@ h1, h2, h3, h4, h5, h6 {
 .hero-contact-label {
     background-color: #004d40;
     color: white;
-    font-size: 1.3em; /* 文字サイズ調整 */
+    font-size: 1.3em;
     font-weight: bold;
-    padding: 12px 30px; /* パディング調整 */
+    padding: 12px 30px;
     border-radius: 8px 8px 0 0;
     margin-bottom: -1px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
@@ -396,21 +397,21 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-contact-buttons {
     background-color: rgba(82, 132, 49, 0.75);
-    padding: 25px 30px; /* パディング調整 */
+    padding: 25px 30px;
     border-radius: 0 0 8px 8px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     display: flex;
-    gap: 20px; /* ボタン間の隙間を広げる */
+    gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
 }
 
-/* 個々の連絡先ボタンのスタイル */
+/* 個々の連絡先ボタンのスタイル (お客様の既存スタイルをそのまま使用) */
 .contact-btn {
     background-color: rgba(82, 132, 49, 0.75);
     color: white;
-    padding: 20px 35px; /* パディングを大きく */
+    padding: 20px 35px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
@@ -419,11 +420,11 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 2px 8px rgba(0,0,0,0.1),
                 inset 0 0 0 2px rgba(255, 255, 255, 0.5);
     transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-    font-size: 1.05em; /* 文字サイズを大きく */
+    font-size: 1.05em;
     line-height: 1.4;
     white-space: nowrap;
     flex: 1 1 auto;
-    min-width: 220px; /* 最小幅を少し広げる */
+    min-width: 220px;
 }
 
 .contact-btn:hover {
@@ -436,21 +437,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .contact-btn span {
-    font-size: 1.7em; /* メインテキストをさらに大きく */
+    font-size: 1.7em;
     font-weight: 900;
     color: white;
     margin-top: 5px;
 }
 
-/* smallタグのスタイルを追加 */
+/* smallタグのスタイルを追加 (お客様の既存スタイルをそのまま使用) */
 .contact-btn small {
-    font-size: 0.9em; /* サブテキストを少し大きく */
+    font-size: 0.9em;
     color: #eee;
     margin-top: 5px;
 }
 
 
-/* お知らせセクション */
+/* お知らせセクション (お客様の既存スタイルをそのまま使用) */
 .news-section {
     background-color: #fefefe;
 }
@@ -462,7 +463,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .news-list li {
-    padding: 18px 0; /* パディングを大きく */
+    padding: 18px 0;
     border-bottom: 1px dashed #eee;
     display: flex;
     align-items: baseline;
@@ -473,31 +474,31 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .news-list .news-date {
-    font-size: 1em; /* 日付の文字サイズを大きく */
+    font-size: 1em;
     color: #777;
     flex-shrink: 0;
-    width: 110px; /* 幅を広げる */
+    width: 110px;
     font-weight: normal;
 }
 
 .news-list a {
-    margin-left: 25px; /* 間隔を広げる */
+    margin-left: 25px;
     flex-grow: 1;
     color: #333;
     font-weight: normal;
-    font-size: 1.1em; /* リンクの文字サイズを大きく */
+    font-size: 1.1em;
 }
 
 .news-list a:hover {
     color: #004d40;
 }
 
-/* サービス紹介セクション */
+/* サービス紹介セクション (お客様の既存スタイルをそのまま使用) */
 .services-section .service-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* カードの最小幅を広げる */
-    gap: 40px; /* 間隔を広げる */
-    margin-top: 50px; /* 上の余白を大きく */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
 }
 
 .service-card {
@@ -518,14 +519,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .service-card img {
     width: 100%;
-    height: 220px; /* 画像の高さを少し大きく */
+    height: 220px;
     object-fit: cover;
     display: block;
 }
 
-/* Googleマップカードのスタイル */
+/* Googleマップカードのスタイル (お客様の既存スタイルをそのまま使用) */
 .service-card.map-card {
-    height: 480px; /* マップカードの高さを高く */
+    height: 480px;
 }
 
 .service-card.map-card iframe {
@@ -538,14 +539,14 @@ h1, h2, h3, h4, h5, h6 {
 .service-card.map-card p,
 .service-card.map-card .common-btn {
     flex-shrink: 0;
-    padding: 0 25px; /* パディングを広げる */
+    padding: 0 25px;
 }
 .service-card.map-card h3 {
-    margin-top: 25px; /* 余白を調整 */
+    margin-top: 25px;
 }
 .service-card.map-card p {
     margin-bottom: 25px;
-    font-size: 1em; /* マップカード内のテキストサイズを調整 */
+    font-size: 1em;
 }
 .service-card.map-card .common-btn {
     margin-bottom: 25px;
@@ -553,7 +554,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .service-card h3 {
-    font-size: 1.8em; /* サービスカードのタイトルを大きく */
+    font-size: 1.8em;
     margin: 25px 0 12px;
     color: #004d40;
 }
@@ -561,7 +562,7 @@ h1, h2, h3, h4, h5, h6 {
 .service-card p {
     padding: 0 25px;
     margin-bottom: 25px;
-    font-size: 1em; /* サービスカードの本文を大きく */
+    font-size: 1em;
     color: #555;
 }
 
@@ -569,16 +570,17 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 25px;
 }
 
-/* CTAセクション */
+/* CTAセクション (お客様の既存スタイルをベースに調整) */
 .cta-section {
     background-color: #004d40;
     color: white;
     text-align: center;
-    padding: 90px 0; /* パディングを大きく */
+    padding: 90px 0; /* お客様の既存スタイル */
 }
 
 .cta-section .section-title {
     color: white;
+    /* margin-bottom: 70px; は .section-title で共通化されているため削除 */
 }
 
 .cta-section .section-title::after {
@@ -586,35 +588,40 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .cta-section p {
-    font-size: 1.2em; /* CTAの本文を大きく */
+    font-size: 1.2em;
     margin-bottom: 50px; /* ボタンとの間に余白を設ける */
-    max-width: 750px; /* 最大幅を広げる */
+    max-width: 750px;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* CTAセクションの連絡先ボタンのラッパー */
+/* CTAセクションの連絡先ボタンのラッパー (レイアウト変更) */
 .cta-contact-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 40px; /* ボタン間のスペースを広げる */
-    flex-wrap: wrap;
-    margin-top: 50px;
+    display: flex; /* 横並びにする */
+    justify-content: center; /* 中央寄せ */
+    gap: 40px; /* ボタン間のスペース */
+    flex-wrap: wrap; /* 画面が狭いときに折り返す */
+    margin-top: 50px; /* 上の余白 */
+    width: 100%; /* 親要素の幅を使う */
+    max-width: 700px; /* 最大幅を設定して、ボタンが広がりすぎないように */
+    margin-left: auto; /* 中央寄せ */
+    margin-right: auto; /* 中央寄せ */
 }
 
-/* 個々のCTA連絡先ボタンのスタイル */
+/* 個々のCTA連絡先ボタンのスタイル (お客様の既存スタイルをベースに調整) */
 .cta-contact-btn {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* テキストと小文字を縦に並べる */
+    align-items: center; /* 中央寄せ */
     justify-content: center;
-    padding: 25px 45px; /* パディングを大きく */
-    border-radius: 12px; /* 角丸をさらに大きく */
+    padding: 25px 45px;
+    border-radius: 12px;
     text-decoration: none;
     font-weight: bold;
     white-space: nowrap;
-    width: 300px; /* ボタンの固定幅を広げる */
-    min-height: 110px; /* 最小高さを高く */
+    /* width: 300px; を削除し、flex: 1 に変更することで、フレキシブルに幅を調整 */
+    flex: 1 1 300px; /* 最小300pxで横並び、余ったスペースを均等に分配 */
+    min-height: 110px;
     
     background-color: #006056;
     color: white;
@@ -625,7 +632,373 @@ h1, h2, h3, h4, h5, h6 {
     transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-/* ホバー時のスタイル */
+/* ホバー時のスタイル (お客様の既存スタイルをそのまま使用) */
 .cta-contact-btn:hover {
     background-color: #00796b;
-    border-color: rgba(255, 255, 2
+    border-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4),
+                inset 0 0 0 2px rgba(255, 255, 255, 0.9);
+    transform: translateY(-4px);
+}
+
+/* CTAボタン内のテキスト調整 */
+.cta-contact-btn span {
+    font-size: 1.7em; /* お客様の既存スタイル */
+    font-weight: 900;
+    color: white;
+    margin-top: 0; /* 元々あったmargin-topを0に */
+    margin-bottom: 5px; /* smallとの間に余白 */
+    display: block; /* 独立したブロック要素に */
+}
+.cta-contact-btn small {
+    font-size: 0.9em; /* お客様の既存スタイル */
+    color: #eee;
+    margin-top: 0; /* 元々あったmargin-topを0に */
+    display: block; /* 独立したブロック要素に */
+}
+
+
+/* フッター (お客様の既存スタイルをベースに調整) */
+.footer {
+    background-color: #f7f7f7;
+    padding: 40px 0;
+    border-top: 1px solid #eee;
+    color: #555;
+    font-size: 0.9em;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* 上揃え */
+    flex-wrap: wrap;
+    gap: 30px; /* 要素間のスペースを調整 */
+}
+
+.footer-info {
+    flex: 1;
+    min-width: 280px; /* 情報を表示できる最小幅 */
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* ロゴの下に余白 */
+}
+
+/* ★フッターロゴのサイズ調整★ */
+.footer-logo img {
+    height: 50px; /* 高さを調整 (例: 50px, お好みで調整してください) */
+    width: auto;
+    margin-right: 15px; /* ロゴとサイト名の間に余白 */
+}
+/* ★フッターロゴのサイズ調整ここまで★ */
+
+.footer-site-name {
+    font-size: 1.4em; /* 少し大きく */
+    font-weight: bold;
+    color: #333;
+    white-space: nowrap; /* 折り返さない */
+}
+
+/* ★フッターナビゲーションの横並び変更点★ */
+.footer-nav {
+    flex: 2; /* 情報より広めに取る */
+    min-width: 400px; /* ナビゲーションを表示できる最小幅 */
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* 横並びにする */
+    flex-wrap: wrap; /* 画面が狭いときに折り返す */
+    gap: 10px 30px; /* 行間と列間のスペースを調整 */
+    justify-content: flex-end; /* 右寄せにする */
+}
+
+.footer-nav li a {
+    text-decoration: none;
+    color: #555;
+    padding: 5px 0;
+    display: block;
+    transition: color 0.3s ease;
+    font-size: 1em; /* リンクの文字サイズ */
+    white-space: nowrap;
+}
+
+.footer-nav li a:hover {
+    color: #004d40;
+}
+/* ★フッターナビゲーションの横並び変更点ここまで★ */
+
+.copyright {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 1px solid #e0e0e0;
+    font-size: 0.85em;
+    color: #777;
+}
+
+
+/* --- レスポンシブデザイン --- */
+@media (max-width: 1024px) {
+    /* 必要に応じて調整 */
+    .hero-main-title {
+        font-size: 3.8em;
+    }
+    .hero-subtitle {
+        font-size: 1.4em;
+    }
+    .hero-contact-wrapper {
+        right: 20px; /* 画面端からの距離 */
+        bottom: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    body {
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .section-common {
+        padding: 30px 0; /* モバイルでの上下の余白をさらに縮める */
+        margin-bottom: 25px;
+    }
+
+    .section-title {
+        font-size: 2em;
+        margin-bottom: 40px;
+        padding-bottom: 15px;
+    }
+    .section-title::after {
+        width: 70px;
+        height: 4px;
+    }
+
+    .common-btn {
+        padding: 15px 25px;
+        font-size: 1em;
+    }
+
+    /* ヘッダー */
+    .header-inner {
+        flex-wrap: wrap;
+        padding: 15px 15px;
+        justify-content: center;
+    }
+    .site-logo {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .site-logo img {
+        height: 55px; /* モバイルでのロゴサイズ */
+    }
+
+    .main-nav {
+        display: none; /* 初期状態では非表示 */
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        position: absolute;
+        top: 85px; /* ヘッダーの高さに応じて調整 */
+        left: 0;
+        text-align: center;
+        padding-top: 10px;
+        z-index: 999;
+    }
+
+    .main-nav.is-active {
+        display: block;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .main-nav li {
+        margin-left: 0;
+        border-bottom: 1px solid #eee;
+    }
+    .main-nav li:last-child {
+        border-bottom: none;
+    }
+    .main-nav a {
+        padding: 12px 0;
+        font-size: 1em;
+    }
+
+    .mobile-menu-toggle {
+        display: block; /* モバイルで表示 */
+        position: absolute;
+        right: 15px;
+        top: 25px;
+    }
+
+    /* ヒーローセクション */
+    .hero-section {
+        height: 70vh; /* モバイルでの高さを調整 */
+        margin-top: 85px; /* ヘッダーの高さ分下げる */
+    }
+    .hero-content {
+        margin-left: auto; /* 中央寄せ */
+        text-align: center;
+    }
+    .hero-main-title {
+        font-size: 2.8em;
+        text-align: center;
+    }
+    .hero-subtitle {
+        font-size: 1.2em;
+        text-align: center;
+    }
+    .hero-contact-wrapper {
+        position: static; /* 固定解除 */
+        transform: none; /* 中央寄せ解除 */
+        margin-top: 30px; /* 上に余白 */
+        margin-left: auto;
+        margin-right: auto;
+        width: 95%; /* 幅を広げる */
+    }
+    .hero-contact-label {
+        font-size: 1.1em;
+        padding: 10px 20px;
+    }
+    .hero-contact-buttons {
+        flex-direction: column; /* 縦並びに変更 */
+        gap: 15px;
+        padding: 15px;
+    }
+    .contact-btn {
+        width: 100%; /* 横幅いっぱいに */
+        padding: 18px 25px;
+        font-size: 0.95em;
+        flex-direction: row; /* 横並びにする */
+        justify-content: center;
+        align-items: center;
+    }
+    .contact-btn span {
+        font-size: 1.5em; /* モバイルで調整 */
+        margin-bottom: 0;
+        margin-right: 10px;
+    }
+    .contact-btn small {
+        font-size: 0.8em;
+        margin-top: 0;
+    }
+
+    /* お知らせセクション */
+    .news-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 0;
+    }
+    .news-list .news-date {
+        margin-bottom: 5px;
+        width: auto; /* 幅固定解除 */
+        font-size: 0.95em;
+    }
+    .news-list a {
+        margin-left: 0;
+        font-size: 1em;
+    }
+
+    /* サービスセクション */
+    .services-section .service-cards {
+        grid-template-columns: 1fr; /* 1列にする */
+        gap: 25px;
+    }
+    .service-card img {
+        height: 180px; /* モバイルでの画像高さ調整 */
+    }
+    .service-card.map-card {
+        height: auto; /* モバイルでは高さ自動 */
+    }
+    .service-card.map-card iframe {
+        min-height: 180px; /* モバイルでの地図最小高さ */
+    }
+    .service-card h3 {
+        font-size: 1.5em;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    .service-card p {
+        font-size: 0.9em;
+        margin-bottom: 20px;
+    }
+
+    /* CTAセクション */
+    .cta-section {
+        padding: 50px 0; /* モバイルでのパディング */
+    }
+    .cta-section p {
+        font-size: 1.1em;
+        margin-bottom: 30px;
+    }
+    .cta-contact-buttons {
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 30px;
+        max-width: 90%; /* 幅を調整 */
+    }
+    .cta-contact-btn {
+        width: 100%;
+        padding: 20px 30px;
+        flex-direction: row; /* 横並びにする */
+        justify-content: center;
+    }
+    .cta-contact-btn span {
+        font-size: 1.5em; /* モバイルで調整 */
+        margin-right: 15px;
+        margin-bottom: 0;
+    }
+    .cta-contact-btn small {
+        font-size: 0.8em;
+    }
+
+
+    /* フッター */
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 25px;
+    }
+    .footer-info,
+    .footer-nav {
+        min-width: unset;
+        width: 100%;
+    }
+    .footer-logo {
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+    .footer-logo img {
+        height: 45px; /* モバイルでのロゴサイズ */
+    }
+    .footer-site-name {
+        font-size: 1.3em;
+    }
+    .footer-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        margin-top: 0;
+    }
+    .footer-nav li a {
+        font-size: 0.95em;
+        padding: 3px 0;
+    }
+    .copyright {
+        margin-top: 30px;
+        padding-top: 15px;
+        font-size: 0.8em;
+    }
+}
