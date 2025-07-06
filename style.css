@@ -689,34 +689,90 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ============== ここから追加・修正されたCSS ============== */
 
-/* 法宝物セクションの画像とリストのスタイル調整 */
-.treasures-list {
-    list-style: none; /* デフォルトのリストマーカーを削除 */
+/* 蓮通寺についてのセクションの背景画像 */
+.about-rentsuji-section {
+    background-image: url(https://kugyounokai.com/wp-content/uploads/2022/04/about_kv_pc-1.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white; /* 背景画像が見えるようにテキスト色を白に */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6); /* テキストの視認性向上 */
+    padding: 100px 0; /* 上下のパディングを調整 */
+}
+.about-rentsuji-section .section-title {
+    color: white; /* タイトル色も白に */
+}
+.about-rentsuji-section .section-title::after {
+    background-color: white; /* 下線も白に */
+}
+.about-rentsuji-section p {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    text-align: center;
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+/* 由緒セクションの画像 */
+.history-image {
+    margin: 40px auto; /* 上下の余白と中央寄せ */
+    max-width: 800px; /* 画像の最大幅 */
+    display: block; /* 中央寄せのためにブロック要素に */
+    width: 100%; /* 親要素の幅に合わせる */
+    height: auto; /* アスペクト比を維持 */
+    border-radius: 8px; /* 角丸 */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* 影 */
+}
+
+/* 法宝物セクションの画像ギャラリー */
+.treasures-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 画像の列を自動調整 */
+    gap: 20px; /* 画像間の隙間 */
+    margin-top: 40px; /* 上のテキストとの間隔 */
+}
+
+.treasures-gallery img {
+    width: 100%; /* 親要素の幅に合わせる */
+    height: 200px; /* 高さを固定 */
+    object-fit: cover; /* 画像がコンテナを覆うように調整 */
+    border-radius: 8px; /* 角丸 */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* 影 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.treasures-gallery img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* 法宝物セクションの画像とリストのスタイル調整 (以前のtreasures-listは不要になったため削除) */
+/* .treasures-list {
+    list-style: none;
     padding: 0;
     margin: 0;
-    display: grid; /* グリッドレイアウトを適用 */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 画像とテキストの列を自動調整 */
-    gap: 30px; /* アイテム間の隙間 */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
 }
 
 .treasures-list li {
-    display: flex; /* リストアイテム内をFlexboxで配置 */
-    align-items: center; /* 垂直方向中央揃え */
-    gap: 15px; /* 画像とテキストの間の隙間 */
-    background-color: #fff; /* 背景色 */
-    padding: 20px; /* 内側の余白 */
-    border-radius: 8px; /* 角丸 */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* 軽い影 */
-    line-height: 1.4; /* 行の高さ */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    line-height: 1.4;
 }
 
 .treasures-list li img {
-    width: 100px; /* 画像の固定幅 */
-    height: 100px; /* 画像の固定高さ */
-    object-fit: cover; /* 画像がコンテナを覆うように調整 */
-    border-radius: 4px; /* 画像の角を少し丸く */
-    flex-shrink: 0; /* 画像が縮まないようにする */
-}
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+} */
 
 /* ページヒーローセクションのpタグが空になったことによる調整 */
 /* これにより、h1の下の空白を減らせます */
@@ -826,6 +882,11 @@ h1, h2, h3, h4, h5, h6 {
     .contact-btn {
         width: 100%;
         min-width: unset; /* 最小幅の制限を解除 */
+    }
+
+    /* モバイル版の蓮通寺についての背景画像 */
+    .about-rentsuji-section {
+        background-image: url(https://kugyounokai.com/wp-content/uploads/2022/04/about_kv_sp-2.jpg);
     }
 }
 
