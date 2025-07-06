@@ -1065,3 +1065,40 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1em;
     }
 }
+/* base/style.css のどこかに追記 */
+
+/* 境内紹介ページの画像スタイル */
+.keidai-intro-section .keidai-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 30px auto 60px; /* 上下に余白を追加 */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* 境内紹介ページのセクションタイトル */
+.keidai-intro-section .section-title {
+    text-align: left; /* 左寄せに変更 */
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 2.2em; /* 少し小さめに */
+    margin-top: 60px; /* 上に大きな余白 */
+    margin-bottom: 30px; /* 下に余白 */
+    padding-bottom: 15px; /* 下線との距離を調整 */
+    color: #004d40;
+}
+
+.keidai-intro-section .section-title::after {
+    left: 0; /* 左端に揃える */
+    transform: translateX(0);
+    width: 60px; /* 下線を短く */
+    height: 4px; /* 下線を調整 */
+    background-color: #004d40;
+}
+
+.keidai-intro-section p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
