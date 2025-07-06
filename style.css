@@ -252,25 +252,24 @@ h1, h2, h3, h4, h5, h6 {
     text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
 }
 
-/* ページごとのヒーローセクション（about.html用） */
+/* ページごとのヒーローセクション（about.html, keidai.html用） */
 .page-hero-about {
     padding: 80px 0; /* 余白を150pxから80pxに縮小 */
-    /* ここから背景画像を削除し、子要素のpictureで制御 */
     background-image: none;
     background-size: cover;
     background-position: center;
     color: white;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-    min-height: 350px; /* 必要に応じて調整。余白を減らしたので少し小さく */
+    min-height: 350px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     z-index: 1;
-    overflow: hidden; /* 画像がはみ出さないように */
+    overflow: hidden;
 }
 
-/* about.htmlのヒーローセクション背景画像 */
+/* ヒーローセクション背景画像 */
 .page-hero-about .hero-background-image {
     position: absolute;
     top: 0;
@@ -287,7 +286,7 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
 }
 
-/* ヒーローセクションのオーバーレイ（about.html用） */
+/* ヒーローセクションのオーバーレイ */
 .page-hero-about .hero-overlay {
     content: '';
     position: absolute;
@@ -301,15 +300,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .page-hero-about .section-title {
     color: white;
-    margin-bottom: 15px; /* 25pxから15pxに縮小 */
+    margin-bottom: 15px;
 }
 .page-hero-about .section-title::after {
     background-color: white;
 }
 .page-hero-about p {
-    font-size: 1.15em; /* 1.3emから1.15emに縮小 */
+    font-size: 1.15em;
     max-width: 700px;
-    margin: 0 auto 0px auto; /* 下の余白も調整 */
+    margin: 0 auto 0px auto;
     color: white;
 }
 
@@ -592,9 +591,9 @@ h1, h2, h3, h4, h5, h6 {
 
 /* 由緒セクションの画像 */
 .history-image {
-    max-width: 100%; /* 親要素の幅を超えないように */
-    height: auto; /* 比率を維持 */
-    display: block; /* 中央寄せのためにブロック要素に */
+    max-width: 100%;
+    height: auto;
+    display: block;
     margin: 30px auto; /* 上下左右に余白、中央寄せ */
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -603,16 +602,17 @@ h1, h2, h3, h4, h5, h6 {
 /* 法宝物ギャラリー */
 .treasures-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* PC版は最低200px、最大で均等割り */
-    gap: 20px; /* 画像間の余白 */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
     margin-top: 40px;
     margin-bottom: 40px;
+    justify-content: center; /* 画像を中央寄せ */
 }
 
 .treasures-gallery img {
     width: 100%;
-    height: 180px; /* 画像の高さを固定 */
-    object-fit: cover; /* 画像が切り取られても縦横比を維持 */
+    height: 180px;
+    object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -624,10 +624,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .treasures-text-list {
-    list-style: disc; /* 黒丸リスト */
-    padding-left: 20px; /* 左側にパディング */
-    margin-top: 30px; /* 上部に余白 */
-    line-height: 2; /* 行間 */
+    list-style: disc;
+    padding-left: 20px;
+    margin-top: 30px;
+    line-height: 2;
     color: #555;
     max-width: 800px;
     margin-left: auto;
@@ -641,32 +641,31 @@ h1, h2, h3, h4, h5, h6 {
 
 /* CTAセクション (「お問い合わせ」セクション) */
 .cta-section {
-    background-color: #f8f8f8; /* 画像に合わせて背景色をbodyと同じか近い色に */
-    color: #333; /* テキスト色を暗く */
+    background-color: #f8f8f8;
+    color: #333;
     text-align: center;
-    padding: 45px 0; /* 上下余白を縮小 (90px -> 45px) */
-    box-shadow: none; /* 画像には影がないため削除 */
-    border-radius: 0; /* 角丸も削除 */
+    padding: 45px 0;
+    box-shadow: none;
+    border-radius: 0;
 }
 
 .cta-section .section-title {
-    color: #333; /* タイトルを暗い色に */
-    margin-top: 0; /* 上部余白をゼロに */
-    margin-bottom: 50px; /* 下部の余白を少し縮小 */
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 50px;
 }
 
 .cta-section .section-title::after {
-    background-color: #004d40; /* 下線を元の緑に */
+    background-color: #004d40;
 }
 
 .cta-section p {
     font-size: 1.2em;
-    /* ここをさらに修正：間隔を縮めるため、margin-bottomを減らします */
-    margin-bottom: 15px; /* 25pxから15pxに減少 */
+    margin-bottom: 15px;
     max-width: 980px;
     margin-left: auto;
     margin-right: auto;
-    color: #555; /* 本文の色を暗く */
+    color: #555;
 }
 
 /* CTAセクションの連絡先ボタンのラッパー */
@@ -675,8 +674,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     gap: 40px;
     flex-wrap: wrap;
-    /* ここをさらに修正：間隔を縮めるため、margin-topを減らします */
-    margin-top: 15px; /* 25pxから15pxに減少 */
+    margin-top: 15px;
     width: 100%;
     max-width: 700px;
     margin-left: auto;
@@ -697,34 +695,34 @@ h1, h2, h3, h4, h5, h6 {
     flex: 1 1 300px;
     min-height: 110px;
     
-    background-color: white; /* 背景を白に */
-    color: #333; /* 通常文字色を暗く */
-    border: 1px solid #00796b; /* 枠線を緑色に */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* 影を調整 */
+    background-color: white;
+    color: #333;
+    border: 1px solid #00796b;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     
     transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 /* ホバー時のスタイル */
 .cta-contact-btn:hover {
-    background-color: #f0f0f0; /* ホバー時にわずかに背景色を変更 */
-    border-color: #004d40; /* ホバー時に枠線を濃い緑に */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* 影を強める */
-    transform: translateY(-2px); /* 少し浮き上がるように */
+    background-color: #f0f0f0;
+    border-color: #004d40;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
 }
 
 /* CTAボタン内のテキスト調整 */
 .cta-contact-btn span {
     font-size: 1.7em;
     font-weight: 900;
-    color: #004d40; /* メインテキストを緑に */
+    color: #004d40;
     margin-top: 0;
     margin-bottom: 5px;
     display: block;
 }
 .cta-contact-btn small {
     font-size: 0.9em;
-    color: #555; /* サブテキストを暗い色に */
+    color: #555;
     margin-top: 0;
     display: block;
 }
@@ -732,7 +730,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* フッター */
 .footer {
-    background-color: #f7f7f7; /* 薄いグレーの背景 */
+    background-color: #f7f7f7;
     padding: 40px 0;
     border-top: 1px solid #eee;
     color: #555;
@@ -760,17 +758,9 @@ h1, h2, h3, h4, h5, h6 {
 
 /* フッターロゴのサイズ調整 */
 .footer-logo img {
-    height: 50px; /* 画像のロゴサイズに合わせる */
+    height: 50px;
     width: auto;
     margin-right: 15px;
-}
-
-/* フッターのサイト名（削除済みのため、このルールは実質影響なし） */
-.footer-site-name {
-    font-size: 1.4em;
-    font-weight: bold;
-    color: #333;
-    white-space: nowrap;
 }
 
 /* フッターナビゲーションの横並び変更点 */
@@ -812,6 +802,58 @@ h1, h2, h3, h4, h5, h6 {
     color: #777;
 }
 
+/* 境内紹介ページ固有のスタイル */
+.keidai-content-block {
+    margin-bottom: 50px; /* 各紹介ブロック間の余白 */
+}
+
+.keidai-content-block h2 {
+    text-align: center; /* タイトルを中央寄せ */
+    margin-bottom: 30px;
+}
+
+/* 単一画像の配置を中央寄せに */
+.keidai-image.single-image {
+    display: block; /* 中央寄せのためにブロック要素に */
+    margin: 0 auto 30px auto; /* 上下に30px、左右中央に */
+    max-width: 100%; /* 親要素の幅を超えないように */
+    height: auto; /* 比率を維持 */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* 複数の画像を扱うkeidai-imagesのスタイル */
+.keidai-images {
+    display: flex; /* Flexboxで横並び */
+    flex-wrap: wrap; /* 必要に応じて折り返し */
+    justify-content: center; /* 画像を中央寄せ */
+    gap: 20px; /* 画像間の余白 */
+    margin-bottom: 30px; /* 画像群の下に余白 */
+}
+
+.keidai-images .keidai-image {
+    max-width: 48%; /* 2枚並べる場合に調整。gapも考慮 */
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* レスポンシブ対応: keidai-imagesの画像サイズ */
+@media (max-width: 767px) {
+    .keidai-images {
+        flex-direction: column; /* モバイルでは縦並び */
+        align-items: center; /* 中央寄せ */
+        gap: 15px;
+    }
+    .keidai-images .keidai-image {
+        max-width: 90%; /* モバイルでは幅を広げる */
+    }
+    .keidai-content-block {
+        margin-bottom: 30px;
+    }
+}
+
 
 /* --- レスポンシブデザイン --- */
 @media (max-width: 1024px) {
@@ -828,14 +870,14 @@ h1, h2, h3, h4, h5, h6 {
 
     /* Tablet: page-hero-about の調整 */
     .page-hero-about {
-        padding: 60px 0; /* PC版からさらに調整 */
+        padding: 60px 0;
         min-height: 300px;
     }
     .page-hero-about .section-title {
-        margin-bottom: 10px; /* さらに詰める */
+        margin-bottom: 10px;
     }
     .page-hero-about p {
-        font-size: 1.1em; /* 1.2emから1.1emに調整 */
+        font-size: 1.1em;
     }
 }
 
@@ -850,15 +892,15 @@ h1, h2, h3, h4, h5, h6 {
 
     /* モバイル時のセクション共通スタイル余白調整 */
     .section-common {
-        padding: 30px 0; /* 上下の余白を縮小 (30px は維持) */
-        margin-bottom: 20px; /* 下部の余白をさらに縮小 (25px -> 20px) */
+        padding: 30px 0;
+        margin-bottom: 20px;
     }
 
     /* モバイル時のセクションタイトル上部余白をさらに縮小 */
     .section-title {
         font-size: 2em;
-        margin-top: 0; /* 上部余白をゼロに */
-        margin-bottom: 30px; /* 下部の余白を少し縮小 (40px -> 30px) */
+        margin-top: 0;
+        margin-bottom: 30px;
         padding-bottom: 15px;
     }
     .section-title::after {
@@ -984,16 +1026,16 @@ h1, h2, h3, h4, h5, h6 {
 
     /* Mobile: page-hero-about の調整 */
     .page-hero-about {
-        padding: 40px 0; /* モバイル版でさらに調整 */
-        min-height: 250px; /* 必要に応じてさらに小さく */
+        padding: 40px 0;
+        min-height: 250px;
     }
     .page-hero-about .section-title {
-        font-size: 2em; /* モバイルサイズに合わせる */
-        margin-bottom: 8px; /* さらに詰める */
+        font-size: 2em;
+        margin-bottom: 8px;
     }
     .page-hero-about p {
-        font-size: 0.95em; /* 1emから0.95emに調整 */
-        margin-bottom: 0px; /* ほぼゼロに */
+        font-size: 0.95em;
+        margin-bottom: 0px;
     }
 
 
@@ -1039,21 +1081,21 @@ h1, h2, h3, h4, h5, h6 {
 
     /* 由緒セクションの画像（モバイル版） */
     .history-image {
-        margin: 25px auto; /* モバイルでの上下余白調整 */
+        margin: 25px auto;
     }
 
     /* 法宝物ギャラリー モバイル版 */
     .treasures-gallery {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* モバイル版は最低140px、2列にしやすいように */
-        gap: 15px; /* モバイルでの画像間余白 */
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 15px;
         margin-top: 30px;
         margin-bottom: 30px;
     }
     .treasures-gallery img {
-        height: 120px; /* モバイルでの画像高さ調整 */
+        height: 120px;
     }
     .treasures-text-list {
-        margin-top: 25px; /* モバイルでの上部余白 */
+        margin-top: 25px;
         padding-left: 15px;
         font-size: 0.95em;
     }
@@ -1061,42 +1103,38 @@ h1, h2, h3, h4, h5, h6 {
 
     /* CTAセクション (「お問い合わせ」セクション) モバイル版 */
     .cta-section {
-        padding: 30px 0; /* 上下余白を縮小 (50px -> 30px) */
+        padding: 30px 0;
     }
     .cta-section p {
         font-size: 1.1em;
-        /* ここをさらに修正：モバイルでも間隔を詰めるため、margin-bottomを調整 */
-        margin-bottom: 10px; /* 20pxから10pxに減少 */
+        margin-bottom: 10px;
     }
     .cta-contact-buttons {
-        flex-direction: column; /* 縦並びにする */
-        gap: 15px; /* ボタン間の余白を調整 */
-        /* ここをさらに修正：モバイルでも間隔を詰めるため、margin-topを調整 */
-        margin-top: 10px; /* 20pxから10pxに減少 */
-        max-width: 320px; /* ★ボタン全体の最大幅を固定（画像に合わせて調整）★ */
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 10px;
+        max-width: 320px;
         margin-left: auto;
         margin-right: auto;
-        /* flex-wrap: wrap; は不要 */
-        /* justify-content: center; はflex-direction: column; のため不要 */
     }
     .cta-contact-btn {
-        width: 100%; /* 親要素のmax-widthに合わせて100%に */
-        padding: 15px 25px; /* パディングを調整して小さく */
-        flex-direction: column; /* spanとsmallを縦に並べる */
-        align-items: center; /* 内容を中央揃え */
-        text-align: center; /* テキストも中央揃え */
+        width: 100%;
+        padding: 15px 25px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
         justify-content: center;
-        min-height: 80px; /* ボタンの最小高さを設定（必要であれば調整） */
-        flex: none; /* flex: 1 1 300px; を解除 */
+        min-height: 80px;
+        flex: none;
     }
     .cta-contact-btn span {
-        font-size: 1.2em; /* メインの文字サイズを小さく */
-        margin-right: 0; /* 右マージンを削除 */
-        margin-bottom: 5px; /* 下マージンを追加 */
+        font-size: 1.2em;
+        margin-right: 0;
+        margin-bottom: 5px;
         display: block;
     }
     .cta-contact-btn small {
-        font-size: 0.75em; /* smallタグの文字サイズをさらに小さく */
+        font-size: 0.75em;
         display: block;
     }
 
@@ -1119,10 +1157,6 @@ h1, h2, h3, h4, h5, h6 {
     }
     .footer-logo img {
         height: 45px;
-    }
-    /* フッターのサイト名（削除済みのため、このルールは実質影響なし） */
-    .footer-site-name {
-        font-size: 1.3em;
     }
     .footer-nav ul {
         flex-direction: column;
