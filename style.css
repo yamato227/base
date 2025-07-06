@@ -864,50 +864,9 @@ h1, h2, h3, h4, h5, h6 {
         text-align: center;
     }
     
-    /* ★修正箇所: ヒーロー連絡先セクションのモバイル表示を調整★ */
+    /* ★修正箇所: ヒーロー連絡先セクションのモバイル表示を非表示に★ */
     .hero-contact-wrapper {
-        position: static; /* 絶対配置を解除して通常フローに */
-        transform: none;
-        margin-top: 0; /* 上部のマージンをなくす */
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%; /* 幅を100%に */
-        padding: 0 15px; /* 左右のパディングを追加 */
-        box-sizing: border-box; /* パディングを含めて幅を計算 */
-        bottom: auto; /* bottomプロパティを解除 */
-        right: auto; /* rightプロパティを解除 */
-    }
-
-    .hero-contact-label {
-        font-size: 1em; /* 文字を小さく */
-        padding: 8px 15px; /* パディングを小さく */
-        border-radius: 5px 5px 0 0; /* 角丸を小さく */
-        margin-bottom: -1px;
-    }
-
-    .hero-contact-buttons {
-        flex-direction: column; /* ボタンを縦並びに */
-        gap: 10px; /* ボタン間のギャップを小さく */
-        padding: 15px; /* パディングを小さく */
-        border-radius: 0 0 5px 5px; /* 角丸を小さく */
-        width: 100%;
-    }
-
-    .contact-btn {
-        width: 100%; /* ボタン幅を100%に */
-        padding: 12px 15px; /* パディングを小さく */
-        font-size: 0.9em; /* 文字を小さく */
-        flex-direction: row; /* テキストとアイコンを横並びに */
-        justify-content: center;
-    }
-    .contact-btn span {
-        font-size: 1.3em; /* アイコンを小さく */
-        margin-bottom: 0;
-        margin-right: 8px; /* テキストとの間隔を小さく */
-    }
-    .contact-btn small {
-        font-size: 0.75em; /* 小文字をさらに小さく */
-        margin-top: 0;
+        display: none; /* モバイルビューで非表示にする */
     }
     
     /* ヒーローセクションの画像表示 (現状維持ですが、問題があればここを見直します) */
