@@ -307,7 +307,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: white;
 }
 .page-hero-about p {
-    font-size: 1.3em;
+    font-size: 1.15em; /* 1.3emから1.15emに縮小 */
     max-width: 700px;
     margin: 0 auto 0px auto; /* 下の余白も調整 */
     color: white;
@@ -835,7 +835,7 @@ h1, h2, h3, h4, h5, h6 {
         margin-bottom: 10px; /* さらに詰める */
     }
     .page-hero-about p {
-        font-size: 1.2em; /* 必要であれば調整 */
+        font-size: 1.1em; /* 1.2emから1.1emに調整 */
     }
 }
 
@@ -992,7 +992,7 @@ h1, h2, h3, h4, h5, h6 {
         margin-bottom: 8px; /* さらに詰める */
     }
     .page-hero-about p {
-        font-size: 1em; /* モバイルサイズに合わせる */
+        font-size: 0.95em; /* 1emから0.95emに調整 */
         margin-bottom: 0px; /* ほぼゼロに */
     }
 
