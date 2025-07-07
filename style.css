@@ -727,7 +727,6 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
 }
 
-
 /* フッター */
 .footer {
     background-color: #f7f7f7;
@@ -1178,6 +1177,112 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 0.8em;
     }
 }
+
+/* プライバシーポリシーページ専用のスタイル */
+.policy-content {
+    background-color: #ffffff;
+    padding: 50px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    max-width: 900px;
+    margin: 50px auto;
+    line-height: 1.8;
+    color: #333;
+}
+.policy-content h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+.policy-content h3 {
+    font-size: 1.2em;
+    color: #555;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+.policy-content p {
+    margin-bottom: 15px;
+}
+.policy-content ul, .policy-content ol {
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+.policy-content li {
+    margin-bottom: 8px;
+}
+.contact-info {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-top: 40px;
+    border-radius: 5px;
+}
+.contact-info p {
+    margin-bottom: 5px;
+}
+.contact-info strong {
+    color: #007bff;
+}
+
+/* ★ここからページトップへ戻るボタンのスタイルを追加します★ */
+#page-top {
+    position: fixed; /* 画面に固定 */
+    right: 30px; /* 右からの位置 */
+    bottom: 30px; /* 下からの位置 */
+    z-index: 99; /* 他の要素より手前に表示 (ヘッダーなどが100なので、それより少し下) */
+    display: none; /* 最初は非表示 (JavaScriptで制御) */
+    /* common-btn, common-btn.small クラスのスタイルが適用されます */
+    padding: 15px 18px; /* common-btn.small のpaddingをベースに、調整して正方形に近く */
+    border-radius: 50%; /* 丸いボタンにする */
+    width: 55px; /* 幅を固定 */
+    height: 55px; /* 高さを固定 */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* 影を追加 */
+    background-color: #00796b; /* ボタンの背景色（共通ボタンより少し濃い色など、またはサイトテーマ色） */
+    border: none; /* ボーダーなし */
+    display: flex; /* 矢印を中央に配置するため (初期はdisplay: none;なのでこれはJSでflexに変わった時に適用) */
+    justify-content: center; /* 矢印を水平中央に */
+    align-items: center; /* 矢印を垂直中央に */
+    cursor: pointer; /* カーソルをポインターに */
+}
+
+#page-top:hover {
+    background-color: #004d40; /* ホバー時の背景色 */
+    transform: translateY(-3px); /* ホバー時のアニメーション */
+    /* box-shadow も調整しても良い */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+/* 上矢印のスタイル */
+#page-top .arrow-up {
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 15px solid white; /* 上向き矢印の色 */
+    margin-top: -3px; /* 矢印の位置調整 */
+}
+
+/* モバイル対応: ボタンの位置とサイズを調整 (767px以下) */
+@media (max-width: 767px) {
+    #page-top {
+        right: 15px; /* モバイルでは少し内側に */
+        bottom: 15px; /* モバイルでは少し上側に */
+        width: 45px; /* 小さくする */
+        height: 45px;
+        padding: 0; /* パディングをリセット（arrow-upのサイズで調整するため） */
+    }
+    #page-top .arrow-up {
+        border-left-width: 8px;
+        border-right-width: 8px;
+        border-bottom-width: 12px;
+        margin-top: -2px; /* モバイルでの矢印の位置調整 */
+    }
+}
+/* ★ここまで追加します★ */
 
 /* プライバシーポリシーページ専用のスタイル */
 .policy-content {
