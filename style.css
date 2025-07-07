@@ -1284,3 +1284,29 @@ h1, h2, h3, h4, h5, h6 {
 .contact-info strong {
     color: #007bff;
 }
+@media (max-width: 767px) {
+    /* 共通の page-hero セクションの調整 */
+    .page-hero {
+        padding: 100px 0 40px !important;
+        min-height: 250px;
+        margin-top: 0 !important;
+    }
+
+    /* 特定ページ用の追加微調整（必要に応じて） */
+    .page-hero-about {
+        /* 追加の調整が必要な場合のみ変更 */
+        padding-top: 100px !important;
+    }
+
+    .page-hero-keidai {
+        padding-top: 100px !important;
+    }
+
+    header {
+        margin-bottom: 0 !important;
+    }
+
+    body, main {
+        padding-top: 0 !important;
+    }
+}
