@@ -1028,10 +1028,8 @@ h1, h2, h3, h4, h5, h6 {
 
     /* Mobile: page-hero-about の調整 */
     .page-hero-about {
-        padding: 125px 0 40px; /* ★ここを変更しました★ */
+        padding: 40px 0;
         min-height: 250px;
-        /* もし以前に margin-top: 85px; があれば、この行を削除またはコメントアウト */
-        /* margin-top: 85px; */ 
     }
     .page-hero-about .section-title {
         font-size: 2em;
@@ -1179,6 +1177,56 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 0.8em;
     }
 }
+
+/* プライバシーポリシーページ専用のスタイル */
+.policy-content {
+    background-color: #ffffff;
+    padding: 50px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    max-width: 900px;
+    margin: 50px auto;
+    line-height: 1.8;
+    color: #333;
+}
+.policy-content h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+.policy-content h3 {
+    font-size: 1.2em;
+    color: #555;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+.policy-content p {
+    margin-bottom: 15px;
+}
+.policy-content ul, .policy-content ol {
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+.policy-content li {
+    margin-bottom: 8px;
+}
+.contact-info {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-top: 40px;
+    border-radius: 5px;
+}
+.contact-info p {
+    margin-bottom: 5px;
+}
+.contact-info strong {
+    color: #007bff;
+}
+
 /* ★ここからページトップへ戻るボタンのスタイルを追加します★ */
 #page-top {
     position: fixed; /* 画面に固定 */
@@ -1284,29 +1332,138 @@ h1, h2, h3, h4, h5, h6 {
 .contact-info strong {
     color: #007bff;
 }
-@media (max-width: 767px) {
-    /* 共通の page-hero セクションの調整 */
-    .page-hero {
-        padding: 100px 0 40px !important;
-        min-height: 250px;
-        margin-top: 0 !important;
-    }
 
-    /* 特定ページ用の追加微調整（必要に応じて） */
-    .page-hero-about {
-        /* 追加の調整が必要な場合のみ変更 */
-        padding-top: 100px !important;
-    }
+これが元々のaboutです。
 
-    .page-hero-keidai {
-        padding-top: 100px !important;
-    }
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蓮通寺について | 浄土真宗 蓮通寺</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../img/kamon.jpg">
+</head>
+<body>
 
-    header {
-        margin-bottom: 0 !important;
-    }
+    <header class="header">
+        <div class="header-inner">
+            <div class="site-logo">
+                <a href="/base/"> <img src="../img/logo-1.png" alt="浄土真宗 蓮通寺">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/base/">ホーム</a></li> <li class="has-dropdown">
+                        <a href="#">蓮通寺について</a>
+                        <ul class="dropdown">
+                            <li><a href="/base/pages/about.html">蓮通寺について</a></li>
+                            <li><a href="/base/pages/keidai.html">境内紹介</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/base/pages/service.html">年間行事・法要</a></li>
+                    <li><a href="/base/pages/news.html">お知らせ</a></li> <li><a href="/base/pages/access.html">アクセス</a></li>
+                    <li><a href="/base/pages/contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" aria-label="モバイルメニューを開く">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
 
-    body, main {
-        padding-top: 0 !important;
-    }
-}
+    <main>
+        <section class="page-hero-about section-common">
+            <picture class="hero-background-image">
+                <source srcset="../img/about_kv_sp-2.jpg" media="(max-width: 767px)">
+                <img src="../img/about_kv_pc-1.jpg" alt="蓮通寺の風景">
+            </picture>
+            <div class="hero-overlay"></div>
+            <div class="container text-center">
+                <h1 class="section-title">蓮通寺について</h1>
+                <p>蓮通寺の由緒や、代々受け継がれてきた貴重な法宝物をご紹介いたします。</p>
+            </div>
+        </section>
+
+        <section class="about-section section-common">
+            <div class="container">
+                <h2 class="section-title">由緒</h2>
+                <p>源平争乱の寿永三年（1184年）、征夷大将軍源義仲は粟津ヶ原で敗死し、その室山吹御前は子息義隆・義順を伴い、北近江浅井郡の山中で世の浮沈を窺って暮らしていたが、義仲を破った頼朝・義経の兄弟も世を去り、琵琶湖にすぐ近い海津の荘に住まいを移したところ、本願寺御開山親鸞聖人、越後に流罪となり琵琶湖を舟で渡ってこられ海津にお着きになり、義隆・義順兄弟と師弟の約諾を交わしてくださり、兄の義隆は海津荘岩谷の地で願慶寺開基となり、弟の義順は浅井郡塩津荘岩熊に赴き蓮通寺の開基となった。</p>
+                <p>時が下って本願寺中興された第八世蓮如上人からも教えをいただき、本願寺東西分派の際には教如上人に従い東本願寺に属し、第十三世宣如上人の次男である、長浜御坊大通寺霊瑞院宣澄師の曾孫が當院に入寺し、公家の綾小路家とも姻戚関係を結び、以降法儀相続して現在に至る。</p>
+                <img src="../img/about_03.jpg" alt="蓮通寺の由緒を表す画像" class="history-image">
+            </div>
+        </section>
+
+        <section class="treasures-section section-common bg-light-gray">
+            <div class="container">
+                <h2 class="section-title">法宝物</h2>
+                <div class="treasures-gallery">
+                    <img src="../img/h1amida.jpg" alt="阿弥陀如来像">
+                    <img src="../img/h2sinran.jpg" alt="親鸞聖人像">
+                    <img src="../img/h3.jpg" alt="法宝物3">
+                    <img src="../img/h4.jpg" alt="法宝物4">
+                </div>
+                <ul class="treasures-text-list">
+                    <li>親鸞聖人御真筆・十字名号</li>
+                    <li>親鸞聖人御真筆・六字名号</li>
+                    <li>蓮如上人御真筆・六字名号</li>
+                    <li>伝・親鸞聖人御自刻御影像</li>
+                    <li>兆伝司筆・聖徳太子真向御影（写真）</li>
+                    <li>護国山大聖寺本尊・大日如来坐像（西浅井町指定文化財・平安時代）</li>
+                    <li>薬師如来坐像（平安時代）</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contact" class="cta-section section-common">
+            <div class="container">
+                <h2 class="section-title">お問い合わせ</h2>
+                <p>ご葬儀、ご法要、その他ご不明な点がございましたら、お気軽にお問い合わせください。</p>
+                
+                <div class="cta-contact-buttons">
+                    <a href="/base/pages/contact.html" class="cta-contact-btn"> <span>メールでのご相談</span>
+                        <small>24時間受付中</small>
+                    </a>
+                    <a href="tel:0749-880-0713" class="cta-contact-btn phone-btn">
+                        <span>電話でのご相談</span>
+                        <small>営業時間 9:00〜17:00</small>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <img src="../img/logo-1.png" alt="蓮通寺">
+                    </div>
+                </div>
+                <nav class="footer-nav">
+                    <ul>
+                        <li><a href="/base/">ホーム</a></li> <li><a href="/base/pages/about.html">蓮通寺について</a></li>
+                        <li><a href="/base/pages/keidai.html">境内紹介</a></li>
+                        <li><a href="/base/pages/service.html">年間行事・法要</a></li>
+                        <li><a href="/base/pages/news.html">お知らせ</a></li> <li><a href="/base/pages/access.html">アクセス</a></li>
+                        <li><a href="/base/pages/contact.html">お問い合わせ</a></li>
+                        <li><a href="/base/pages/privacy.html">プライバシーポリシー</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="copyright">
+                <p>© 2025 Rentsuji. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
