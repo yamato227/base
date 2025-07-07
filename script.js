@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ヒーロースライドショー (元のコードから変更なし。モバイルメニューの修正とは無関係なため)
+    // ヒーロースライドショー
     const slideshowImages = document.querySelectorAll('.slideshow-image');
     let currentImageIndex = 0;
 
@@ -78,5 +78,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (slideshowImages.length > 1) {
         setInterval(showNextImage, 5000);
+    }
+
+    // ここからページトップスクロール機能を追加
+    const pageTopBtn = document.getElementById('page-top');
+
+    // ボタンが存在する場合のみ処理を有効にする
+    if (pageTopBtn) {
+        // スクロールイベントでボタンの表示・非表示を切り替える
+        window.addEventListener('scroll', function() {
+            // スクロール量が200pxを超えたらボタンを表示
+            if (window.scrollY > 200) {
+                pageTopBtn.style.display = 'flex'; // CSSで指定したflexを適用して中央揃えを維持
+            } else {
+                pageTopBtn.style.display = 'none';
+            }
+        });
+
+        // ボタンクリックでページトップへスムーズスクロール
+        pageTopBtn.addEventListener('click', function(e) {
+            e.preventDefault(); // デフォルトのリンク動作（#へのジャンプ）を無効化
+            window.scrollTo({
+                top: 0,            // ページの最上部へ
+                behavior: 'smooth' // スムーズにスクロール
+            });
+        });
     }
 });
