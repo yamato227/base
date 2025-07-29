@@ -9,13 +9,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (mobileMenuToggle && mainNav) {
         mobileMenuToggle.addEventListener('click', function() {
-            mainNav.classList.toggle('is-active');
+            const isExpanded = mainNav.classList.toggle('is-active'); // メニューの状態をトグルし、真偽値を取得
             mobileMenuToggle.classList.toggle('open');
             body.classList.toggle('no-scroll'); // bodyにno-scrollクラスをトグル
-        });
 
-        // ドロップダウンメニューの制御はHTMLから削除されたため、このブロックは完全に削除
-        // 以前コメントアウトしていた部分も完全に削除します。
+            // ARIA属性を更新して、現在のメニューの状態を支援技術に伝える
+            mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
+        });
 
         // 画面サイズがモバイルブレイクポイントより大きくなったらモバイルメニューをリセット
         window.addEventListener('resize', function() {
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 mainNav.classList.remove('is-active');
                 mobileMenuToggle.classList.remove('open');
                 body.classList.remove('no-scroll'); // no-scrollクラスを削除
-                // ドロップダウンメニューのリセットも不要になったため削除
+                mobileMenuToggle.setAttribute('aria-expanded', 'false'); // PCサイズでは閉じた状態にリセット
             }
         });
 
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 mainNav.classList.remove('is-active');
                 mobileMenuToggle.classList.remove('open');
                 body.classList.remove('no-scroll'); // no-scrollクラスを削除
-                // ドロップダウンメニューのリセットも不要になったため削除
+                mobileMenuToggle.setAttribute('aria-expanded', 'false'); // 閉じた状態にリセット
             }
         });
     }
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setInterval(showNextImage, 5000);
     }
 
-    // ここからページトップスクロール機能を追加
+    // ページトップスクロール機能
     const pageTopBtn = document.getElementById('page-top');
 
     // ボタンが存在する場合のみ処理を有効にする
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
         pageTopBtn.addEventListener('click', function(e) {
             e.preventDefault(); // デフォルトのリンク動作（#へのジャンプ）を無効化
             window.scrollTo({
-                top: 0,         // ページの最上部へ
+                top: 0,          // ページの最上部へ
                 behavior: 'smooth' // スムーズにスクロール
             });
         });
