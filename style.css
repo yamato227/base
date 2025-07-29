@@ -310,6 +310,9 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 900px; /* ここを調整してテキストが1行に収まるように広げました */
     margin: 0 auto 0px auto;
     color: white;
+    /* 長い単語の改行を調整 */
+    overflow-wrap: break-word;
+    word-wrap: break-word; /* 互換性のための旧プロパティ */
 }
 
 
@@ -386,6 +389,9 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 600px;
     text-align: left;
     margin-top: 15px;
+    /* 長い単語の改行を調整 */
+    overflow-wrap: break-word;
+    word-wrap: break-word; /* 互換性のための旧プロパティ */
 }
 
 /* ヒーローセクション下部の連絡先ボタンの新しいラッパー */
@@ -583,6 +589,9 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 25px;
     font-size: 1em;
     color: #555;
+    /* 長い単語の改行を調整 */
+    overflow-wrap: break-word;
+    word-wrap: break-word; /* 互換性のための旧プロパティ */
 }
 
 .service-card .common-btn {
@@ -632,6 +641,9 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    /* 長い単語の改行を調整 */
+    overflow-wrap: break-word;
+    word-wrap: break-word; /* 互換性のための旧プロパティ */
 }
 
 .treasures-text-list li {
@@ -666,6 +678,9 @@ h1, h2, h3, h4, h5, h6 {
     margin-left: auto;
     margin-right: auto;
     color: #555;
+    /* 長い単語の改行を調整 */
+    overflow-wrap: break-word;
+    word-wrap: break-word; /* 互換性のための旧プロパティ */
 }
 
 /* CTAセクションの連絡先ボタンのラッパー */
@@ -855,26 +870,22 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.8;
     color: #555;
     font-size: 1.1em;
+    /* 長い単語の改行を調整 */
+    overflow-wrap: break-word;
+    word-wrap: break-word; /* 互換性のための旧プロパティ */
 }
 
 /* biwaichi-points のスタイル：中央寄せを維持 */
 .biwaichi-points {
-    display: flex;           /* 子要素をFlexboxで横並びにする（今は1つですが、将来増やす可能性を考慮） */
+    display: flex;             /* 子要素をFlexboxで横並びにする（今は1つですが、将来増やす可能性を考慮） */
     justify-content: center; /* 子要素を中央寄せにする */
-    flex-wrap: wrap;         /* 画面幅が足りない場合に折り返す */
-    gap: 30px;               /* 子要素間の間隔 (現在は1つなので影響なし) */
+    flex-wrap: wrap;           /* 画面幅が足りない場合に折り返す */
+    gap: 30px;                 /* 子要素間の間隔 (現在は1つなので影響なし) */
     margin-bottom: 40px;
 }
 
 /* .point-item のスタイル：カードの見た目と幅制御 */
 .biwaichi-points .point-item {
-    /* point-item 自体をカード表示にする必要がなくなったため、以下のスタイルをコメントアウトまたは削除 */
-    /* max-width: 300px; */
-    /* width: 100%; */
-    /* background-color: #fff; */
-    /* padding: 20px; */
-    /* border-radius: 8px; */
-    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); */
     text-align: center; /* 画像を中央に配置するために必要 */
     margin: 0; /* 親要素のflexboxで中央寄せするため、個別のmarginは不要に */
 }
@@ -901,6 +912,9 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1em;
     color: #666;
     margin-bottom: 30px;
+    /* 長い単語の改行を調整 */
+    overflow-wrap: break-word;
+    word-wrap: break-word; /* 互換性のための旧プロパティ */
 }
 
 .biwaichi-access-guide a {
@@ -1300,6 +1314,9 @@ h1, h2, h3, h4, h5, h6 {
     margin: 50px auto;
     line-height: 1.8;
     color: #333;
+    /* 長い単語の改行を調整 */
+    overflow-wrap: break-word;
+    word-wrap: break-word; /* 互換性のための旧プロパティ */
 }
 .policy-content h2 {
     font-size: 1.8em;
@@ -1317,6 +1334,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 .policy-content p {
     margin-bottom: 15px;
+    /* 長い単語の改行を調整 */
+    overflow-wrap: break-word;
+    word-wrap: break-word; /* 互換性のための旧プロパティ */
 }
 .policy-content ul, .policy-content ol {
     margin-bottom: 15px;
@@ -1334,6 +1354,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 .contact-info p {
     margin-bottom: 5px;
+    /* 長い単語の改行を調整 */
+    overflow-wrap: break-word;
+    word-wrap: break-word; /* 互換性のための旧プロパティ */
 }
 .contact-info strong {
     color: #007bff;
@@ -1397,6 +1420,9 @@ h1, h2, h3, h4, h5, h6 {
 /* ★ここまで追加します★ */
 
 /* プライバシーポリシーページ専用のスタイル */
+/* このブロックは重複しているので削除または統合してください */
+/* 以下のスタイルは既に上記に記述されています */
+/*
 .policy-content {
     background-color: #ffffff;
     padding: 50px 30px;
@@ -1444,3 +1470,4 @@ h1, h2, h3, h4, h5, h6 {
 .contact-info strong {
     color: #007bff;
 }
+*/
