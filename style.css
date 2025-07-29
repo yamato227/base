@@ -873,7 +873,7 @@ h1, h2, h3, h4, h5, h6 {
 /* ★新規追加: biwaichi-section 内の直接の img タグのスタイルを調整 (kesiki1.JPG用) ★ */
 .biwaichi-section > .container > p > img {
     max-width: 100%; /* 親要素の幅を超えないようにする */
-    height: auto;    /* アスペクト比を維持 */
+    height: auto;   /* アスペクト比を維持 */
     display: block;  /* 中央寄せのためにブロック要素に */
     margin: 0 auto 20px auto; /* 中央寄せと下部余白 */
     border-radius: 8px;
@@ -881,7 +881,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .biwaichi-description {
-    max-width: 700px;
+    /* ★修正箇所: max-width の値を増やします★ */
+    max-width: 800px; /* 例: 700px から 800px または 900px に変更 */
     margin: 0 auto 40px;
     line-height: 1.8;
     color: #555;
@@ -893,10 +894,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* biwaichi-points のスタイル：中央寄せを維持 */
 .biwaichi-points {
-    display: flex;              /* 子要素をFlexboxで横並びにする（今は1つですが、将来増やす可能性を考慮） */
+    display: flex;           /* 子要素をFlexboxで横並びにする（今は1つですが、将来増やす可能性を考慮） */
     justify-content: center; /* 子要素を中央寄せにする */
-    flex-wrap: wrap;            /* 画面幅が足りない場合に折り返す */
-    gap: 30px;                  /* 子要素間の間隔 (現在は1つなので影響なし) */
+    flex-wrap: wrap;         /* 画面幅が足りない場合に折り返す */
+    gap: 30px;               /* 子要素間の間隔 (現在は1つなので影響なし) */
     margin-bottom: 40px;
 }
 
@@ -1001,6 +1002,12 @@ h1, h2, h3, h4, h5, h6 {
         height: auto; /* アスペクト比を維持 */
     }
 
+    /* ★新規追加: biwaichi-description Tablet 向け max-width ★ */
+    .biwaichi-description {
+        max-width: 90%; /* コンテナ幅に対するパーセンテージで設定 */
+        /* もしくは具体的なピクセル値で、デスクトップより狭くする（例: 600px） */
+    }
+
     /* Tablet: biwaichi-points の画像サイズ調整（変更なし、元のまま） */
     .biwaichi-points .point-item img {
         width: 100%; /* 親要素に合わせて調整 */
@@ -1038,5 +1045,11 @@ h1, h2, h3, h4, h5, h6 {
     }
     .section-title::after {
         /* ここに続くCSSを元のまま残してください */
+    }
+
+    /* ★新規追加: biwaichi-description Mobile 向け max-width ★ */
+    .biwaichi-description {
+        max-width: 100%; /* モバイルでは可能な限り幅を使う */
+        padding: 0 10px; /* 左右に少しパディングを入れると見やすい */
     }
 }
