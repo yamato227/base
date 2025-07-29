@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const mainNav = document.querySelector('.main-nav');
 
     // CSSのモバイルブレイクポイントと一致させる
-    const MOBILE_BREAKPOINT = 767; 
+    const MOBILE_BREAKPOINT = 767;  
 
     if (mobileMenuToggle && mainNav) {
         mobileMenuToggle.addEventListener('click', function() {
@@ -12,7 +12,9 @@ document.addEventListener('DOMContentLoaded', function() {
             mobileMenuToggle.classList.toggle('open');
         });
 
-        // ドロップダウンメニューの制御 (モバイル時のみ)
+        // ドロップダウンメニューの制御はHTMLから削除されたため、ここも不要
+        // 以下のブロックは削除またはコメントアウトします
+        /*
         const hasDropdowns = document.querySelectorAll('.main-nav .has-dropdown > a');
         hasDropdowns.forEach(link => {
             link.addEventListener('click', function(e) {
@@ -34,16 +36,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
+        */
 
-        // 画面サイズがモバイルブレイクポイントより大きくなったらモバイルメニューとドロップダウンをリセット
+        // 画面サイズがモバイルブレイクポイントより大きくなったらモバイルメニューをリセット
         window.addEventListener('resize', function() {
             if (window.innerWidth > MOBILE_BREAKPOINT) {
                 mainNav.classList.remove('is-active'); // 'open' から 'is-active' に修正
                 mobileMenuToggle.classList.remove('open');
-                // ドロップダウンメニューもリセット
+                // ドロップダウンメニューのリセットも不要になったため削除
+                /*
                 document.querySelectorAll('.main-nav .has-dropdown').forEach(item => {
                     item.classList.remove('active-dropdown'); // インラインstyle.displayからクラス制御に修正
                 });
+                */
             }
         });
 
@@ -53,9 +58,12 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!isClickInsideMenu && mainNav.classList.contains('is-active') && window.innerWidth <= MOBILE_BREAKPOINT) {
                 mainNav.classList.remove('is-active');
                 mobileMenuToggle.classList.remove('open');
+                // ドロップダウンメニューのリセットも不要になったため削除
+                /*
                 document.querySelectorAll('.main-nav .has-dropdown').forEach(item => {
                     item.classList.remove('active-dropdown');
                 });
+                */
             }
         });
     }
@@ -99,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
         pageTopBtn.addEventListener('click', function(e) {
             e.preventDefault(); // デフォルトのリンク動作（#へのジャンプ）を無効化
             window.scrollTo({
-                top: 0,            // ページの最上部へ
+                top: 0,         // ページの最上部へ
                 behavior: 'smooth' // スムーズにスクロール
             });
         });
