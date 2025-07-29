@@ -165,7 +165,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #004d40;
 }
 
-/* ドロップダウンメニュー */
+/* ドロップダウンメニュー (HTMLから削除されたため、機能しませんが、念のため残しておきます) */
 .main-nav .dropdown {
     display: none;
     position: absolute;
@@ -203,7 +203,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* モバイルメニューのトグルボタン（初期は非表示） */
 .mobile-menu-toggle {
-    display: none;
+    display: none; /* PCでは非表示 */
     background: none;
     border: none;
     font-size: 30px;
@@ -873,7 +873,7 @@ h1, h2, h3, h4, h5, h6 {
 /* ★新規追加: biwaichi-section 内の直接の img タグのスタイルを調整 (kesiki1.JPG用) ★ */
 .biwaichi-section > .container > p > img {
     max-width: 100%; /* 親要素の幅を超えないようにする */
-    height: auto;   /* アスペクト比を維持 */
+    height: auto;  /* アスペクト比を維持 */
     display: block;  /* 中央寄せのためにブロック要素に */
     margin: 0 auto 20px auto; /* 中央寄せと下部余白 */
     border-radius: 8px;
@@ -894,10 +894,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* biwaichi-points のスタイル：中央寄せを維持 */
 .biwaichi-points {
-    display: flex;           /* 子要素をFlexboxで横並びにする（今は1つですが、将来増やす可能性を考慮） */
+    display: flex;            /* 子要素をFlexboxで横並びにする（今は1つですが、将来増やす可能性を考慮） */
     justify-content: center; /* 子要素を中央寄せにする */
-    flex-wrap: wrap;         /* 画面幅が足りない場合に折り返す */
-    gap: 30px;               /* 子要素間の間隔 (現在は1つなので影響なし) */
+    flex-wrap: wrap;          /* 画面幅が足りない場合に折り返す */
+    gap: 30px;                /* 子要素間の間隔 (現在は1つなので影響なし) */
     margin-bottom: 40px;
 }
 
@@ -1024,6 +1024,9 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 767px) {
     body {
         font-size: 16px;
+        /* モバイルメニューが開いたときにスクロールを禁止する場合
+           JavaScriptで制御することも可能 */
+        /* overflow: hidden;  */
     }
 
     .container {
@@ -1047,6 +1050,238 @@ h1, h2, h3, h4, h5, h6 {
         /* ここに続くCSSを元のまま残してください */
     }
 
+    /* ヘッダー内側のパディング調整 */
+    .header-inner {
+        padding: 15px 15px;
+    }
+
+    /* ロゴサイズ調整 */
+    .site-logo img {
+        height: 50px;
+    }
+
+    /* モバイルメニューのトグルボタンを表示 */
+    .mobile-menu-toggle {
+        display: block; /* モバイルでのみ表示 */
+    }
+
+    /* メインナビゲーション (モバイル用) */
+    .main-nav {
+        position: fixed; /* 画面に固定 */
+        top: 0;
+        right: -100%; /* 初期状態では画面外に隠す */
+        width: 80%; /* メニューの幅 */
+        max-width: 300px; /* 最大幅を設定して、タブレットなどで広がりすぎないように */
+        height: 100vh; /* 画面の高さいっぱい */
+        background-color: #fff; /* メニューの背景色 */
+        box-shadow: -2px 0 10px rgba(0,0,0,0.2); /* 影 */
+        transition: right 0.4s ease-out; /* スライドイン/アウトのアニメーション */
+        z-index: 99; /* ハンバーガーボタンより下、コンテンツより上 */
+        overflow-y: auto; /* メニュー項目が多い場合にスクロール可能にする */
+        padding-top: 80px; /* ヘッダーと被らないように調整 */
+    }
+
+    .main-nav.is-active {
+        right: 0; /* is-activeが付いたら画面内にスライドイン */
+    }
+
+    .main-nav ul {
+        flex-direction: column; /* 縦並びにする */
+        padding: 0;
+        margin: 0;
+        border-top: 1px solid #eee; /* メニュー上部の区切り線 */
+    }
+
+    .main-nav li {
+        margin-left: 0;
+        border-bottom: 1px solid #eee; /* 各メニュー項目の区切り線 */
+    }
+    .main-nav li:last-child {
+        border-bottom: none; /* 最後の項目は区切り線なし */
+    }
+
+    .main-nav a {
+        padding: 15px 20px; /* モバイルメニュー項目のパディング */
+        font-size: 1.1em;
+    }
+
+    /* ドロップダウンメニュー（モバイル用） - HTMLからドロップダウンを削除したため、実質機能しません */
+    .main-nav .dropdown {
+        position: static; /* モバイルでは絶対配置を解除し、通常フローに */
+        box-shadow: none;
+        background-color: transparent;
+        border-radius: 0;
+        padding: 0;
+        display: none; /* 初期状態では非表示 */
+        overflow: hidden; /* スライドアニメーション用 */
+        transition: max-height 0.3s ease-out;
+        max-height: 0; /* 非表示時の高さ */
+    }
+
+    .main-nav .has-dropdown.active-dropdown > .dropdown {
+        display: flex; /* JavaScriptで.active-dropdownが付与されたら表示 */
+        max-height: 500px; /* 適当な最大高さを設定（コンテンツに応じて調整） */
+    }
+
+    .main-nav .dropdown a {
+        padding: 10px 30px; /* ドロップダウン子項目のパディング */
+        font-size: 1em;
+    }
+
+    /* ヒーローセクション（モバイル用） */
+    .hero-section {
+        height: 70vh; /* モバイルでの高さを調整 */
+    }
+    .hero-main-title {
+        font-size: 2.8em;
+        margin-bottom: 15px;
+    }
+    .hero-subtitle {
+        font-size: 1.2em;
+        max-width: 90%;
+    }
+    .hero-content {
+        margin-left: 15px;
+    }
+
+    .hero-contact-wrapper {
+        position: static; /* 固定解除 */
+        margin-top: 30px;
+        margin-bottom: 30px;
+        width: 100%;
+        align-items: center; /* 中央寄せ */
+        padding: 0 15px;
+    }
+    .hero-contact-label {
+        width: 90%; /* ラベルの幅を調整 */
+        border-radius: 8px 8px 0 0;
+    }
+    .hero-contact-buttons {
+        width: 90%; /* ボタン群の幅を調整 */
+        padding: 20px 15px;
+        gap: 15px;
+    }
+    .contact-btn {
+        font-size: 0.9em;
+        padding: 15px 25px;
+        min-width: 180px;
+    }
+    .contact-btn span {
+        font-size: 1.5em;
+    }
+
+    /* ページごとのヒーローセクション（モバイル用） */
+    .page-hero-about {
+        padding: 40px 0;
+        min-height: 250px;
+    }
+    .page-hero-about .section-title {
+        font-size: 1.8em;
+        margin-bottom: 8px;
+    }
+    .page-hero-about p {
+        font-size: 0.95em;
+        max-width: 90%;
+    }
+
+    /* お知らせセクション (モバイル用) */
+    .news-list li {
+        flex-direction: column; /* 縦並び */
+        align-items: flex-start;
+        padding: 15px 0;
+    }
+    .news-list .news-date {
+        margin-bottom: 5px;
+        width: auto; /* 幅指定を解除 */
+    }
+    .news-list a {
+        margin-left: 0;
+        font-size: 1em;
+    }
+
+    /* サービス紹介セクション (モバイル用) */
+    .services-section .service-cards {
+        grid-template-columns: 1fr; /* 1列にする */
+        gap: 30px;
+    }
+    .service-card {
+        margin: 0 auto; /* 中央寄せ */
+        max-width: 350px; /* カードの最大幅 */
+    }
+    .service-card img {
+        height: 180px;
+    }
+    .service-card.map-card {
+        height: auto;
+    }
+    .service-card.map-card iframe {
+        min-height: 250px;
+    }
+
+    /* CTAセクション (モバイル用) */
+    .cta-section .section-title {
+        margin-bottom: 30px;
+    }
+    .cta-section p {
+        font-size: 1em;
+    }
+    .cta-contact-buttons {
+        flex-direction: column; /* 縦並び */
+        gap: 20px;
+        max-width: 350px; /* ボタンの最大幅 */
+    }
+    .cta-contact-btn {
+        width: 100%;
+        padding: 20px 30px;
+    }
+
+    /* フッター (モバイル用) */
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-info, .footer-nav {
+        min-width: unset; /* 最小幅を解除 */
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .footer-logo {
+        justify-content: center;
+    }
+    .footer-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        margin-top: 20px;
+    }
+    .copyright {
+        margin-top: 30px;
+        padding-top: 20px;
+    }
+
+    /* biwaichi-description Mobile 向け max-width */
+    .biwaichi-description {
+        max-width: 100%; /* モバイルでは可能な限り幅を使う */
+        padding: 0 10px; /* 左右に少しパディングを入れると見やすい */
+    }
+    /* biwaichi-points の画像サイズ調整（モバイル） */
+    .biwaichi-points .point-item img {
+        width: 100%; /* 親要素に合わせて調整 */
+        height: auto;
+        max-width: 300px; /* モバイルでの最大幅を調整 */
+    }
+    .biwaichi-access-guide iframe {
+        width: 100%; /* 親要素に合わせて調整 */
+        height: 300px; /* モバイルでの高さを調整 */
+        max-width: 300px; /* モバイルでの最大幅を調整 */
+    }
+
+    /* ★新規追加: biwaichi-section 内の直接の img タグのスタイル（Mobile） ★ */
+    .biwaichi-section > .container > p > img {
+        max-width: 90%; /* モバイルで最大幅を調整 */
+        height: auto; /* アスペクト比を維持 */
+    }
     /* ★新規追加: biwaichi-description Mobile 向け max-width ★ */
     .biwaichi-description {
         max-width: 100%; /* モバイルでは可能な限り幅を使う */
