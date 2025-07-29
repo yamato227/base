@@ -894,10 +894,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* biwaichi-points のスタイル：中央寄せを維持 */
 .biwaichi-points {
-    display: flex;            /* 子要素をFlexboxで横並びにする（今は1つですが、将来増やす可能性を考慮） */
+    display: flex;           /* 子要素をFlexboxで横並びにする（今は1つですが、将来増やす可能性を考慮） */
     justify-content: center; /* 子要素を中央寄せにする */
-    flex-wrap: wrap;          /* 画面幅が足りない場合に折り返す */
-    gap: 30px;                /* 子要素間の間隔 (現在は1つなので影響なし) */
+    flex-wrap: wrap;         /* 画面幅が足りない場合に折り返す */
+    gap: 30px;               /* 子要素間の間隔 (現在は1つなので影響なし) */
     margin-bottom: 40px;
 }
 
@@ -966,6 +966,42 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+/* ★ページトップボタンのスタイルを追加・修正★ */
+#page-top {
+    display: flex; /* 子要素を中央寄せにするためにflexを使用 */
+    flex-direction: column; /* 矢印と文字を縦に並べる */
+    justify-content: center; /* 縦方向中央揃え */
+    align-items: center; /* 横方向中央揃え */
+    position: fixed; /* スクロールしても固定表示 */
+    bottom: 20px; /* 画面下からの距離 */
+    right: 20px; /* 画面右からの距離 */
+    z-index: 10; /* 他の要素より前面に表示 */
+    background-color: #f8f8f8; /* 背景色 */
+    color: #333; /* 文字色 */
+    border: 1px solid #ccc; /* 枠線 */
+    border-radius: 5px; /* 角丸 */
+    padding: 10px; /* 内側の余白 */
+    text-decoration: none; /* 下線を消す */
+    opacity: 0; /* 最初は非表示 */
+    transition: opacity 0.3s ease-in-out; /* フェードイン・アウトのアニメーション */
+    pointer-events: none; /* 非表示時にクリックできないようにする */
+}
+
+#page-top.visible {
+    opacity: 1; /* スクロールしたら表示 */
+    pointer-events: auto; /* 表示時にクリックできるようにする */
+}
+
+#page-top .arrow-up {
+    font-size: 1.2em; /* 矢印のサイズ */
+    line-height: 1; /* 行の高さ */
+    margin-bottom: 5px; /* 矢印と文字の間の余白 */
+}
+
+#page-top .top-text {
+    font-size: 0.8em; /* TOPテキストのサイズ */
+}
+
 
 /* --- レスポンシブデザイン --- */
 @media (max-width: 1024px) {
@@ -1019,6 +1055,20 @@ h1, h2, h3, h4, h5, h6 {
         max-width: 450px; /* タブレットでの最大幅を調整 */
         height: auto; /* アスペクト比を維持 */
     }
+
+    /* ★ページトップボタンのレスポンシブ対応（Tablet）★ */
+    #page-top {
+        bottom: 15px;
+        right: 15px;
+        padding: 8px;
+    }
+    #page-top .arrow-up {
+        font-size: 1em;
+        margin-bottom: 3px;
+    }
+    #page-top .top-text {
+        font-size: 0.7em;
+    }
 }
 
 @media (max-width: 767px) {
@@ -1026,7 +1076,7 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 16px;
         /* モバイルメニューが開いたときにスクロールを禁止する場合
            JavaScriptで制御することも可能 */
-        /* overflow: hidden;  */
+        /* overflow: hidden; */
     }
 
     .container {
