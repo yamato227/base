@@ -838,6 +838,88 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
+/* ★追加または修正箇所: biwaichi-section のスタイル ★ */
+.biwaichi-section {
+    padding: 45px 0; /* section-commonに合わせる */
+    background-color: #f5f5f5; /* bg-light-grayに合わせる */
+    text-align: center;
+    margin-bottom: 30px; /* section-commonに合わせる */
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05); /* section-commonに合わせる */
+    border-radius: 8px; /* section-commonに合わせる */
+    overflow: hidden; /* section-commonに合わせる */
+}
+
+.biwaichi-description {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+    color: #555;
+    font-size: 1.1em;
+}
+
+/* biwaichi-points のスタイル：中央寄せを維持 */
+.biwaichi-points {
+    display: flex;          /* 子要素をFlexboxで横並びにする（今は1つですが、将来増やす可能性を考慮） */
+    justify-content: center; /* 子要素を中央寄せにする */
+    flex-wrap: wrap;        /* 画面幅が足りない場合に折り返す */
+    gap: 30px;              /* 子要素間の間隔 (現在は1つなので影響なし) */
+    margin-bottom: 40px;
+}
+
+/* .point-item のスタイル：カードの見た目と幅制御 */
+.biwaichi-points .point-item {
+    max-width: 300px; /* ここで個別のカードの最大幅を制限 */
+    width: 100%; /* 親要素の幅いっぱいに広げつつ、max-widthで制限 */
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin: 0 auto; /* point-item自体を中央寄せにする場合、flex-basisよりこちらが有効 */
+}
+
+/* .biwaichi-points .point-item img のスタイル：画像サイズを制御する最重要部分 */
+.biwaichi-points .point-item img {
+    width: 100%;            /* 親要素 (.point-item) の幅いっぱいに広げる */
+    max-width: 200px;       /* ただし、最大幅は200pxに制限（必要に応じて調整してください） */
+    height: auto;           /* 高さは元の比率を維持することで縦横比を保つ */
+    object-fit: contain;    /* 画像全体が要素内に収まるように調整 */
+    margin-bottom: 15px;
+    border-radius: 4px;
+    display: block; /* img要素はinline要素なので、ブロック要素にしてmargin: autoを効かせる */
+    margin-left: auto; /* 画像をpoint-item内で中央寄せ */
+    margin-right: auto; /* 画像をpoint-item内で中央寄せ */
+}
+
+.biwaichi-points .point-item p {
+    font-size: 1em;
+    font-weight: bold;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.biwaichi-access-guide {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.biwaichi-access-guide a {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.biwaichi-access-guide iframe { /* Google Mapのiframeのスタイル調整 */
+    max-width: 100%; /* 親要素の幅を超えないようにする */
+    height: 450px; /* 元のHTMLで指定された高さ。必要に応じて調整 */
+    margin-top: 20px; /* 上部に余白 */
+    margin-bottom: 20px; /* 下部に余白 */
+    display: block; /* iframeをブロック要素にして中央寄せ可能に */
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* レスポンシブ対応: keidai-imagesの画像サイズ */
 @media (max-width: 767px) {
     .keidai-images {
@@ -880,6 +962,10 @@ h1, h2, h3, h4, h5, h6 {
         /* タブレットでも2行になる可能性があるため、ここでmax-widthを調整するか、
             white-space: nowrap; overflow: hidden; text-overflow: ellipsis; を検討 */
         max-width: 700px; /* 必要に応じて調整 */
+    }
+    /* ★追加または修正箇所: biwaichi-section Tablet ★ */
+    .biwaichi-section {
+        padding: 40px 0; /* モバイルと統一または微調整 */
     }
 }
 
@@ -1103,6 +1189,19 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 0.95em;
     }
 
+    /* ★追加または修正箇所: biwaichi-section Mobile ★ */
+    .biwaichi-section {
+        padding: 30px 0; /* モバイル時のセクション共通スタイルに合わせる */
+    }
+    .biwaichi-points .point-item {
+        max-width: 280px; /* モバイルでのカードの最大幅を調整 */
+    }
+    .biwaichi-points .point-item img {
+        max-width: 150px; /* モバイルでの画像の最大幅を調整（必要に応じて） */
+    }
+    .biwaichi-access-guide iframe {
+        height: 250px; /* モバイルでのマップの高さ調整 */
+    }
 
     /* CTAセクション (「お問い合わせ」セクション) モバイル版 */
     .cta-section {
@@ -1332,138 +1431,3 @@ h1, h2, h3, h4, h5, h6 {
 .contact-info strong {
     color: #007bff;
 }
-
-これが元々のaboutです。
-
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>蓮通寺について | 浄土真宗 蓮通寺</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css">
-    <link rel="icon" href="../img/kamon.jpg">
-</head>
-<body>
-
-    <header class="header">
-        <div class="header-inner">
-            <div class="site-logo">
-                <a href="/base/"> <img src="../img/logo-1.png" alt="浄土真宗 蓮通寺">
-                </a>
-            </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="/base/">ホーム</a></li> <li class="has-dropdown">
-                        <a href="#">蓮通寺について</a>
-                        <ul class="dropdown">
-                            <li><a href="/base/pages/about.html">蓮通寺について</a></li>
-                            <li><a href="/base/pages/keidai.html">境内紹介</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="/base/pages/service.html">年間行事・法要</a></li>
-                    <li><a href="/base/pages/news.html">お知らせ</a></li> <li><a href="/base/pages/access.html">アクセス</a></li>
-                    <li><a href="/base/pages/contact.html">お問い合わせ</a></li>
-                </ul>
-            </nav>
-            <button class="mobile-menu-toggle" aria-label="モバイルメニューを開く">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </header>
-
-    <main>
-        <section class="page-hero-about section-common">
-            <picture class="hero-background-image">
-                <source srcset="../img/about_kv_sp-2.jpg" media="(max-width: 767px)">
-                <img src="../img/about_kv_pc-1.jpg" alt="蓮通寺の風景">
-            </picture>
-            <div class="hero-overlay"></div>
-            <div class="container text-center">
-                <h1 class="section-title">蓮通寺について</h1>
-                <p>蓮通寺の由緒や、代々受け継がれてきた貴重な法宝物をご紹介いたします。</p>
-            </div>
-        </section>
-
-        <section class="about-section section-common">
-            <div class="container">
-                <h2 class="section-title">由緒</h2>
-                <p>源平争乱の寿永三年（1184年）、征夷大将軍源義仲は粟津ヶ原で敗死し、その室山吹御前は子息義隆・義順を伴い、北近江浅井郡の山中で世の浮沈を窺って暮らしていたが、義仲を破った頼朝・義経の兄弟も世を去り、琵琶湖にすぐ近い海津の荘に住まいを移したところ、本願寺御開山親鸞聖人、越後に流罪となり琵琶湖を舟で渡ってこられ海津にお着きになり、義隆・義順兄弟と師弟の約諾を交わしてくださり、兄の義隆は海津荘岩谷の地で願慶寺開基となり、弟の義順は浅井郡塩津荘岩熊に赴き蓮通寺の開基となった。</p>
-                <p>時が下って本願寺中興された第八世蓮如上人からも教えをいただき、本願寺東西分派の際には教如上人に従い東本願寺に属し、第十三世宣如上人の次男である、長浜御坊大通寺霊瑞院宣澄師の曾孫が當院に入寺し、公家の綾小路家とも姻戚関係を結び、以降法儀相続して現在に至る。</p>
-                <img src="../img/about_03.jpg" alt="蓮通寺の由緒を表す画像" class="history-image">
-            </div>
-        </section>
-
-        <section class="treasures-section section-common bg-light-gray">
-            <div class="container">
-                <h2 class="section-title">法宝物</h2>
-                <div class="treasures-gallery">
-                    <img src="../img/h1amida.jpg" alt="阿弥陀如来像">
-                    <img src="../img/h2sinran.jpg" alt="親鸞聖人像">
-                    <img src="../img/h3.jpg" alt="法宝物3">
-                    <img src="../img/h4.jpg" alt="法宝物4">
-                </div>
-                <ul class="treasures-text-list">
-                    <li>親鸞聖人御真筆・十字名号</li>
-                    <li>親鸞聖人御真筆・六字名号</li>
-                    <li>蓮如上人御真筆・六字名号</li>
-                    <li>伝・親鸞聖人御自刻御影像</li>
-                    <li>兆伝司筆・聖徳太子真向御影（写真）</li>
-                    <li>護国山大聖寺本尊・大日如来坐像（西浅井町指定文化財・平安時代）</li>
-                    <li>薬師如来坐像（平安時代）</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="contact" class="cta-section section-common">
-            <div class="container">
-                <h2 class="section-title">お問い合わせ</h2>
-                <p>ご葬儀、ご法要、その他ご不明な点がございましたら、お気軽にお問い合わせください。</p>
-                
-                <div class="cta-contact-buttons">
-                    <a href="/base/pages/contact.html" class="cta-contact-btn"> <span>メールでのご相談</span>
-                        <small>24時間受付中</small>
-                    </a>
-                    <a href="tel:0749-880-0713" class="cta-contact-btn phone-btn">
-                        <span>電話でのご相談</span>
-                        <small>営業時間 9:00〜17:00</small>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <div class="footer-logo">
-                        <img src="../img/logo-1.png" alt="蓮通寺">
-                    </div>
-                </div>
-                <nav class="footer-nav">
-                    <ul>
-                        <li><a href="/base/">ホーム</a></li> <li><a href="/base/pages/about.html">蓮通寺について</a></li>
-                        <li><a href="/base/pages/keidai.html">境内紹介</a></li>
-                        <li><a href="/base/pages/service.html">年間行事・法要</a></li>
-                        <li><a href="/base/pages/news.html">お知らせ</a></li> <li><a href="/base/pages/access.html">アクセス</a></li>
-                        <li><a href="/base/pages/contact.html">お問い合わせ</a></li>
-                        <li><a href="/base/pages/privacy.html">プライバシーポリシー</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="copyright">
-                <p>© 2025 Rentsuji. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="../script.js"></script>
-</body>
-</html>
