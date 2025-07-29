@@ -394,91 +394,6 @@ h1, h2, h3, h4, h5, h6 {
     word-wrap: break-word; /* 互換性のための旧プロパティ */
 }
 
-/* ヒーローセクション下部の連絡先ボタンの新しいラッパー */
-.hero-contact-wrapper {
-    position: absolute;
-    bottom: 40px;
-    right: 40px;
-    z-index: 4;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    width: fit-content;
-}
-
-.hero-contact-label {
-    background-color: #004d40;
-    color: white;
-    font-size: 1.3em;
-    font-weight: bold;
-    padding: 12px 30px;
-    border-radius: 8px 8px 0 0;
-    margin-bottom: -1px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    white-space: nowrap;
-    text-align: center;
-    width: 100%;
-}
-
-.hero-contact-buttons {
-    background-color: rgba(82, 132, 49, 0.75);
-    padding: 25px 30px;
-    border-radius: 0 0 8px 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-}
-
-/* 個々の連絡先ボタンのスタイル */
-.contact-btn {
-    background-color: rgba(82, 132, 49, 0.75);
-    color: white;
-    padding: 20px 35px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    text-align: center;
-    border: 1px solid rgba(170, 200, 150, 0.75);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1),
-                inset 0 0 0 2px rgba(255, 255, 255, 0.5);
-    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-    font-size: 1.05em;
-    line-height: 1.4;
-    white-space: nowrap;
-    flex: 1 1 auto;
-    min-width: 220px;
-}
-
-.contact-btn:hover {
-    background-color: rgba(104, 159, 56, 0.75);
-    transform: translateY(-3px);
-    color: white;
-    border-color: rgba(190, 220, 170, 0.75);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2),
-                inset 0 0 0 2px rgba(255, 255, 255, 0.7);
-}
-
-.contact-btn span {
-    font-size: 1.7em;
-    font-weight: 900;
-    color: #004d40;
-    margin-top: 0;
-    margin-bottom: 5px;
-    display: block;
-}
-
-/* smallタグのスタイルを追加 */
-.contact-btn small {
-    font-size: 0.9em;
-    color: #eee;
-    margin-top: 0;
-    display: block;
-}
-
-
 /* お知らせセクション */
 .news-section {
     background-color: #fefefe;
@@ -1031,10 +946,6 @@ h1, h2, h3, h4, h5, h6 {
     .hero-subtitle {
         font-size: 1.4em;
     }
-    .hero-contact-wrapper {
-        right: 20px;
-        bottom: 20px;
-    }
 
     /* Tablet: page-hero-about の調整 */
     .page-hero-about {
@@ -1198,32 +1109,6 @@ h1, h2, h3, h4, h5, h6 {
     }
     .hero-content {
         margin-left: 15px;
-    }
-
-    .hero-contact-wrapper {
-        position: static; /* 固定解除 */
-        margin-top: 30px;
-        margin-bottom: 30px;
-        width: 100%;
-        align-items: center; /* 中央寄せ */
-        padding: 0 15px;
-    }
-    .hero-contact-label {
-        width: 90%; /* ラベルの幅を調整 */
-        border-radius: 8px 8px 0 0;
-    }
-    .hero-contact-buttons {
-        width: 90%; /* ボタン群の幅を調整 */
-        padding: 20px 15px;
-        gap: 15px;
-    }
-    .contact-btn {
-        font-size: 0.9em;
-        padding: 15px 25px;
-        min-width: 180px;
-    }
-    .contact-btn span {
-        font-size: 1.5em;
     }
 
     /* ページごとのヒーローセクション（モバイル用） */
