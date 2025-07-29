@@ -66,11 +66,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (pageTopBtn) {
         // スクロールイベントでボタンの表示・非表示を切り替える
         window.addEventListener('scroll', function() {
-            // スクロール量が200pxを超えたらボタンを表示
+            // スクロール量が200pxを超えたらvisibleクラスを追加
             if (window.scrollY > 200) {
-                pageTopBtn.style.display = 'flex'; // CSSで指定したflexを適用して中央揃えを維持
+                pageTopBtn.classList.add('visible'); // visibleクラスを追加
             } else {
-                pageTopBtn.style.display = 'none';
+                pageTopBtn.classList.remove('visible'); // visibleクラスを削除
             }
         });
 
