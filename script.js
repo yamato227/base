@@ -2,53 +2,28 @@ document.addEventListener('DOMContentLoaded', function() {
     // ハンバーガーメニューの開閉
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const mainNav = document.querySelector('.main-nav');
+    const body = document.body; // body要素を取得
 
     // CSSのモバイルブレイクポイントと一致させる
     const MOBILE_BREAKPOINT = 767;  
 
     if (mobileMenuToggle && mainNav) {
         mobileMenuToggle.addEventListener('click', function() {
-            mainNav.classList.toggle('is-active'); // 'open' から 'is-active' に修正
+            mainNav.classList.toggle('is-active');
             mobileMenuToggle.classList.toggle('open');
+            body.classList.toggle('no-scroll'); // bodyにno-scrollクラスをトグル
         });
 
-        // ドロップダウンメニューの制御はHTMLから削除されたため、ここも不要
-        // 以下のブロックは削除またはコメントアウトします
-        /*
-        const hasDropdowns = document.querySelectorAll('.main-nav .has-dropdown > a');
-        hasDropdowns.forEach(link => {
-            link.addEventListener('click', function(e) {
-                // モバイルメニューが開いている場合、かつ画面幅がモバイルブレイクポイント以下の場合のみ処理
-                if (mainNav.classList.contains('is-active') && window.innerWidth <= MOBILE_BREAKPOINT) {
-                    e.preventDefault(); // リンクへの遷移を一時的に停止
-
-                    const parentLi = this.closest('.has-dropdown');
-                    if (parentLi) {
-                        // 同じ階層の他の開いているドロップダウンを閉じる
-                        document.querySelectorAll('.main-nav .has-dropdown').forEach(item => {
-                            if (item !== parentLi) {
-                                item.classList.remove('active-dropdown');
-                            }
-                        });
-                        // クリックされたドロップダウンを開閉
-                        parentLi.classList.toggle('active-dropdown');
-                    }
-                }
-            });
-        });
-        */
+        // ドロップダウンメニューの制御はHTMLから削除されたため、このブロックは完全に削除
+        // 以前コメントアウトしていた部分も完全に削除します。
 
         // 画面サイズがモバイルブレイクポイントより大きくなったらモバイルメニューをリセット
         window.addEventListener('resize', function() {
             if (window.innerWidth > MOBILE_BREAKPOINT) {
-                mainNav.classList.remove('is-active'); // 'open' から 'is-active' に修正
+                mainNav.classList.remove('is-active');
                 mobileMenuToggle.classList.remove('open');
+                body.classList.remove('no-scroll'); // no-scrollクラスを削除
                 // ドロップダウンメニューのリセットも不要になったため削除
-                /*
-                document.querySelectorAll('.main-nav .has-dropdown').forEach(item => {
-                    item.classList.remove('active-dropdown'); // インラインstyle.displayからクラス制御に修正
-                });
-                */
             }
         });
 
@@ -58,12 +33,8 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!isClickInsideMenu && mainNav.classList.contains('is-active') && window.innerWidth <= MOBILE_BREAKPOINT) {
                 mainNav.classList.remove('is-active');
                 mobileMenuToggle.classList.remove('open');
+                body.classList.remove('no-scroll'); // no-scrollクラスを削除
                 // ドロップダウンメニューのリセットも不要になったため削除
-                /*
-                document.querySelectorAll('.main-nav .has-dropdown').forEach(item => {
-                    item.classList.remove('active-dropdown');
-                });
-                */
             }
         });
     }
