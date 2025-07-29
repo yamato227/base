@@ -464,15 +464,18 @@ h1, h2, h3, h4, h5, h6 {
 .contact-btn span {
     font-size: 1.7em;
     font-weight: 900;
-    color: white;
-    margin-top: 5px;
+    color: #004d40;
+    margin-top: 0;
+    margin-bottom: 5px;
+    display: block;
 }
 
 /* smallタグのスタイルを追加 */
 .contact-btn small {
     font-size: 0.9em;
     color: #eee;
-    margin-top: 5px;
+    margin-top: 0;
+    display: block;
 }
 
 
@@ -856,7 +859,7 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* ★修正箇所: biwaichi-section のスタイル ★ */
+/* ★修正・追加箇所: biwaichi-section のスタイル ★ */
 .biwaichi-section {
     padding: 45px 0; /* section-commonに合わせる */
     background-color: #f5f5f5; /* bg-light-grayに合わせる */
@@ -865,6 +868,16 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 2px 15px rgba(0,0,0,0.05); /* section-commonに合わせる */
     border-radius: 8px; /* section-commonに合わせる */
     overflow: hidden; /* section-commonに合わせる */
+}
+
+/* ★新規追加: biwaichi-section 内の直接の img タグのスタイルを調整 (kesiki1.JPG用) ★ */
+.biwaichi-section > .container > p > img {
+    max-width: 100%; /* 親要素の幅を超えないようにする */
+    height: auto;    /* アスペクト比を維持 */
+    display: block;  /* 中央寄せのためにブロック要素に */
+    margin: 0 auto 20px auto; /* 中央寄せと下部余白 */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .biwaichi-description {
@@ -880,10 +893,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* biwaichi-points のスタイル：中央寄せを維持 */
 .biwaichi-points {
-    display: flex;             /* 子要素をFlexboxで横並びにする（今は1つですが、将来増やす可能性を考慮） */
+    display: flex;              /* 子要素をFlexboxで横並びにする（今は1つですが、将来増やす可能性を考慮） */
     justify-content: center; /* 子要素を中央寄せにする */
-    flex-wrap: wrap;           /* 画面幅が足りない場合に折り返す */
-    gap: 30px;                 /* 子要素間の間隔 (現在は1つなので影響なし) */
+    flex-wrap: wrap;            /* 画面幅が足りない場合に折り返す */
+    gap: 30px;                  /* 子要素間の間隔 (現在は1つなので影響なし) */
     margin-bottom: 40px;
 }
 
@@ -893,9 +906,10 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0; /* 親要素のflexboxで中央寄せするため、個別のmarginは不要に */
 }
 
-/* .biwaichi-points .point-item img のスタイル：画像サイズを制御する最重要部分 */
+/* ★修正箇所: .biwaichi-points .point-item img のスタイル（影響範囲を明確にする） ★ */
+/* このセレクタは「美しい景色を堪能」のようなポイントカードの画像を意図しています。 */
+/* 直接 section 直下の kesiki1.JPG には影響しないようにします。 */
 .biwaichi-points .point-item img {
-    /* 下の地図のiframeのサイズを基準に調整 */
     width: 600px;  /* 地図のiframeのwidth="600"に合わせる */
     height: 450px; /* 地図のiframeのheight="450"に合わせる */
     object-fit: cover; /* 画像が指定サイズに収まるように調整（必要に応じてトリミング） */
@@ -977,12 +991,17 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1.1em;
         max-width: 700px; /* 必要に応じて調整 */
     }
-    /* ★追加または修正箇所: biwaichi-section Tablet ★ */
+    /* ★修正箇所: biwaichi-section Tablet のスタイル調整 ★ */
     .biwaichi-section {
         padding: 40px 0; /* モバイルと統一または微調整 */
     }
+    /* ★新規追加: biwaichi-section 内の直接の img タグのスタイル（Tablet） ★ */
+    .biwaichi-section > .container > p > img {
+        max-width: 90%; /* タブレットで最大幅を調整 */
+        height: auto; /* アスペクト比を維持 */
+    }
 
-    /* Tablet: biwaichi-points の画像サイズ調整 */
+    /* Tablet: biwaichi-points の画像サイズ調整（変更なし、元のまま） */
     .biwaichi-points .point-item img {
         width: 100%; /* 親要素に合わせて調整 */
         max-width: 450px; /* タブレットでの最大幅を調整（地図のiframeのサイズに合わせる） */
@@ -1018,3 +1037,6 @@ h1, h2, h3, h4, h5, h6 {
         padding-bottom: 15px;
     }
     .section-title::after {
+        /* ここに続くCSSを元のまま残してください */
+    }
+}
