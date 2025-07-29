@@ -838,7 +838,7 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* ★追加または修正箇所: biwaichi-section のスタイル ★ */
+/* ★修正箇所: biwaichi-section のスタイル ★ */
 .biwaichi-section {
     padding: 45px 0; /* section-commonに合わせる */
     background-color: #f5f5f5; /* bg-light-grayに合わせる */
@@ -859,44 +859,42 @@ h1, h2, h3, h4, h5, h6 {
 
 /* biwaichi-points のスタイル：中央寄せを維持 */
 .biwaichi-points {
-    display: flex;          /* 子要素をFlexboxで横並びにする（今は1つですが、将来増やす可能性を考慮） */
+    display: flex;           /* 子要素をFlexboxで横並びにする（今は1つですが、将来増やす可能性を考慮） */
     justify-content: center; /* 子要素を中央寄せにする */
-    flex-wrap: wrap;        /* 画面幅が足りない場合に折り返す */
-    gap: 30px;              /* 子要素間の間隔 (現在は1つなので影響なし) */
+    flex-wrap: wrap;         /* 画面幅が足りない場合に折り返す */
+    gap: 30px;               /* 子要素間の間隔 (現在は1つなので影響なし) */
     margin-bottom: 40px;
 }
 
 /* .point-item のスタイル：カードの見た目と幅制御 */
 .biwaichi-points .point-item {
-    max-width: 300px; /* ここで個別のカードの最大幅を制限 */
-    width: 100%; /* 親要素の幅いっぱいに広げつつ、max-widthで制限 */
-    text-align: center;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    margin: 0 auto; /* point-item自体を中央寄せにする場合、flex-basisよりこちらが有効 */
+    /* point-item 自体をカード表示にする必要がなくなったため、以下のスタイルをコメントアウトまたは削除 */
+    /* max-width: 300px; */
+    /* width: 100%; */
+    /* background-color: #fff; */
+    /* padding: 20px; */
+    /* border-radius: 8px; */
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); */
+    text-align: center; /* 画像を中央に配置するために必要 */
+    margin: 0; /* 親要素のflexboxで中央寄せするため、個別のmarginは不要に */
 }
 
 /* .biwaichi-points .point-item img のスタイル：画像サイズを制御する最重要部分 */
 .biwaichi-points .point-item img {
-    width: 100%;            /* 親要素 (.point-item) の幅いっぱいに広げる */
-    max-width: 200px;       /* ただし、最大幅は200pxに制限（必要に応じて調整してください） */
-    height: auto;           /* 高さは元の比率を維持することで縦横比を保つ */
-    object-fit: contain;    /* 画像全体が要素内に収まるように調整 */
-    margin-bottom: 15px;
-    border-radius: 4px;
+    /* 下の地図のiframeのサイズを基準に調整 */
+    width: 600px;  /* 地図のiframeのwidth="600"に合わせる */
+    height: 450px; /* 地図のiframeのheight="450"に合わせる */
+    object-fit: cover; /* 画像が指定サイズに収まるように調整（必要に応じてトリミング） */
+    max-width: 100%; /* 親要素（.point-item）の幅を超えないようにする */
     display: block; /* img要素はinline要素なので、ブロック要素にしてmargin: autoを効かせる */
-    margin-left: auto; /* 画像をpoint-item内で中央寄せ */
-    margin-right: auto; /* 画像をpoint-item内で中央寄せ */
+    margin: 0 auto; /* 画像をpoint-item内で中央寄せ */
+    border-radius: 8px; /* 角丸を適用 */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* 影を追加 */
 }
 
+/* 「美しい景色を堪能」のpタグを非表示にする */
 .biwaichi-points .point-item p {
-    font-size: 1em;
-    font-weight: bold;
-    color: #333;
-    margin-top: 0;
-    margin-bottom: 0;
+    display: none;
 }
 
 .biwaichi-access-guide {
@@ -912,6 +910,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .biwaichi-access-guide iframe { /* Google Mapのiframeのスタイル調整 */
     max-width: 100%; /* 親要素の幅を超えないようにする */
+    width: 600px; /* HTMLの指定に合わせておくが、max-widthで制御される */
     height: 450px; /* 元のHTMLで指定された高さ。必要に応じて調整 */
     margin-top: 20px; /* 上部に余白 */
     margin-bottom: 20px; /* 下部に余白 */
@@ -959,13 +958,23 @@ h1, h2, h3, h4, h5, h6 {
     }
     .page-hero-about p {
         font-size: 1.1em;
-        /* タブレットでも2行になる可能性があるため、ここでmax-widthを調整するか、
-            white-space: nowrap; overflow: hidden; text-overflow: ellipsis; を検討 */
         max-width: 700px; /* 必要に応じて調整 */
     }
     /* ★追加または修正箇所: biwaichi-section Tablet ★ */
     .biwaichi-section {
         padding: 40px 0; /* モバイルと統一または微調整 */
+    }
+
+    /* Tablet: biwaichi-points の画像サイズ調整 */
+    .biwaichi-points .point-item img {
+        width: 100%; /* 親要素に合わせて調整 */
+        max-width: 450px; /* タブレットでの最大幅を調整（地図のiframeのサイズに合わせる） */
+        height: auto; /* アスペクト比を維持 */
+    }
+    .biwaichi-access-guide iframe {
+        width: 100%; /* 親要素に合わせて調整 */
+        max-width: 450px; /* タブレットでの最大幅を調整 */
+        height: auto; /* アスペクト比を維持 */
     }
 }
 
@@ -1189,15 +1198,19 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 0.95em;
     }
 
-    /* ★追加または修正箇所: biwaichi-section Mobile ★ */
+    /* ★修正箇所: biwaichi-section Mobile ★ */
     .biwaichi-section {
         padding: 30px 0; /* モバイル時のセクション共通スタイルに合わせる */
     }
     .biwaichi-points .point-item {
-        max-width: 280px; /* モバイルでのカードの最大幅を調整 */
+        /* カード表示をやめて単に画像と地図と同じ幅にするため、max-width を解除または大きくする */
+        max-width: 100%; /* 親要素に合わせる */
     }
     .biwaichi-points .point-item img {
-        max-width: 150px; /* モバイルでの画像の最大幅を調整（必要に応じて） */
+        width: 100%; /* モバイルでは幅を100%にする */
+        height: 250px; /* モバイルでの画像の高さを地図のiframeに合わせる (biwaichi-access-guide iframe の高さ) */
+        object-fit: cover; /* 引き続きオブジェクトフィットを維持 */
+        max-width: none; /* max-widthの制限をなくす */
     }
     .biwaichi-access-guide iframe {
         height: 250px; /* モバイルでのマップの高さ調整 */
