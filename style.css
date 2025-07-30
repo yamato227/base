@@ -129,7 +129,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 20px;
+    padding: 10px 20px; /* ★修正箇所: 上下パディングを20pxから10pxに減らしました */
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -137,6 +137,7 @@ h1, h2, h3, h4, h5, h6 {
 .site-logo img {
     height: 65px;
     vertical-align: middle;
+    margin-bottom: 0px; /* ★追加: 画像の下のマージンを調整 */
 }
 
 /* メインナビゲーション */
@@ -154,7 +155,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .main-nav a {
     display: block;
-    padding: 9px 0; /* ここを18pxから9pxに変更しました */
+    padding: 5px 0; /* ★修正箇所: 上下パディングを9pxから5pxに減らしました */
     color: #333;
     font-weight: 700;
     font-size: 1.15em;
@@ -894,10 +895,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* biwaichi-points のスタイル：中央寄せを維持 */
 .biwaichi-points {
-    display: flex;            /* 子要素をFlexboxで横並びにする（今は1つですが、将来増やす可能性を考慮） */
+    display: flex;           /* 子要素をFlexboxで横並びにする（今は1つですが、将来増やす可能性を考慮） */
     justify-content: center; /* 子要素を中央寄せにする */
-    flex-wrap: wrap;          /* 画面幅が足りない場合に折り返す */
-    gap: 30px;                /* 子要素間の間隔 (現在は1つなので影響なし) */
+    flex-wrap: wrap;           /* 画面幅が足りない場合に折り返す */
+    gap: 30px;                 /* 子要素間の間隔 (現在は1つなので影響なし) */
     margin-bottom: 40px;
 }
 
