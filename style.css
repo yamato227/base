@@ -140,6 +140,10 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0px; /* ★追加: 画像の下のマージンを調整 */
 }
 
+.site-logo { /* ★追加: ロゴ全体に対するスタイル */
+    margin-right: 20px; /* 現在の隙間を半分にする場合は、この値を調整してください */
+}
+
 /* メインナビゲーション */
 .main-nav ul {
     list-style: none;
