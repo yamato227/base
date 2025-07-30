@@ -127,11 +127,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .header-inner {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */ /* この行をコメントアウトまたは削除 */
+    justify-content: flex-start; /* ロゴとメニューを左寄せにする */
     align-items: center;
     padding: 20px 20px;
     max-width: 1200px;
     margin: 0 auto;
+    gap: 40px; /* ロゴとメニューの間の隙間を40pxに設定。この値は調整してください。 */
 }
 
 .site-logo img {
@@ -148,7 +150,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main-nav li {
-    margin-left: 40px;
+    /* margin-left: 40px; */ /* gapで間隔を制御するため、この行は不要になります */
     position: relative;
 }
 
