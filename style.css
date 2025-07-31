@@ -558,16 +558,44 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
 }
 
-/* Googleマップカードのスタイル */
-.service-card.map-card {
-    height: 480px;
+/* Googleマップのレスポンシブ対応 */
+/* iframeを囲むdivのスタイル */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 のアスペクト比 (高さ / 幅 = 9 / 16 = 0.5625) */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000; /* iframeが読み込まれるまでの背景色 */
+    /* .service-card.map-card の flex-grow との調整 */
+    flex-grow: 1; 
+    height: auto; /* flex-grow と併用するため */
+    min-height: 220px; /* 最小高さを確保 */
 }
 
-.service-card.map-card iframe {
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Googleマップカードのスタイル */
+.service-card.map-card {
+    height: 480px; /* カード全体の高さを指定（コンテンツの高さによる） */
+    display: flex;
+    flex-direction: column;
+}
+
+/* 以前の .service-card.map-card iframe のスタイルは .video-container に移動したため削除または調整 */
+/* .service-card.map-card iframe {
     flex-grow: 1;
     height: auto;
     min-height: 220px;
-}
+} */
 
 .service-card.map-card h3,
 .service-card.map-card p,
@@ -1173,12 +1201,14 @@ h1, h2, h3, h4, h5, h6 {
         max-width: 90%;
         margin: 0 auto;
     }
+    /* service-card.map-card の高さは .video-container の padding-bottom で制御されるため auto に */
     .service-card.map-card {
         height: auto; /* 高さを自動調整 */
     }
-    .service-card.map-card iframe {
+    /* iframe の最小高さは .video-container で設定される */
+    /* .service-card.map-card iframe {
         min-height: 250px;
-    }
+    } */
 
     .treasures-gallery {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* 画像サイズを調整 */
