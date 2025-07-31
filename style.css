@@ -132,6 +132,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 5px 20px; /* ★修正箇所: 上下パディングを10pxから5pxに減らしました */
     max-width: 1200px;
     margin: 0 auto;
+    gap: 0; /* flexboxのgapを0に設定（必要に応じて） */
 }
 
 .site-logo img {
