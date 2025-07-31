@@ -129,20 +129,20 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 10px; /* ★修正箇所: 上下パディングを10pxから5pxに減らしました */
+    padding: 10px 10px;
     max-width: 1200px;
     margin: 0 auto;
-    gap: 0; /* flexboxのgapを0に設定（必要に応じて） */
+    gap: 0;
 }
 
 .site-logo img {
     height: 65px;
     vertical-align: middle;
-    margin-bottom: -2px; /* ★修正: 画像の下のマージンを調整 */
+    margin-bottom: -2px;
 }
 
-.site-logo { /* ★追加: ロゴ全体に対するスタイル */
-    margin-right: 0px; /* 現在の隙間を半分にする場合は、この値を調整してください */
+.site-logo {
+    margin-right: 0px;
 }
 
 /* メインナビゲーション */
@@ -154,13 +154,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main-nav li {
-    margin-left: 40px;
+    margin-left: 30px; /* 40px から 30px に変更してメニュー項目間の間隔を縮小 */
     position: relative;
 }
 
 .main-nav a {
     display: block;
-    padding: 2px 0; /* ★修正箇所: 上下パディングを5pxから2pxに減らしました */
+    padding: 3px 0; /* 2px から 3px に変更して上下のパディングを微調整 */
     color: #333;
     font-weight: 700;
     font-size: 1.15em;
@@ -313,7 +313,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .page-hero-about p {
     font-size: 1.15em;
-    max-width: 900px; /* ここを調整してテキストが1行に収まるように広げました */
+    max-width: 900px;
     margin: 0 auto 0px auto;
     color: white;
     /* 長い単語の改行を調整 */
@@ -801,7 +801,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px 30px;
+    gap: 10px 15px; /* ここを 30px から 15px に変更 */
     justify-content: flex-end;
 }
 
@@ -962,6 +962,7 @@ h1, h2, h3, h4, h5, h6 {
     .footer-nav ul {
         justify-content: center;
         margin-top: 20px;
+        gap: 10px 10px; /* モバイル表示でのフッターギャップをさらに調整 */
     }
     .footer-info, .footer-nav {
         min-width: unset;
