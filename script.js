@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const body = document.body; // body要素を取得
 
     // CSSのモバイルブレイクポイントと一致させる
-    const MOBILE_BREAKPOINT = 767;  
+    // CSSで@media (max-width: 768px) としているため、ここも768に合わせます。
+    const MOBILE_BREAKPOINT = 768;
 
     if (mobileMenuToggle && mainNav) {
         mobileMenuToggle.addEventListener('click', function() {
@@ -46,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function showNextImage() {
         if (slideshowImages.length === 0) return;
 
+        // ここを修正しました。.hero-image -> .slideshow-image
         slideshowImages[currentImageIndex].classList.remove('active');
         currentImageIndex = (currentImageIndex + 1) % slideshowImages.length;
         slideshowImages[currentImageIndex].classList.add('active');
@@ -66,11 +68,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if (pageTopBtn) {
         // スクロールイベントでボタンの表示・非表示を切り替える
         window.addEventListener('scroll', function() {
-            // スクロール量が200pxを超えたらvisibleクラスを追加
             if (window.scrollY > 200) {
-                pageTopBtn.classList.add('visible'); // visibleクラスを追加
+                // ここを修正しました。'display'プロパティを直接操作するのではなく、
+                // CSSで定義した.showクラスを追加・削除します。
+                // これにより、CSSでtransitionを使い、フェードイン・アウトのアニメーションが適用されます。
+                pageTopBtn.classList.add('show');
             } else {
-                pageTopBtn.classList.remove('visible'); // visibleクラスを削除
+                pageTopBtn.classList.remove('show');
             }
         });
 
@@ -78,8 +82,8 @@ document.addEventListener('DOMContentLoaded', function() {
         pageTopBtn.addEventListener('click', function(e) {
             e.preventDefault(); // デフォルトのリンク動作（#へのジャンプ）を無効化
             window.scrollTo({
-                top: 0,          // ページの最上部へ
-                behavior: 'smooth' // スムーズにスクロール
+                top: 0,
+                behavior: 'smooth'
             });
         });
     }
