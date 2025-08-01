@@ -568,7 +568,7 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 100%;
     background: #000; /* iframeが読み込まれるまでの背景色 */
     /* .service-card.map-card の flex-grow との調整 */
-    flex-grow: 1; 
+    flex-grow: 1;
     height: auto; /* flex-grow と併用するため */
     min-height: 220px; /* 最小高さを確保 */
 }
@@ -589,13 +589,6 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     flex-direction: column;
 }
-
-/* 以前の .service-card.map-card iframe のスタイルは .video-container に移動したため削除または調整 */
-/* .service-card.map-card iframe {
-    flex-grow: 1;
-    height: auto;
-    min-height: 220px;
-} */
 
 .service-card.map-card h3,
 .service-card.map-card p,
@@ -1007,28 +1000,27 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .main-nav {
-        /* モバイルでは初期非表示 */
+        /* ★ここを修正しました★ */
         display: none;
         flex-direction: column;
-        /* absolute から fixed に変更し、全画面をカバーするように調整 */
-        position: fixed; /* 修正: absolute から fixed に変更 */
-        top: 0; /* 修正: 0 に変更 */
-        right: -100%; /* 修正: 画面外に隠す */
-        width: 100%;
-        height: 100%; /* 画面全体をカバー */
+        position: fixed;
+        top: 0;
+        right: -50%; /* 修正: 画面外の半分に隠す */
+        width: 50%; /* 修正: 画面幅の半分 */
+        height: 100%;
         background-color: #fff;
         box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         z-index: 99;
         padding: 15px 0;
         border-top: 1px solid #eee;
         transition: right 0.3s ease-out; /* スライドイン/アウトのアニメーション */
-        overflow-y: auto; /* メニュー項目が多い場合にスクロール可能に */
+        overflow-y: auto;
     }
 
-    /* 修正: JavaScriptが 'is-active' クラスを付与するので、ここに合わせる */
+    /* ★ここを修正しました★ */
     .main-nav.is-active {
-        display: flex; /* JavaScriptで.is-activeクラスが付与されたら表示 */
-        right: 0; /* 画面内にスライドイン */
+        display: flex;
+        right: 0; /* 修正: 画面内にスライドイン */
     }
 
     .main-nav ul {
@@ -1078,8 +1070,8 @@ h1, h2, h3, h4, h5, h6 {
         position: fixed;
         bottom: 30px;
         right: 30px;
-        left: auto; /* 修正: 左プロパティを解除 */
-        z-index: 1000; /* 修正: 他の要素より手前に表示するために高く設定 */
+        left: auto;
+        z-index: 1000;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1093,8 +1085,8 @@ h1, h2, h3, h4, h5, h6 {
         text-decoration: none;
         box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         transition: opacity 0.3s ease, transform 0.3s ease;
-        opacity: 0; /* 初期は非表示 */
-        visibility: hidden; /* 初期は非表示 */
+        opacity: 0;
+        visibility: hidden;
         flex-direction: column;
         line-height: 1;
     }
