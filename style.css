@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+/* ★追加箇所: メニューオープン時にbodyのスクロールを無効化するクラスを追加 ★ */
+body.no-scroll {
+    overflow: hidden;
+}
+
 body {
     margin: 0;
     font-family: 'Noto Serif JP', serif, sans-serif;
@@ -999,14 +1004,14 @@ h1, h2, h3, h4, h5, h6 {
         padding: 10px 15px; /* モバイルでのパディングを調整 */
     }
 
+    /* ★修正箇所: モバイルメニューのスタイルを修正し、全画面表示を回避★ */
     .main-nav {
-        /* ★ここを修正しました★ */
         display: none;
         flex-direction: column;
         position: fixed;
         top: 0;
-        right: -50%; /* 修正: 画面外の半分に隠す */
-        width: 50%; /* 修正: 画面幅の半分 */
+        right: -100%; /* 修正: 画面外に完全に隠す */
+        width: 70%; /* 修正: 画面幅の70%に設定 */
         height: 100%;
         background-color: #fff;
         box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -1017,7 +1022,7 @@ h1, h2, h3, h4, h5, h6 {
         overflow-y: auto;
     }
 
-    /* ★ここを修正しました★ */
+    /* ★修正箇所: メニューがアクティブになったときに画面内にスライドインするよう修正★ */
     .main-nav.is-active {
         display: flex;
         right: 0; /* 修正: 画面内にスライドイン */
