@@ -12,6 +12,42 @@
     <link rel="shortcut icon" href="./favicon/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    
+    <style>
+        /* ページトップボタンのスタイル */
+        #page-top {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 99;
+            background-color: #8B4513; /* 茶色 */
+            color: white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: none; /* 初期状態では非表示 */
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.3s ease-in-out;
+            opacity: 0;
+            flex-direction: column;
+            font-size: 12px;
+            line-height: 1;
+        }
+
+        #page-top.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        #page-top .arrow-up {
+            font-size: 16px;
+            margin-bottom: 2px;
+        }
+    </style>
 </head>
 <body>
 
@@ -87,10 +123,6 @@
             </div>
         </section>
 
-        <a href="#" id="page-top" class="common-btn small">
-            <span class="arrow-up">▲</span> <span class="top-text">TOP</span>
-        </a>
-
         <section class="biwaichi-section section-common bg-light-gray">
             <div class="container">
                 <h2 class="section-title">ビワイチのお供に蓮通寺</h2>
@@ -151,6 +183,34 @@
         </div>
     </footer>
 
+    <a href="#top" id="page-top">
+        <span class="arrow-up">▲</span>
+        <span class="top-text">TOP</span>
+    </a>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const pageTopBtn = document.getElementById('page-top');
+            
+            // スクロールイベントを監視
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 200) {
+                    pageTopBtn.classList.add('show');
+                } else {
+                    pageTopBtn.classList.remove('show');
+                }
+            });
+            
+            // ボタンクリックでトップにスクロール
+            pageTopBtn.addEventListener('click', (event) => {
+                event.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
     <script src="./script.js"></script>
 </body>
 </html>
