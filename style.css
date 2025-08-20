@@ -724,7 +724,7 @@ h1, h2, h3, h4, h5, h6 {
 /* CTAセクションの連絡先ボタンのラッパー */
 .cta-contact-buttons {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* 中央揃えに修正 */
     gap: 40px;
     flex-wrap: wrap;
     margin-top: 15px;
@@ -1226,7 +1226,7 @@ h1, h2, h3, h4, h5, h6 {
     }
     .cta-contact-btn {
         flex: 1 1 auto;
-        width: 90%;
+        width: auto; /* 修正: width を auto に変更 */
         max-width: 300px;
         padding: 20px 30px;
         min-height: unset;
