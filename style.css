@@ -1220,17 +1220,19 @@ h1, h2, h3, h4, h5, h6 {
     .cta-section p {
         font-size: 1em;
     }
-    .cta-contact-buttons {
-        gap: 20px;
-        flex-direction: column;
-    }
-    .cta-contact-btn {
-        flex: 1 1 auto;
-        width: auto; /* 修正: width を auto に変更 */
-        max-width: 300px;
-        padding: 20px 30px;
-        min-height: unset;
-    }
+   .cta-contact-buttons {
+    gap: 20px;
+    flex-direction: column;
+    align-items: center; /* 追加 */
+}
+.cta-contact-btn {
+    flex: 1 1 auto;
+    width: 90%; /* auto から 90% に変更 */
+    max-width: 300px;
+    padding: 20px 30px;
+    min-height: unset;
+    margin: 0 auto; /* 追加 */
+}
     .cta-contact-btn span {
         font-size: 1.5em;
     }
