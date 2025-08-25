@@ -1304,7 +1304,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* サービス詳細情報のスタイル */
 .service-details {
-    text-align: center;
+    text-align: left; /* ★ここを left に変更★ */
     font-size: 1.1em;
     line-height: 1.8;
     color: #333;
