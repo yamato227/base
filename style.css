@@ -791,21 +791,20 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-content {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: flex-start;
+    align-items: center;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 40px;
 }
 
 .footer-info {
-    flex: 1;
-    min-width: 280px;
+    flex: none;
 }
 
 .footer-logo {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 0;
 }
 
 /* フッターロゴのサイズ調整 */
@@ -817,8 +816,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* フッターナビゲーションの横並び変更点 */
 .footer-nav {
-    flex: 2;
-    min-width: 400px;
+    flex: none;
 }
 
 .footer-nav ul {
@@ -827,8 +825,8 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px 15px; /* ここを 30px から 15px に変更 */
-    justify-content: flex-end;
+    gap: 10px 15px;
+    justify-content: flex-start;
 }
 
 .footer-nav li a {
