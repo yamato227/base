@@ -1179,7 +1179,7 @@ h1, h2, h3, h4, h5, h6 {
     /* サブページのヒーロー画像（モバイルで上下幅を縮小） */
     .page-hero-about {
         padding: 15px 0;
-        min-height: 0;
+        min-height: 10;
     }
 
     .news-list li {
