@@ -1408,20 +1408,20 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
     font-size: 1.1em;
     cursor: pointer;
-    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
 }
 
 .question::after {
     content: "▼";
-    position: absolute;
-    right: 25px;
-    top: 50%;
-    transform: translateY(-50%);
+    flex-shrink: 0;
     transition: transform 0.3s ease;
 }
 
 .faq-item.active .question::after {
-    transform: translateY(-50%) rotate(180deg);
+    transform: rotate(180deg);
 }
 
 .answer {
