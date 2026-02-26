@@ -1741,70 +1741,85 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-/* スマホ：縦積みレイアウトに切り替え */
+/* スマホ：左テキスト・右ロゴの2カラムグリッド */
 @media (max-width: 480px) {
     .kugyou-banner-section {
         padding: 14px 0;
     }
 
     .kugyou-banner {
-        flex-direction: column;
-        align-items: stretch;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "left right"
+            "mid  right";
         height: auto;
         padding: 14px 16px;
         gap: 0;
+        align-items: stretch;
     }
 
     .kugyou-left {
-        margin-right: 0;
-        margin-bottom: 10px;
+        grid-area: left;
+        margin-right: 12px;
+        margin-bottom: 0;
+        padding-bottom: 8px;
+        border-bottom: 1px solid rgba(139, 115, 85, 0.2);
     }
 
     .kugyou-sub {
-        font-size: 11px;
+        font-size: 10px;
         margin-bottom: 3px;
     }
 
     .kugyou-main {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .kugyou-mid {
+        grid-area: mid;
         border-left: none;
-        border-top: 1px solid rgba(139, 115, 85, 0.25);
+        border-top: none;
         padding-left: 0;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding-top: 8px;
+        padding-bottom: 0;
+        margin-right: 12px;
     }
 
     .kugyou-desc {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .kugyou-highlight {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .kugyou-right {
+        grid-area: right;
         margin-left: 0;
-        align-items: stretch;
-        border-top: 1px solid rgba(139, 115, 85, 0.25);
-        padding-top: 10px;
+        border-left: 1px solid rgba(139, 115, 85, 0.25);
+        padding-left: 12px;
+        align-items: center;
+        justify-content: center;
     }
 
     .kugyou-logo {
-        max-height: 28px;
-        max-width: 130px;
+        max-height: 24px;
+        max-width: 88px;
         width: auto;
         height: auto;
         margin: 0 auto 8px;
     }
 
     .kugyou-btn {
-        width: 100%;
+        width: 88px;
         justify-content: center;
-        font-size: 13px;
-        padding: 10px;
+        font-size: 10px;
+        padding: 7px 6px;
+        white-space: normal;
+        text-align: center;
+        line-height: 1.4;
     }
 }
 
