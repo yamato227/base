@@ -1692,6 +1692,7 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 3px 8px rgba(0,0,0,0.2);
 }
 
+/* タブレット：横並びを維持しつつ縮小 */
 @media (max-width: 768px) {
     .kugyou-banner {
         max-width: 100%;
@@ -1732,6 +1733,71 @@ h1, h2, h3, h4, h5, h6 {
 
     .kugyou-temple {
         font-size: 9px;
+    }
+}
+
+/* スマホ：縦積みレイアウトに切り替え */
+@media (max-width: 480px) {
+    .kugyou-banner-section {
+        padding: 14px 0;
+    }
+
+    .kugyou-banner {
+        flex-direction: column;
+        align-items: stretch;
+        height: auto;
+        padding: 14px 16px;
+        gap: 0;
+    }
+
+    .kugyou-left {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .kugyou-sub {
+        font-size: 11px;
+        margin-bottom: 3px;
+    }
+
+    .kugyou-main {
+        font-size: 18px;
+    }
+
+    .kugyou-mid {
+        border-left: none;
+        border-top: 1px solid rgba(139, 115, 85, 0.25);
+        padding-left: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .kugyou-desc {
+        font-size: 12px;
+    }
+
+    .kugyou-highlight {
+        font-size: 14px;
+    }
+
+    .kugyou-right {
+        margin-left: 0;
+        align-items: stretch;
+        border-top: 1px solid rgba(139, 115, 85, 0.25);
+        padding-top: 10px;
+    }
+
+    .kugyou-temple {
+        font-size: 10px;
+        text-align: center;
+        margin-bottom: 6px;
+    }
+
+    .kugyou-btn {
+        width: 100%;
+        justify-content: center;
+        font-size: 13px;
+        padding: 10px;
     }
 }
 
