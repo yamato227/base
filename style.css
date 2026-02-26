@@ -1667,8 +1667,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .kugyou-logo {
-    height: 34px;
+    max-height: 32px;
+    max-width: 140px;
     width: auto;
+    height: auto;
     display: block;
     margin-bottom: 6px;
     object-fit: contain;
@@ -1734,7 +1736,8 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .kugyou-logo {
-        height: 26px;
+        max-height: 26px;
+        max-width: 120px;
     }
 }
 
@@ -1790,8 +1793,10 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .kugyou-logo {
-        height: auto;
+        max-height: 28px;
         max-width: 130px;
+        width: auto;
+        height: auto;
         margin: 0 auto 8px;
     }
 
@@ -1913,10 +1918,14 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 8px;
 }
 
-.kugyou-rect-temple {
-    font-size: 10px;
-    color: #6b7280;
-    margin-bottom: 4px;
+.kugyou-rect-logo {
+    max-height: 28px;
+    max-width: 120px;
+    width: auto;
+    height: auto;
+    display: block;
+    margin-bottom: 6px;
+    object-fit: contain;
 }
 
 .kugyou-rect-btn {
@@ -1995,10 +2004,14 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Noto Serif JP', serif;
 }
 
-.kugyou-mobile-note {
-    font-size: 10px;
-    color: #6b7280;
-    margin: 0;
+.kugyou-mobile-logo {
+    max-height: 20px;
+    max-width: 100px;
+    width: auto;
+    height: auto;
+    display: block;
+    margin-top: 4px;
+    object-fit: contain;
 }
 
 .kugyou-mobile-cta {
