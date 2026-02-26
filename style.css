@@ -1666,10 +1666,12 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
 }
 
-.kugyou-temple {
-    font-size: 10px;
-    color: #6b7280;
-    margin-bottom: 4px;
+.kugyou-logo {
+    height: 34px;
+    width: auto;
+    display: block;
+    margin-bottom: 6px;
+    object-fit: contain;
 }
 
 .kugyou-btn {
@@ -1731,8 +1733,8 @@ h1, h2, h3, h4, h5, h6 {
         padding: 6px 12px;
     }
 
-    .kugyou-temple {
-        font-size: 9px;
+    .kugyou-logo {
+        height: 26px;
     }
 }
 
@@ -1787,10 +1789,10 @@ h1, h2, h3, h4, h5, h6 {
         padding-top: 10px;
     }
 
-    .kugyou-temple {
-        font-size: 10px;
-        text-align: center;
-        margin-bottom: 6px;
+    .kugyou-logo {
+        height: auto;
+        max-width: 130px;
+        margin: 0 auto 8px;
     }
 
     .kugyou-btn {
